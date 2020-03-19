@@ -16,9 +16,9 @@ class TextIF extends Component {
     return (
       <div className={"TextIF " + this.props.classN}>
         <label>
-          {this.props.name}
-          <br/>
-          <input type="text" onChange={(this.handleChange)} />
+          <p className={this.props.classN + "__TextIF-p"}>{this.props.name}</p>
+          <input type="text" onChange={(this.handleChange)}
+            className={this.props.classN + "__TextIF-input"}/>
         </label>
       </div>
     )

@@ -1,6 +1,6 @@
 import React from 'react';
 import './App.css';
-import Reg from './registration/index';
+import Reg from './pages/news/index';
 
 function App() {
   return (
