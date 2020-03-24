@@ -65,28 +65,28 @@ class Registration extends Component {
     this.updateDataY = this.updateDataY.bind(this);
   }
 
-  updateDataL = value => {
+  updateDataL(value) {
      this.setState({login: value});
   };
-  updateDataP = value => {
+  updateDataP(value) {
      this.setState({password: value});
   };
-  updateDataConfP = value => {
+  updateDataConfP(value) {
      this.setState({confirmPassword: value});
   };
-  updateDataE = value => {
+  updateDataE(value) {
      this.setState({email: value});
   };
-  updateDataS = e => {
+  updateDataS(e) {
     this.setState({sex: e.target.value});
   };
-  updateDataD = value => {
+  updateDataD(value) {
     this.setState({day: value})
   };
-  updateDataM = value => {
+  updateDataM(value) {
     this.setState({month: value})
   };
-  updateDataY = value => {
+  updateDataY(value) {
     this.setState({year: value})
   };
   handleSubmit = (e) => {

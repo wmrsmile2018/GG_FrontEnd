@@ -2,169 +2,188 @@ import React, {Component} from 'react';
 import Post from '../../elements/post/index'
 
 
-const tmpObj = [
+const obj= [
   {
-    "id_post": "5e724471c72b3b7f6129787c",
-    "avatar": "http://placehold.it/32x32",
+    "id_post": "5e73658931da434191c94547",
+    "avatar": "https://lh3.googleusercontent.com/proxy/XNpIZWrc6llsUJE29w0lY9pmsxwJvfgbRZ6QLoVHF-P5ZP-kznu-246CfR4TFss-y9QowscUfL1dDavM2jja6lCkNel11QfDK5ePijyaYKXruTYDlpIqRnzCfp1xsNMcNvXsRaff59iWvjI",
     "author": "some author",
     "date": 21313,
     "time": 12313,
-    "text": "Sunt voluptate est consequat non laboris. Consequat laborum Lorem cupidatat ut est commodo velit dolor quis in aute veniam in. Id tempor duis cillum qui incididunt adipisicing esse voluptate. Deserunt aute anim aliqua irure culpa laborum elit voluptate nulla aliquip proident laborum ullamco. Laboris aute adipisicing nulla proident ullamco dolor velit ex do eu consectetur reprehenderit. Quis exercitation ullamco aliqua cupidatat et aliquip incididunt labore.\r\n",
-    "photos": "http://placehold.it/32x32",
+    "text": "Ullamco officia duis labore est. Eiusmod occaecat officia est non sint aliqua consectetur aliqua. Fugiat amet minim magna cupidatat ut eiusmod qui veniam labore consectetur duis qui et. Cupidatat nulla velit sit esse. Tempor non cillum nulla excepteur velit sit. Deserunt consequat minim dolore aliquip nulla sint excepteur ullamco. Et adipisicing irure esse Lorem sint deserunt pariatur anim adipisicing fugiat ad.\r\n",
+    "photos": [
+      {
+        "id_photo": "5e736589ab0635e2ba339736",
+        "photo": "https://via.placeholder.com/640x360"
+      },
+      {
+        "id_photo": "5e7365890ca7448d10c83878",
+        "photo": "https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcTPo6WfnUxzDdXuyiXxC6j4W7cMP3h-jfzE0zUeChJqfZVLk12Q"
+      },
+      {
+        "id_photo": "5e736589ab0635e2ba339736",
+        "photo": "https://via.placeholder.com/640x360"
+      }
+    ],
     "likes": 10,
     "dislikes": 20,
-    "comments": [
-      {
-        "id_com": "5e724471d1fa720712ed2548"
-      },
-      {
-        "id_com": "5e7244714b3e98bb4c9d1019"
-      },
-      {
-        "id_com": "5e724471fe72e54469f4056f"
-      }
-    ]
+    "comments": 7
   },
   {
-    "id_post": "5e724471e85578b306d3ac22",
+    "id_post": "5e73658944562d8ad0c5fe3c",
     "avatar": "http://placehold.it/32x32",
     "author": "some author",
     "date": 21313,
     "time": 12313,
-    "text": "Ea id anim ut officia laboris eiusmod ut esse commodo. Veniam ex eu eiusmod veniam reprehenderit tempor. Veniam tempor do deserunt velit reprehenderit eiusmod anim consectetur magna aliquip sit incididunt do. Reprehenderit laborum labore sit ea do ut officia esse.\r\n",
-    "photos": "http://placehold.it/32x32",
+    "text": "Laboris deserunt proident excepteur nisi. Nostrud ea minim et velit commodo nisi dolor id. Pariatur nisi culpa esse aute cupidatat sit reprehenderit exercitation Lorem culpa id magna incididunt.\r\n",
+    "photos": [
+      {
+        "id_photo": "5e736589019c7815086ece6e",
+        "photo": "http://placehold.it/32x32"
+      },
+      {
+        "id_photo": "5e73658940c1a90e7144c557",
+        "photo": "http://placehold.it/32x32"
+      },
+      {
+        "id_photo": "5e7365890a99406cc9b1a8e6",
+        "photo": "http://placehold.it/32x32"
+      }
+    ],
     "likes": 10,
     "dislikes": 20,
-    "comments": [
-      {
-        "id_com": "5e7244719ff03aa883fd9a15"
-      },
-      {
-        "id_com": "5e724471b7134c38c785bfa9"
-      },
-      {
-        "id_com": "5e724471c8cbed0593f4b564"
-      }
-    ]
+    "comments": 7
   },
   {
-    "id_post": "5e724471203ba2916d94b888",
+    "id_post": "5e7365890495923eb08e9203",
     "avatar": "http://placehold.it/32x32",
     "author": "some author",
     "date": 21313,
     "time": 12313,
-    "text": "Aliqua deserunt irure occaecat amet cupidatat commodo aute elit consectetur mollit mollit cupidatat deserunt sit. Laboris incididunt reprehenderit minim do cupidatat dolor est id ex reprehenderit pariatur commodo consequat. Dolor do dolor commodo consequat.\r\n",
-    "photos": "http://placehold.it/32x32",
+    "text": "Adipisicing voluptate mollit laboris adipisicing aute voluptate eu non culpa. Dolore sint consectetur voluptate laboris sit tempor occaecat nostrud Lorem anim. Sit do cillum eu in ad. Irure laboris officia cillum non incididunt dolore nulla non sit ut sunt reprehenderit eiusmod. Aliquip non aliqua elit ullamco. Et sint veniam ea do id sit.\r\n",
+    "photos": [
+      {
+        "id_photo": "5e736589c088ec11b2dec26c",
+        "photo": "http://placehold.it/32x32"
+      },
+      {
+        "id_photo": "5e7365892912ac3af2aa55a6",
+        "photo": "http://placehold.it/32x32"
+      },
+      {
+        "id_photo": "5e7365895853a7ad4bf85ac3",
+        "photo": "http://placehold.it/32x32"
+      }
+    ],
     "likes": 10,
     "dislikes": 20,
-    "comments": [
-      {
-        "id_com": "5e724471355d4052cb6cec12"
-      },
-      {
-        "id_com": "5e7244714512019aa1e8f9a4"
-      },
-      {
-        "id_com": "5e724471ffb10132267e75ed"
-      }
-    ]
+    "comments": 7
   },
   {
-    "id_post": "5e72447176a1d26a9f20c9f8",
+    "id_post": "5e736589ba56b75b941899f9",
     "avatar": "http://placehold.it/32x32",
     "author": "some author",
     "date": 21313,
     "time": 12313,
-    "text": "Ullamco et in pariatur dolor ullamco irure aute. Ipsum quis ut Lorem do deserunt magna eu duis sunt. Est est duis exercitation Lorem. Anim anim labore do ut veniam. Amet irure duis Lorem voluptate nulla qui quis enim culpa anim. Incididunt laboris ex qui sit ipsum.\r\n",
-    "photos": "http://placehold.it/32x32",
+    "text": "Duis aliqua exercitation nostrud veniam duis esse occaecat nostrud et. Dolore sint ad officia sint. Cillum eiusmod exercitation ea reprehenderit voluptate cupidatat ullamco eu dolor. Dolore et exercitation magna irure ad ut occaecat. Nostrud id elit in excepteur excepteur esse in. Et exercitation culpa veniam consectetur ut. Commodo in pariatur officia Lorem do occaecat esse culpa ad Lorem.\r\n",
+    "photos": [
+      {
+        "id_photo": "5e7365895fac840024767bef",
+        "photo": "http://placehold.it/32x32"
+      },
+      {
+        "id_photo": "5e736589073ceccc3945d858",
+        "photo": "http://placehold.it/32x32"
+      },
+      {
+        "id_photo": "5e736589716ced8285c995cd",
+        "photo": "http://placehold.it/32x32"
+      }
+    ],
     "likes": 10,
     "dislikes": 20,
-    "comments": [
-      {
-        "id_com": "5e724471f6089645b1f054fa"
-      },
-      {
-        "id_com": "5e72447168fd8af18cb101f9"
-      },
-      {
-        "id_com": "5e7244715326a4cf2387447d"
-      }
-    ]
+    "comments": 7
   },
   {
-    "id_post": "5e72447170c2bc4cc52f0a32",
+    "id_post": "5e73658958b2d33b3d2f6819",
     "avatar": "http://placehold.it/32x32",
     "author": "some author",
     "date": 21313,
     "time": 12313,
-    "text": "Ex cillum sint eu elit duis nisi et anim amet cupidatat elit. Aute aute pariatur nostrud ullamco non et aute et duis aute voluptate culpa incididunt. Nulla cillum deserunt elit quis dolor ad tempor consequat minim pariatur qui cupidatat tempor. Dolore officia id commodo id adipisicing nostrud voluptate culpa dolore nisi. Sint nulla incididunt magna veniam tempor adipisicing nisi eiusmod. Sint ut sint ullamco quis.\r\n",
-    "photos": "http://placehold.it/32x32",
+    "text": "Qui sunt proident sint enim cupidatat velit ipsum eiusmod adipisicing. Elit cillum et fugiat do cillum culpa laboris eu sint officia. Dolore nulla cupidatat laboris duis commodo ut nulla. Eu incididunt Lorem eiusmod cupidatat sunt reprehenderit velit. Esse amet aliquip amet dolor dolor esse enim aute consectetur id consectetur eiusmod cupidatat. Nisi excepteur cillum do id non mollit.\r\n",
+    "photos": [
+      {
+        "id_photo": "5e736589c20a385ce0b80233",
+        "photo": "http://placehold.it/32x32"
+      },
+      {
+        "id_photo": "5e736589e1fafa653e79e181",
+        "photo": "http://placehold.it/32x32"
+      },
+      {
+        "id_photo": "5e7365890de3535857585d4a",
+        "photo": "http://placehold.it/32x32"
+      }
+    ],
     "likes": 10,
     "dislikes": 20,
-    "comments": [
-      {
-        "id_com": "5e7244714b20ffa25e312e7d"
-      },
-      {
-        "id_com": "5e724471db6de64fa8a72d54"
-      },
-      {
-        "id_com": "5e7244710af04870f4685c25"
-      }
-    ]
+    "comments": 7
   },
   {
-    "id_post": "5e724471404affd4b9bfafdb",
+    "id_post": "5e73658915706fd854ea0218",
     "avatar": "http://placehold.it/32x32",
     "author": "some author",
     "date": 21313,
     "time": 12313,
-    "text": "Culpa est labore sunt voluptate ex elit proident ullamco. Duis eu voluptate nostrud dolor magna qui enim cillum eiusmod mollit. Labore nulla eiusmod veniam esse magna voluptate id nisi. Deserunt Lorem in non consectetur sunt eiusmod esse velit voluptate dolore labore officia ut.\r\n",
-    "photos": "http://placehold.it/32x32",
+    "text": "Mollit ad cillum ex Lorem velit veniam anim fugiat qui. Eiusmod cillum minim eu sunt excepteur non proident commodo. Id reprehenderit dolore in cupidatat nisi dolore nisi aute. Eiusmod veniam culpa nostrud in ullamco laboris incididunt incididunt cillum et. Esse ea non aute minim aliquip duis.\r\n",
+    "photos": [
+      {
+        "id_photo": "5e7365896f9a2921b945ccb2",
+        "photo": "http://placehold.it/32x32"
+      },
+      {
+        "id_photo": "5e736589dfa9324b60df5e27",
+        "photo": "http://placehold.it/32x32"
+      },
+      {
+        "id_photo": "5e73658980dd9b0651d6e92c",
+        "photo": "http://placehold.it/32x32"
+      }
+    ],
     "likes": 10,
     "dislikes": 20,
-    "comments": [
-      {
-        "id_com": "5e724471fb6fb55f2bdbf0c3"
-      },
-      {
-        "id_com": "5e7244719059aa260d4723df"
-      },
-      {
-        "id_com": "5e7244711e2a218ed62d2904"
-      }
-    ]
+    "comments": 7
   },
   {
-    "id_post": "5e724471405b63b955d720cd",
+    "id_post": "5e736589e83207997c08e4bf",
     "avatar": "http://placehold.it/32x32",
     "author": "some author",
     "date": 21313,
     "time": 12313,
-    "text": "Nostrud sint Lorem veniam mollit aliquip esse pariatur non esse qui non. Cupidatat officia id elit cupidatat consectetur laboris voluptate dolor est culpa ut labore id sit. Aliqua laboris anim anim ea ad mollit ad. Eiusmod velit tempor eu ea.\r\n",
-    "photos": "http://placehold.it/32x32",
+    "text": "Ullamco velit ad do in ex reprehenderit irure in aliquip aliquip amet. Veniam incididunt pariatur ipsum laborum ex ipsum incididunt cupidatat officia dolor labore ullamco ipsum. Et velit proident exercitation aliqua fugiat labore. Lorem ad est nisi officia fugiat pariatur adipisicing ipsum minim consectetur consequat consequat incididunt.\r\n",
+    "photos": [
+      {
+        "id_photo": "5e7365890059099d5f43adf8",
+        "photo": "http://placehold.it/32x32"
+      },
+      {
+        "id_photo": "5e736589e72e486404e5712a",
+        "photo": "http://placehold.it/32x32"
+      },
+      {
+        "id_photo": "5e7365895ee88a6bfdf7a461",
+        "photo": "http://placehold.it/32x32"
+      }
+    ],
     "likes": 10,
     "dislikes": 20,
-    "comments": [
-      {
-        "id_com": "5e7244715683af1be2f11d2f"
-      },
-      {
-        "id_com": "5e7244711984c1bf713c73d1"
-      },
-      {
-        "id_com": "5e724471b432186b1071817a"
-      }
-    ]
+    "comments": 7
   }
 ];
-const obj = JSON.parse('[{ "name":"John", "age":30, "city":"New York"},{ "name":"John", "age":30, "city":"New York"}]');
+// const tmpObj = JSON.parse('[{ "name":"John", "age":30, "city":"New York"},{ "name":"John", "age":30, "city":"New York"}]');
 
-// console.log(tmpJson1);
-// console.log(obj);
 // console.log(JSON.stringify(obj));
-// console.log(JSON.stringify(tmpJson1));
-// console.log(JSON.parse(JSON.stringify(tmpJson1)));
+// console.log(JSON.parse(JSON.stringify(obj)));
+// console.log(obj[0].photos.length)
 class News extends Component {
   constructor(props) {
     super(props);
@@ -174,16 +193,19 @@ class News extends Component {
   }
   render() {
     return (
-      <div className="news">
+      <div className="News">
         <Post
-          idPost=""
-          classN=""
-          img=""
-          author=""
-          date=""
-          time=""
-          text=""
-          idPhotos=""
+          idPost={obj[0].id_post}
+          classN="News"
+          avatar={obj[0].avatar}
+          author={obj[0].author}
+          date={obj[0].date}
+          time={obj[0].time}
+          text={obj[0].text}
+          photos={obj[0].photos}
+          likes={obj[0].likes}
+          dislikes={obj[0].dislikes}
+          comments={obj[0].comments}
           />
       </div>
     )
