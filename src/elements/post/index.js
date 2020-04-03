@@ -1,30 +1,10 @@
 import React, {Component} from 'react';
-// import Comment from '../comment/index';
-import Avatar from '../avatar/index';
+import Avatar1 from '../avatar1/index';
 import Comment from '../comment/index';
-import Picture from '../picture/index';
+import Pictures from '../pictures/index';
 import placeholder from '../../public/images/placeholder.jpg';
 
-// key={i.toString(36) + i}
-class Pictures extends Component {
-  constructor(props) {
-       super(props);
-       this.state = {
-       }
-     };
-  render() {
-    const Photos = this.props.photos.map((photo,i) =>
-      <div key={i.toString(36) + i}>
-        <Picture key={i.toString(36) + i} src={photo.photo} mapSize={this.props.photos.length}/>
-      </div>
-    );
-    return (
-      <div>
-        {Photos}
-      </div>
-    )
-  }
-}
+// https://codepen.io/desandro/pen/vLeBLV
 
 
 class Post extends Component {
@@ -37,11 +17,11 @@ class Post extends Component {
 
   render() {
     return(
-      <div id={this.props.idPost} className={"Post " + this.props.classN + "__post"}>
+      <div id={this.props.idPost} className={"post " + this.props.classN + "__post"}>
         <div className={this.props.classN + "__post-header"}>
           <div className={this.props.classN + "__post-leftSide"}>
-            <Avatar
-              className={this.props.classN + "__post-avatar"}
+            <Avatar1
+              className={this.props.classN + "__post-avatar1"}
               avatar={this.props.img}
               classN={this.props.classN}
               w="20" h="20"/>
@@ -78,7 +58,7 @@ class Post extends Component {
           <div className={this.props.classN + "__post-comments"}>
             <img src={placeholder} width="20" height="20" alt=""/>
             {this.props.comments}
-            <Comment comments={this.props.comments} display="none"/>
+            <Comment idPost={this.props.idPost} display="none"/>
           </div>
         </div>
         <div className={this.props.classN + "__comments"} display={"none"}>

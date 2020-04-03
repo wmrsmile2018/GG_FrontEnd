@@ -49,4 +49,25 @@ class Picture extends Component {
     )
   }
 }
-export default Picture;
+
+class Pictures extends Component {
+  constructor(props) {
+       super(props);
+     };
+  render() {
+    const Photos = this.props.photos.map((photo,i) =>
+      <div key={i.toString(36) + i}>
+        <Picture key={i.toString(36) + i} src={photo.photo} mapSize={this.props.photos.length}/>
+      </div>
+    );
+
+    return (
+      <div className={"pictures " + classN + "__pictures"}>
+        {Photos}
+      </div>
+    );
+  }
+}
+
+
+export default Pictures;

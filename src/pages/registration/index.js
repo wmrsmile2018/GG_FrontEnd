@@ -27,7 +27,7 @@ const Validate = (input, pattern) => {
 const RegElement = (props) => {
   return (
     <div className={props.classN1}>
-      <TextIF classN={props.classN2} updateData={props.update} name={props.name} type={props.type} />
+      <TextIF classN={props.classN2} actionOnChange={props.actionOnChange} updateData={props.update} name={props.name} type={props.type} />
       <div style={{display: props.display}} className={props.classN3}>
         {props.text}
       </div>
@@ -65,31 +65,31 @@ class Registration extends Component {
     this.updateDataY = this.updateDataY.bind(this);
   }
 
-  updateDataL(value) {
-     this.setState({login: value});
+  updateDataL(e) {
+     this.setState({login: e.target.value});
   };
-  updateDataP(value) {
-     this.setState({password: value});
+  updateDataP(e) {
+     this.setState({password: e.target.value});
   };
-  updateDataConfP(value) {
-     this.setState({confirmPassword: value});
+  updateDataConfP(e) {
+     this.setState({confirmPassword: e.target.value});
   };
-  updateDataE(value) {
-     this.setState({email: value});
+  updateDataE(e) {
+     this.setState({email: e.target.value});
   };
   updateDataS(e) {
     this.setState({sex: e.target.value});
   };
-  updateDataD(value) {
-    this.setState({day: value})
+  updateDataD(e) {
+    this.setState({day: e.target.value})
   };
-  updateDataM(value) {
-    this.setState({month: value})
+  updateDataM(e) {
+    this.setState({month: e.target.value})
   };
-  updateDataY(value) {
-    this.setState({year: value})
+  updateDataY(e) {
+    this.setState({year: e.target.value})
   };
-  handleSubmit = (e) => {
+  handleSubmit(e) {
     if (!Validate(this.state.login, patternLogin)) {
       this.setState({styleLogin: "block"})
     } else {
@@ -129,8 +129,8 @@ class Registration extends Component {
         <form onSubmit={this.handleSubmit}>
           <RegElement
             classN1="registration__div-login"
-            classN2="registration__login"
-            update={this.updateDataL}
+            classN2="registration"
+            actionOnChange={this.updateDataL}
             name="login"
             type="text"
             display={this.state.styleLogin}
@@ -139,8 +139,8 @@ class Registration extends Component {
             />
           <RegElement
             classN1="registration__div-password"
-            classN2="registration__password"
-            update={this.updateDataP}
+            classN2="registration"
+            actionOnChange={this.updateDataP}
             name="password"
             type="text"
             display={this.state.stylePas}
@@ -149,8 +149,8 @@ class Registration extends Component {
             />
           <RegElement
             classN1="registration__div-confirm-password"
-            classN2="registration__confirm-password"
-            update={this.updateDataConfP} name="confirm password"
+            classN2="registration"
+            actionOnChange={this.updateDataConfP} name="confirm password"
             type="text"
             display={this.state.styleConfirmPas}
             classN3="registration__confirm-password-error registration__error"
@@ -184,9 +184,10 @@ class Registration extends Component {
           </div>
           <RegElement
             classN1="registration__div-email"
-            classN2="registration__email"
-            update={this.updateDataE}
-            name="email" type="text"
+            classN2="registration"
+            actionOnChange={this.updateDataE}
+            name="email"
+            type="text"
             display={this.state.styleEmail}
             classN3="registration__email registration__error"
             text="почта не подходит"

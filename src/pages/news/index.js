@@ -1,7 +1,6 @@
 import React, {Component} from 'react';
 import Post from '../../elements/post/index'
 
-
 const obj= [
   {
     "id_post": "5e73658931da434191c94547",
@@ -187,13 +186,10 @@ const obj= [
 class News extends Component {
   constructor(props) {
     super(props);
-    this.state = {
-
-    };
   }
   render() {
     return (
-      <div className="News">
+      <div className="news">
         <Post
           idPost={obj[0].id_post}
           classN="News"

@@ -1,6 +1,7 @@
 import React from 'react';
 import './App.css';
-import Reg from './pages/news/index';
+import './public/css/style.css'
+import Reg from './pages/personalPage/index';
 
 function App() {
   return (

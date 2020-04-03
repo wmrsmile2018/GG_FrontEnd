@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 import placeholder from '../../public/images/placeholder.jpg';
-
-class Avatar extends Component {
+// аватар с контуром в виде щита
+class Avatar1 extends Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -27,4 +27,4 @@ class Avatar extends Component {
   }
 }
 
-export default Avatar;
+export default Avatar1;

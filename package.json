@@ -7,10 +7,18 @@
     "@testing-library/react": "^9.5.0",
     "@testing-library/user-event": "^7.2.1",
     "antd": "^4.0.2",
+    "chart.js": "^2.9.3",
+    "highcharts": "^8.0.4",
+    "highcharts-react-official": "^3.0.0",
     "masonry-layout": "^4.2.2",
     "node-sass": "^4.13.1",
-    "react": "^16.13.0",
-    "react-dom": "^16.13.0",
+    "prop-types": "^15.7.2",
+    "react": "^16.13.1",
+    "react-chartjs-2": "^2.9.0",
+    "react-circular-progressbar": "^2.0.3",
+    "react-dom": "^16.13.1",
+    "react-jsx-highcharts": "^4.0.1",
+    "react-router-dom": "^5.1.2",
     "react-scripts": "3.4.0"
   },
   "scripts": {
@@ -18,7 +26,7 @@
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "scss": "sass --watch ./public/scss:./public/css"
+    "scss": "sass --watch ./src/public/style:./src/public/css/"
   },
   "eslintConfig": {
     "extends": "react-app"
