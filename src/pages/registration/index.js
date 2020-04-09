@@ -80,15 +80,17 @@ class Registration extends Component {
   updateDataS(e) {
     this.setState({sex: e.target.value});
   };
-  updateDataD(e) {
-    this.setState({day: e.target.value})
+  updateDataD(value) {
+    this.setState({day: value})
   };
-  updateDataM(e) {
-    this.setState({month: e.target.value})
+  updateDataM(value) {
+    this.setState({month: value})
   };
-  updateDataY(e) {
-    this.setState({year: e.target.value})
+  updateDataY(value) {
+    this.setState({year: value})
   };
+
+
   handleSubmit(e) {
     if (!Validate(this.state.login, patternLogin)) {
       this.setState({styleLogin: "block"})
@@ -123,6 +125,7 @@ class Registration extends Component {
     days = generatorDate(1, 31);
     months = generatorDate(1, 12);
     years = generatorDate(1900, 2003);
+    console.log(days);
 // <RegElement classN1="" classN2="" update={} name="" type="" display={} classN3="" text=""/>
     return (
       <div className = "registration">
@@ -157,19 +160,16 @@ class Registration extends Component {
             text="Пароль не соответсвует"
             />
           <div className = "registration__div-date">
-            <label>
               birthday
               <br/>
               <Select style={{ width: 80 }} onChange={this.updateDataD} > {days} </Select>
               <Select style={{ width: 80 }} onChange={this.updateDataM} > {months} </Select>
               <Select style={{ width: 80 }} onChange={this.updateDataY} > {years} </Select>
-            </label>
             <div style={{display: this.state.styleDate}} className="registration__date-error registration__error">
               Выберите дату
             </div>
           </div>
           <div className = "registration__div-sex">
-            <label>
               sex
               <br/>
                <Radio.Group onChange={this.updateDataS} sex={this.state.value}>
@@ -177,7 +177,6 @@ class Registration extends Component {
                 <Radio value={"female"}>B</Radio>
                 <Radio value={"another"}>C</Radio>
               </Radio.Group>
-            </label>
             <div style={{display: this.state.styleSex}} className="registration__sex-error registration__error">
               Выберите пол
             </div>

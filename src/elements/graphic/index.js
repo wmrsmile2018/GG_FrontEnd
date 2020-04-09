@@ -15,6 +15,7 @@ import {
   Annotation,
   Legend,
   AreaSeries,
+  LineSeries,
   Tooltip
 } from 'react-jsx-highcharts';
 
@@ -27,15 +28,17 @@ const plotOptions = {
 
 const Graphic = (props) => {
   return (
+
     <HighchartsChart plotOptions={ plotOptions }>
       <Chart  zoomType="x"/>
       <Legend />
       <Tooltip valueSuffix=" k"/>
-      <XAxis id="myXaxis"  data={props.data2}>
+      <XAxis id="myXaxis" categories={props.XAxis}>
         <XAxis.Title>{props.xTittle}</XAxis.Title>
       </XAxis>
       <YAxis id="myYaxis">
-        <AreaSeries data={props.data1} />
+        <AreaSeries data={props.YAxis} name="Вид1" color="rgba(124, 181, 236, 0.75)"/>
+        <LineSeries  data={props.YAxis} name="Вид2" color="rgba(124, 181, 236, 0.75)"/>
       </YAxis>
     </HighchartsChart>
   );

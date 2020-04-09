@@ -20,46 +20,47 @@ const getTime = (unix_timestamp) => {
   return pad(hours) + ":" + pad(minutes) + ":" + pad(seconds);
 }
 
-class Histories extends Component {
+class Profits extends Component {
   constructor(props) {
     super(props);
     this.state = {
       isOpen: false,
     };
-    this.handleClick = this.handleClick.bind(this);
+    // this.handleClick = this.handleClick.bind(this);
   }
-
-  handleClick() {
-    if (this.state.isOpen === false) {
-        this.setState({
-          isOpen: true
-        })
-    } else {
-      this.setState({
-        isOpen: false
-      })
-    }
-  }
+  //
+  // handleClick() {
+  //   if (this.state.isOpen === false) {
+  //       this.setState({
+  //         isOpen: true
+  //       })
+  //   } else {
+  //     this.setState({
+  //       isOpen: false
+  //     })
+  //   }
+  // }
 
   render(){
     const red = "1px solid #EB5757";
-    const green = "1px solid #83E4E4";
+    const green = "1px solid #B2DF8A";
     return (
-      <div className={"history " + this.props.classN + "__history" + this.props.iter} onClick={this.handleClick} style={{border: this.props.isWin === true ? green : red}}>
-        <div className={this.props.classN + "__history-team1"}>
+      <div className={"profit " + this.props.classN + "__profit" + this.props.iter} style={{border: this.props.isWin === true ? green : red}}>
+        <div className={this.props.classN + "__profit-team1"}>
           {this.props.team1.map((player, i) => <Avatar2 key={i.toString(36) + i} src={player.photo}/>)}
         </div>
-        <div className={this.props.classN + "__history-score"}>{this.props.score}</div>
-        <div className={this.props.classN + "__history-time"}>{getTime(this.props.timestamp)}</div>
-        <div className={this.props.classN + "__history-team2"}>
+        <div className={this.props.classN + "__profit-bet"}>{this.props.score}</div>
+        <div className={this.props.classN + "__profit-team2"}>
           {this.props.team2.map((player, i) => <Avatar2 key={i.toString(36) + i} src={player.photo}/>)}
         </div>
+        <div className={this.props.classN + "__profit-time"}>{getTime(this.props.timestamp)}</div>
+        <div className={this.props.classN + "__profit-profit"}>{this.props.profit}</div>
       </div>
     )
   }
 }
 
-const History = (props) => {
+const Profit = (props) => {
   let currentDate = '';
   let output = [];
   output.push(
@@ -79,7 +80,7 @@ const History = (props) => {
         </div>
       )
     }
-    output.push(<Histories
+    output.push(<Profits
       key={i.toString(36) + i}
       iter={i}
       classN={props.classN}
@@ -88,9 +89,10 @@ const History = (props) => {
       score={props.response[i].score}
       team1={props.response[i].team1}
       team2={props.response[i].team2}
+      profit={props.response[i].profit}
       />)
   }
   return output;
 }
 
-export default History;
+export default Profit;

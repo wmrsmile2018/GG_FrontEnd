@@ -3,10 +3,9 @@ import React from 'react';
 
 const Avatar2 = (props) => {
   return (
-    <div>
+    <div className={"avatar2 " + this.props.classN + "__avatar2"}>
       <img src={props.src} alt=""/>
     </div>
   );
 }
-
 export default Avatar2;

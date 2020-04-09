@@ -11,9 +11,9 @@ class Avatar1 extends Component {
 
   render() {
     return (
-      <div>
+      <div className={"avatar1 " + this.props.classN + "__avatar1"}>
         <img className={"outline " + this.props.classN + "__outline"}
-          src={placeholder}
+          src={this.props.svg}
           width={this.props.w}
           height={this.props.h}
           alt=""/>
