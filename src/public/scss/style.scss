@@ -1,0 +1,342 @@
+@import '~antd/dist/antd.css';
+$color-blue: #83E4E4;
+$color-red: #EB5757;
+$color-yellow: #FFD074;
+$color-black: #11161B;
+$color-gray: #F2F2F2;
+$color-white: #FFFFFF;
+$color-green: #B2DF8A;
+
+$size-standart: 16px;
+$size-big: 18px;
+$size-mini: 12px;
+
+$width-big: 210px;
+
+[type=radio] {
+  // position: absolute;
+  // opacity: 0;
+  // width: 0;
+  // height: 0;
+  display: none;
+}
+
+/* IMAGE STYLES */
+input[type=radio] + label  {
+  background: asset-url('../svg/cross.svg') no-repeat left;
+    padding-left: 2rem;
+}
+
+/* CHECKED STYLES */
+input[type=radio]:checked + label {
+  background: asset-url('../svg/cross.svg') no-repeat left;
+}
+
+// main
+body, html, #root, .App {
+  height: 100%;
+  width: 100%;
+  background: url("../images/background.jpg");
+  background-size: 100%;
+}
+
+h1 {
+  color: $color-gray;
+  font-size: $size-big;
+  text-align: center;
+  margin-bottom: 50px;
+}
+
+p {
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  // -apple-system, BlinkMacSystemFont,
+  margin: 0;
+  font-family: 'Roboto', 'Segoe UI', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
+
+.background_g1, .background_g2 {
+  z-index: 1;
+  opacity: 5%;
+  position: fixed;
+  top: calc(50% - 300px);
+  left: calc(50% - 350px);
+}
+
+.background_g2 {
+  top: calc(50% - 115px);
+  left: calc(50% - 250px);
+}
+
+// circular progress bar _______________________________________________________
+.circle-background {
+	fill: none;
+	stroke: #ddd;
+}
+
+.circle-progress {
+	fill: none;
+	stroke: red;
+	stroke-linecap: round;
+	stroke-linejoin: round;
+}
+
+.circle-text {
+	font-size: 3em;
+	font-weight: bold;
+	fill: red;
+}
+
+// text input field ____________________________________________________________
+.textIF {
+  p {
+    color: $color-gray;
+    font-size: $size-standart;
+    font-weight: bold;
+  }
+
+  input {
+    color: $color-white;
+    background: $color-black;
+    border: $color-blue 1px solid;
+    border-radius: 3px;
+    font-size: $size-mini;
+    width: 366px;
+  }
+}
+
+// input submit ________________________________________________________________
+.inputS {
+  p {
+    color: $color-blue;
+    font-size: $size-standart;
+    position: absolute;
+  }
+
+  input{
+    border: none;
+    height: 28px;
+    // -webkit-mask-image: url('../svg/border.svg');
+    mask-image: url('../svg/border.svg');
+    cursor: pointer;
+
+  }
+}
+
+//button submit ________________________________________________________________
+.buttonS {
+  cursor: pointer;
+}
+
+// error _______________________________________________________________________
+.registration__error, .signIn__error{
+  color: $color-red;
+  font-size: $size-mini;
+}
+
+// registration ________________________________________________________________
+.registration {
+  position: relative;
+  z-index: 100;
+  padding-top: 84px;
+  width: 100%;
+  height: 100%;
+
+  form {
+    width: 370px;
+    margin: 0 auto;
+  }
+
+  .registration__signIn {
+    width: 366px;
+    margin: 0 auto;
+    text-align: center;
+    margin-top: 20px;
+
+    .registration__button {
+      background: none;
+      color: $color-gray;
+      border: none;
+    }
+  }
+
+  .registration_tittle {
+    font-weight: bold!important;
+    font-size: $size-standart!important;
+    color: $color-gray!important;
+  }
+
+  .registration__login, .registration__password, .registration__confirm-password {
+    margin-bottom: 12px;
+  }
+
+  .registration__date {
+    margin-bottom: 12px;
+    p {
+      font-size: $size-standart;
+      color: $color-gray;
+    }
+
+    .ant-select {
+      width: 78px;
+    }
+
+    .registration__dateSelector {
+      display: grid;
+      grid-template-columns: 100px 100px 100px;
+      grid-gap: 30px;
+    }
+
+    .ant-select-selector {
+      height: 17px;
+      background: $color-black;
+      border: $color-blue 1px solid;
+      border-radius: 3px;
+      font-size: $size-mini;
+      color: $color-gray;
+      text-align: center;
+    }
+
+    .ant-select-selection-search {
+      left: 0px;
+      width: 95px;
+    }
+
+    .ant-select-selection-item {
+      margin: 0 auto;
+      line-height: 17px;
+      padding: 0;
+    }
+
+    .ant-select-arrow {
+      right: -17px;
+      color: $color-white;
+      font-size: 12px;
+      margin-top: -7px;
+      width: 15px;
+      height: 14px;
+    }
+  }
+
+  .registration__sex {
+    cursor: pointer;
+    margin-bottom: 12px;
+    p {
+      color: $color-gray;
+      font-size: $size-mini;
+    }
+
+    .registration__radioB {
+      display: grid;
+      grid-template-columns: 100px 100px 100px;
+      grid-gap: 30px;
+
+      .radioB {
+        display: flex;
+        flex-direction: columns;
+      }
+
+      p {
+        display: inline;
+        margin-right: 7px;
+      }
+
+      img {
+        width: 18px;
+        height: 18px;
+        margin-left: 1px;
+        margin-bottom: 4px;
+        transform: rotate(45deg);
+      }
+
+      .registration__outline {
+        border-radius: 2px;
+        border: 1px solid $color-blue;
+        margin-top: -2px;
+        width: 22px;
+        height: 22px;
+      }
+    }
+  }
+
+  .registration__inputS {
+    width: $width-big;
+    display: block;
+    margin: 0 auto;
+    margin-top: 50px;
+
+    p {
+      text-align: center;
+      width: $width-big;
+    }
+
+    input {
+      background-size: $width-big 28px;
+      color: $color-gray;
+      width: $width-big;
+    }
+  }
+
+  .registration__exist {
+    color: $color-gray;
+    font-size: $size-mini;
+  }
+}
+
+//sign in ______________________________________________________________________
+.signIn {
+  position: relative;
+  z-index: 100;
+  padding-top: 84px;
+  width: 100%;
+  height: 100%;
+
+  form {
+    width: 370px;
+    margin: 0 auto;
+  }
+
+  .signIn__login, .signIn__password {
+    margin-bottom: 12px;
+  }
+
+  .signIn__inputS {
+    width: $width-big;
+    display: block;
+    margin: 0 auto;
+    margin-top: 50px;
+
+    p {
+      text-align: center;
+      width: $width-big;
+    }
+    input {
+      background-size: $width-big 28px;
+      color: $color-gray;
+      width: $width-big;
+    }
+  }
+
+  .signIn_button {
+    width: 123px;
+    display: block;
+    margin: 0 auto;
+    margin-top: 20px;
+    background: none;
+    color: $color-gray;
+    font-size: $size-mini;
+    border: none;
+  }
+}

@@ -3,6 +3,7 @@ import { Select, Radio } from 'antd';
 import TextIF from '../../elements/textInputField/index';
 import InputS from '../../elements/inputSubmit/index';
 import ButtonS from '../../elements/buttonSubmit/index';
+import RadioB from '../../elements/radioButton/index';
 
 const { Option } = Select;
 
@@ -27,7 +28,7 @@ const Validate = (input, pattern) => {
 const RegElement = (props) => {
   return (
     <div className={props.classN1}>
-      <TextIF classN={props.classN2} actionOnChange={props.actionOnChange} updateData={props.update} name={props.name} type={props.type} />
+      <TextIF classN={props.classN2} actionOnChange={props.actionOnChange} name={props.name} type={props.type} />
       <div style={{display: props.display}} className={props.classN3}>
         {props.text}
       </div>
@@ -77,8 +78,8 @@ class Registration extends Component {
   updateDataE(e) {
      this.setState({email: e.target.value});
   };
-  updateDataS(e) {
-    this.setState({sex: e.target.value});
+  updateDataS(value) {
+    this.setState({sex: value});
   };
   updateDataD(value) {
     this.setState({day: value})
@@ -117,85 +118,77 @@ class Registration extends Component {
     } else {
       this.setState({styleSex: "none"})
     }
+    if(this.state.day === '' || this.state.month === '' || this.state.year === '') {
+      this.setState({styleDate: "block"})
+      } else {
+      this.setState({styleDate: "none"})
+      }
     e.preventDefault();
   }
 
   render() {
+    const RegElementParametres = [
+      {display: this.state.styleLogin, actionOnChange: this.updateDataL ,classN1: "registration__login", classN2: "registration", name: "Логин", type: "text", classN3: "registration__error", text: "Логин не подходит"},
+      {display: this.state.stylePas, actionOnChange: this.updateDataP ,classN1: "registration__password", classN2: "registration", name: "Пароль", type: "password", classN3: "registration__error", text: "Пароль не подходит"},
+      {display: this.state.styleConfirmPas, actionOnChange: this.updateDataConfP ,classN1: "registration__confirm-password", classN2: "registration", name: "Повторите пароль", type: "password", classN3: "registration__error", text: "Пароли не совпадают"},
+    ]
     let days, months, years;
     days = generatorDate(1, 31);
     months = generatorDate(1, 12);
     years = generatorDate(1900, 2003);
-    console.log(days);
 // <RegElement classN1="" classN2="" update={} name="" type="" display={} classN3="" text=""/>
+    const RegElements = RegElementParametres.map((element, index) =>
+      <RegElement
+        key={index}
+        classN1={element.classN1}
+        classN2={element.classN2}
+        actionOnChange={element.actionOnChange}
+        name={element.name}
+        type={element.type}
+        display={element.display}
+        classN3={element.classN3}
+        text={element.text}
+      />
+    )
     return (
-      <div className = "registration">
+      <div className="registration">
         <form onSubmit={this.handleSubmit}>
-          <RegElement
-            classN1="registration__div-login"
-            classN2="registration"
-            actionOnChange={this.updateDataL}
-            name="login"
-            type="text"
-            display={this.state.styleLogin}
-            classN3="registration__login-error registration__error"
-            text="Логин не подходит"
-            />
-          <RegElement
-            classN1="registration__div-password"
-            classN2="registration"
-            actionOnChange={this.updateDataP}
-            name="password"
-            type="text"
-            display={this.state.stylePas}
-            classN3="registration__password-error registration__error"
-            text="Пароль не подходит"
-            />
-          <RegElement
-            classN1="registration__div-confirm-password"
-            classN2="registration"
-            actionOnChange={this.updateDataConfP} name="confirm password"
-            type="text"
-            display={this.state.styleConfirmPas}
-            classN3="registration__confirm-password-error registration__error"
-            text="Пароль не соответсвует"
-            />
-          <div className = "registration__div-date">
-              birthday
-              <br/>
+          <h1>Регистрация</h1>
+          {RegElements}
+          <div className="registration__date">
+            <p className="registration_tittle">Дата рождения</p>
+            <div className="registration__dateSelector">
               <Select style={{ width: 80 }} onChange={this.updateDataD} > {days} </Select>
               <Select style={{ width: 80 }} onChange={this.updateDataM} > {months} </Select>
               <Select style={{ width: 80 }} onChange={this.updateDataY} > {years} </Select>
-            <div style={{display: this.state.styleDate}} className="registration__date-error registration__error">
+            </div>
+            <div style={{display: this.state.styleDate}} className="registration__error">
               Выберите дату
             </div>
           </div>
-          <div className = "registration__div-sex">
-              sex
-              <br/>
-               <Radio.Group onChange={this.updateDataS} sex={this.state.value}>
-                <Radio value={"male"}>A</Radio>
-                <Radio value={"female"}>B</Radio>
-                <Radio value={"another"}>C</Radio>
-              </Radio.Group>
-            <div style={{display: this.state.styleSex}} className="registration__sex-error registration__error">
+          <div className="registration__sex">
+            <p className="registration_tittle">Пол</p>
+            <RadioB classN="registration" actionOnChange={this.updateDataS}
+              values={["Мужской", "Женский", "Другое"]} />
+            <div style={{display: this.state.styleSex}} className="registration__error">
               Выберите пол
             </div>
           </div>
           <RegElement
-            classN1="registration__div-email"
+            classN1="registration__email"
             classN2="registration"
             actionOnChange={this.updateDataE}
-            name="email"
+            name="Почта"
             type="text"
             display={this.state.styleEmail}
-            classN3="registration__email registration__error"
+            classN3="registration__error"
             text="почта не подходит"
             />
-         <InputS type="submit" value="Зарегистрироваться"/>
+          <InputS type="submit" classN="registration" value="Зарегистрироваться"/>
        </form>
-       <div className="registration__div-button">
-         <p>Уже есть аккаунт?</p>
-         <ButtonS classN="registration_button" text="Войти"/>
+       <div className="registration__signIn">
+         <p className="registration__exist">Уже есть аккаунт?</p>
+         <ButtonS classN="registration__button" text="Войти"/>
        </div>
      </div>
    )

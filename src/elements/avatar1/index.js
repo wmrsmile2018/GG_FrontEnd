@@ -16,12 +16,15 @@ class Avatar1 extends Component {
           src={this.props.svg}
           width={this.props.w}
           height={this.props.h}
-          alt=""/>
-        <br/>
+          style={{display: this.props.display}}
+          alt=""
+          />
         <img className={"avatar " +  this.props.classN + "__avatar"}
-          src={placeholder} width={this.props.w}
+          src={this.props.img}
+          width={this.props.w}
           height={this.props.h}
-          alt=""/>
+          alt=""
+          />
       </div>
     )
   }

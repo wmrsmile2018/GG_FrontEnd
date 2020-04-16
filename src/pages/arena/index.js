@@ -1,11 +1,14 @@
 import React, {Component} from 'react';
 import Sprintf from 'sprintf-js';
 import Leaders from '../../elements/leaders/index';
+import Avatar1 from '../../elements/avatar1/index';
+import Outline from '../../public/svg/outline.svg';
+import placeholder from '../../public/images/placeholder.jpg';
 
 const dateFormat = require('dateformat');
 
 const tmpObjs = [
-  {"photo": "http://placehold.it/32x32"},
+  {photo: placeholder, display1: "none", display2: "block", outline: Outline, nickname: "nagibator1234"},
   // {"photo": "http://placehold.it/32x32"},
   // {"photo": "http://placehold.it/32x32"},
   // {"photo": "http://placehold.it/32x32"},
@@ -57,13 +60,35 @@ class Arena extends Component {
         <Leaders classN="arena" objs={tmpObjs}/>
         Подбор соперника
         <div className="arena">
-          <div className="arena__player1"></div>
+          <div className="arena__player1">
+            <p className="arena__winRate">45% побед</p>
+            <Avatar1
+              classN="arena"
+              display="none"
+              svg={null}
+              w="50px"
+              h="50px"
+              img={placeholder}
+            />
+          <p className="arena__raiting">6500</p>
+          </div>
           <div className="arena__ticker">
             <p className="arena__tittle">Время ожидания:</p>
             <p className="arena__ticker">{dateFormat(time, "MM:ss")}</p>
             <p className="arena__bet"></p>
           </div>
-          <div className="arena__player2"></div>
+          <div className="arena__player2">
+            <p className="arena__winRate">45% побед</p>
+            <Avatar1
+              classN="arena"
+              display="none"
+              svg={null}
+              w="50px"
+              h="50px"
+              img={placeholder}
+            />
+          <p className="arena__raiting">5434</p>
+          </div>
         </div>
         <div className="arena__rules">
           <div className="arena__rule1">1</div>

@@ -43,20 +43,21 @@ class RecoveryPas extends Component {
   }
   render() {
     return(
-      <div className = "recoveryPassword">
-      <form onSubmit={this.handleSubmit}>
-        <RecPasElement
-        classN1="recoveryPassword__div-email"
-        classN2="recoveryPassword__email"
-        update={this.updateDataE} name="email"
+    <div className = "recoveryPassword">
+    <form onSubmit={this.handleSubmit}>
+      <h1>Восстановление пароли</h1>
+      <RecPasElement
+        classN1="recoveryPassword__email"
+        classN2="recoveryPassword"
+        update={this.updateDataE} name="Введите почту"
         type="text" display={this.state.styleEmail}
-        classN3="recoveryPassword__password-error recoveryPassword__error"
+        classN3="recoveryPassword__error"
         text="почта не подходит"
-        />
-        <InputS type="submit" value="Далее"/>
-      </form>
-        <p>На введенную вами электронную почту было <br/>отправленно письмо с ссылкой для входа в аккаунт</p>
-    </div>
+      />
+      <InputS type="submit" value="Далее"/>
+    </form>
+    <p>На введенную вами электронную почту было <br/>отправленно письмо с ссылкой для входа в аккаунт</p>
+  </div>
     )
   }
 }

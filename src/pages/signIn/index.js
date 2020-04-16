@@ -50,33 +50,32 @@ class SignIn extends Component {
 
   render() {
     return (
-      <div className = "registration">
+      <div className = "signIn">
       <form onSubmit={this.handleSubmit}>
+        <h1>Вход</h1>
         <SignInElement
-          classN1="signIn__div-login"
-          classN2="signIn__login"
+          classN1="signIn__login"
+          classN2="signIn"
           update={this.updateDataL}
-          name="login"
+          name="Логин"
           type="text"
           display={this.state.styleLogin}
-          classN3="signIn__login-error signIn__error"
+          classN3="signIn__error"
           text="введите логин"
-          />
+        />
         <SignInElement
-          classN1="signIn__div-password"
-          classN2="signIn__login"
+          classN1="signIn__password"
+          classN2="signIn"
           update={this.updateDataP}
-          name="password"
+          name="Пароль"
           type="text"
           display={this.state.stylePas}
-          classN3="signIn__password-error signIn__error"
+          classN3="signIn__error"
           text="Введите пароль"
-          />
-        <InputS type="submit" value="Войти"/>
+        />
+        <InputS type="submit" value="Войти" classN="signIn"/>
       </form>
-      <div className="signIn__div-button">
-        <ButtonS classN="SignIn_button" text="Забыли пароль?"/>
-      </div>
+      <ButtonS classN="signIn_button" text="Забыли пароль?"/>
     </div>
     )
   }
