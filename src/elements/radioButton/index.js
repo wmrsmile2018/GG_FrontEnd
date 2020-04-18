@@ -28,7 +28,7 @@ class RadioB extends Component {
     visibility[index] = "visible";
     value = e.target.dataset.value;
     for(let i = 0; i < this.props.values.length; i++) {
-      if(i != index) {
+      if(i !== index) {
         visibility[i] = "hidden";
       }
     }
@@ -46,7 +46,7 @@ class RadioB extends Component {
       className={"radioB " + this.props.classN + "__radioB" + index}>
       <p data-index={index} data-value={element}>{element}</p>
       <div data-index={index} data-value={element} className={this.props.classN + "__outline"}>
-        <img src={Cross} style={{visibility: this.state.visibility[index]}}/>
+        <img src={Cross} style={{visibility: this.state.visibility[index]}} alt=""/>
       </div>
     </div>
   )

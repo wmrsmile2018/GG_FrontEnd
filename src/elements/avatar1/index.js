@@ -1,5 +1,4 @@
 import React, {Component} from 'react';
-import placeholder from '../../public/images/placeholder.jpg';
 // аватар с контуром в виде щита
 class Avatar1 extends Component {
   constructor(props) {
@@ -11,7 +10,7 @@ class Avatar1 extends Component {
 
   render() {
     return (
-      <div className={"avatar1 " + this.props.classN + "__avatar1"}>
+      <div className={"avatar1 " + this.props.classN}>
         <img className={"outline " + this.props.classN + "__outline"}
           src={this.props.svg}
           width={this.props.w}

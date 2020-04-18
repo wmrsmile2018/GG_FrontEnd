@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import { Select, Radio } from 'antd';
+import { Select } from 'antd';
 import TextIF from '../../elements/textInputField/index';
 import InputS from '../../elements/inputSubmit/index';
 import ButtonS from '../../elements/buttonSubmit/index';
@@ -28,7 +28,7 @@ const Validate = (input, pattern) => {
 const RegElement = (props) => {
   return (
     <div className={props.classN1}>
-      <TextIF classN={props.classN2} actionOnChange={props.actionOnChange} name={props.name} type={props.type} />
+      <TextIF classN={props.classN2 + "__"} actionOnChange={props.actionOnChange} name={props.name} type={props.type} />
       <div style={{display: props.display}} className={props.classN3}>
         {props.text}
       </div>

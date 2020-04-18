@@ -1,0 +1,8 @@
+@font-face
+{
+    font-family: 'cyberdyne';
+    src: url('cyberdyne.eot'),
+      url('cyberdyne.eot?#') format('embedded-opentype'),
+      url('cyberdyne.woff') format('woff'),
+      url('cyberdyne.ttf') format('truetype');
+}

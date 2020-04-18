@@ -17,8 +17,10 @@
     "react": "^16.13.1",
     "react-chartjs-2": "^2.9.0",
     "react-circular-progressbar": "^2.0.3",
+    "react-contenteditable": "^3.3.4",
     "react-dom": "^16.13.1",
     "react-jsx-highcharts": "^4.0.1",
+    "react-masonry-component": "^6.2.1",
     "react-router-dom": "^5.1.2",
     "react-scripts": "3.4.0",
     "sprintf-js": "^1.1.2"
@@ -47,6 +49,7 @@
   },
   "devDependencies": {
     "css-loader": "^3.4.2",
-    "less-loader": "^5.0.0"
+    "less-loader": "^5.0.0",
+    "react-xmasonry": "^3.0.3"
   }
 }

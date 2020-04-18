@@ -3,7 +3,7 @@ import React from 'react';
 
 const Avatar2 = (props) => {
   return (
-    <div className={"avatar2 " + this.props.classN + "__avatar2"}>
+    <div className={"avatar2 " + props.classN}>
       <img src={props.src} alt=""/>
     </div>
   );
