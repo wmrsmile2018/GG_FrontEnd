@@ -1,30 +1,27 @@
 module.exports = {
-  apps : [{
-    script: 'npm',
-    args: 'run start:production',
-    name: 'gg-frond-end',
-    env_production : {
-            NODE_ENV: 'production'
-        }
-    watch: '.'
-  }, {
-    script: './service-worker/',
-    watch: ['./service-worker']
-  }],
+  apps : [
+    {
+      name      : 'gg-frond-end',
+      script    : 'npm',
+      args      : 'run start:production',
+      env_production : {
+        NODE_ENV: 'production'
+      }
+    },
+  ],
 
   deploy : {
-    production : {}
-    staging : {
-      user : 'SSH_USERNAME',
-      host : 'SSH_HOSTMACHINE',
-      ref  : 'origin/master',
-      repo : 'git@github.com:wmrsmile2018/GG_FrontEnd.git',
-      path : 'DESTINATION_PATH',
-      ssh_options: ['ForwardAgent=yes'],
-      'pre-deploy-local': '',
-      'post-deploy' : 'npm install && pm2 reload ecosystem.config.js --env production',
-      'pre-setup': ''
-    },
-    dev : {}
-  }
-};
+      production : {},
+      staging: {
+        user: 'your-user',
+        host: 'your-server',
+        ref: 'origin/master',
+        repo: 'git@github.com:wmrsmile2018/GG_FrontEnd.git',
+        path: '/var/www/yourprojectpath',
+        key: '/absolute/path/to/key',
+        ssh_options: ['ForwardAgent=yes'],
+        'post-deploy': 'npm install && pm2 reload ecosystem.config.js --env production'
+      },
+      dev : {}
+    }
+  };
