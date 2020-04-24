@@ -45,7 +45,7 @@ class Histories extends Component {
     const red = "1px solid #EB5757";
     const green = "1px solid #83E4E4";
     return (
-      <div className={"history " + this.props.classN + "__history" + this.props.iter} onClick={this.handleClick} style={{border: this.props.isWin === true ? green : red}}>
+      <div className={"currentHistory " + this.props.classN + "__currentHistory" + this.props.iter} onClick={this.handleClick} style={{border: this.props.isWin === true ? green : red}}>
         <div className={this.props.classN + "__history-team1"}>
           {this.props.team1.map((player, i) => <Avatar2 key={i.toString(36) + i} src={player.photo}/>)}
         </div>
@@ -60,8 +60,10 @@ class Histories extends Component {
 }
 
 const History = (props) => {
+  const display = props.visibility ? {display: "block"} : {display: "none"}
+  console.log(display);
   let currentDate = '';
-  let output = [];
+  let output = [], tmp = [];
   output.push(
     <div key={"columns"} className={props.classN + "__columns"}>
       <p className={props.classN + "__colums-column1"}>Команда1</p>
@@ -73,13 +75,22 @@ const History = (props) => {
   for (let i = 0; i < props.response.length; i ++) {
     if (currentDate !== getDate(props.response[i].timestamp)) {
       currentDate = getDate(props.response[i].timestamp);
+      output.push(
+        <div key={i}
+          className={"currentDay " + props.classN + "__currentDay"}
+          >
+          {tmp}
+        </div>
+      );
       output.push(<div
         key={i.toString(36) + i + "delimiter"}
         className={props.classN + "__delimiter"}>Дата: {currentDate}
         </div>
       )
+      tmp = [];
     }
-    output.push(<Histories
+    tmp.push(
+      <Histories
       key={i.toString(36) + i}
       iter={i}
       classN={props.classN}
@@ -88,9 +99,25 @@ const History = (props) => {
       score={props.response[i].score}
       team1={props.response[i].team1}
       team2={props.response[i].team2}
-      />)
+      />
+    )
   }
-  return output;
+
+  output.push(
+    <div key={props.response.length}
+      className={"currentDay " + props.classN + "__currentDay"}
+      >
+      {tmp}
+    </div>
+  );
+
+  return (
+    <div style={display}
+      className={"history " + props.classN + "__history"}
+      >
+      {output}
+    </div>
+  );
 }
 
 export default History;

@@ -2,6 +2,7 @@
 @import './cyberdyne.css';
 @import './robotoMono.css';
 
+$color-dark-blue: #56CCF2;
 $color-blue: #83E4E4;
 $color-red: #EB5757;
 $color-yellow: #FFD074;
@@ -216,7 +217,8 @@ code {
   position: relative;
   z-index: 100;
   padding-top: 84px;
-  width: 100%;
+  width: 582px;
+  margin: 0 auto;
   height: 100%;
 
   form {
@@ -368,7 +370,8 @@ code {
   position: relative;
   z-index: 100;
   padding-top: 84px;
-  width: 100%;
+  width: 582px;
+  margin: 0 auto;
   height: 100%;
 
   form {
@@ -416,7 +419,8 @@ code {
    position: relative;
    z-index: 100;
    padding-top: 84px;
-   width: 100%;
+   width: 582px;
+   margin: 0 auto;
    height: 100%;
 
    form {
@@ -456,7 +460,8 @@ code {
   position: relative;
   z-index: 100;
   padding-top: 84px;
-  width: 100%;
+  width: 582px;
+  margin: 0 auto;
   height: 100%;
 
   form {
@@ -744,4 +749,65 @@ code {
   }
 }
 
-////////////////////////////////////////////////////////////////////////////////
+/////////////////////////////PERSONAL PAGE//////////////////////////////////////
+
+.personalPage {
+  padding-top: 20px;
+  z-index: 100;
+  position: relative;
+  margin: 0 auto;
+  width: 582px;
+
+  .statics {
+    padding: 20px 30px;
+    margin-top: 40px;
+    border: 1px solid $color-blue;
+    border-radius: 20px;
+    display: grid;
+    grid-gap: 29px;
+    grid-template-columns: 157px 157px 157px;
+
+    span {
+      font-family: "cyberdyne";
+      color: $color-dark-blue;
+    }
+
+    .personalPage__statics-column1 {
+      div {
+        position: relative;
+        margin-bottom: 10px;
+      }
+
+      span {
+        top: 0px;
+        right: 0px;
+        position: absolute;
+      }
+
+
+    }
+
+    .personalPage__statics-column2 {
+      text-align: center;
+
+      p {
+        margin-bottom: 10px;
+        font-weight: bold;
+        font-size: $size-big;
+      }
+    }
+
+    .personalPage__statics-column3 {
+      div {
+        position: relative;
+        margin-bottom: 10px;
+      }
+
+      span {
+        top: 0px;
+        right: 0px;
+        position: absolute;
+      }
+    }
+  }
+}

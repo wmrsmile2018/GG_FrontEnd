@@ -13,7 +13,8 @@ import G from './public/images/g.png';
 import Arena from './pages/arena/index';
 import HallOfFame from './pages/hallOfFame/index';
 import ModeSelection from './pages/modeSelection/index';
-
+import Option from './pages/options/index';
+import PersonalPage from './pages/personalPage/index';
 
 const Error = () => {
   return (
@@ -24,14 +25,21 @@ const Error = () => {
 function App() {
   return (
     <div className="App">
-      <img className="background_g1" src={G} height="458"/>
-      <img className="background_g2" src={G} height="458"/>
+      <img className="background_g1" src={G} height="458" alt=""/>
+      <img className="background_g2" src={G} height="458" alt=""/>
       <Switch>
         <Route path="/signup" component={Reg}/>
         <Route path="/signin" component={SignIn}/>
-        <Route path="/restore/newpassword" component={RestorePas}/>
+        <Route path="/restore/new-password" component={RestorePas}/>
         <Route path="/restore/request" component={RequestRecPas}/>
         <Route path="/news" component={News}/>
+
+        <Route path="/arena" component={Arena}/>
+        <Route path="/hall-of-fame" component={HallOfFame}/>
+        <Route path="/mode-selection" component={ModeSelection}/>
+        <Route path="/options" component={Option}/>
+        <Route path="/personal-page" component={PersonalPage}/>
+
         <Route path="*" component={Error}/>
       </Switch>
     </div>

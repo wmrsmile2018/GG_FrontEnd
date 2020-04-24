@@ -179,7 +179,8 @@ code {
   position: relative;
   z-index: 100;
   padding-top: 84px;
-  width: 100%;
+  width: 582px;
+  margin: 0 auto;
   height: 100%;
 }
 .registration form {
@@ -306,7 +307,8 @@ code {
   position: relative;
   z-index: 100;
   padding-top: 84px;
-  width: 100%;
+  width: 582px;
+  margin: 0 auto;
   height: 100%;
 }
 .signIn form {
@@ -346,7 +348,8 @@ code {
   position: relative;
   z-index: 100;
   padding-top: 84px;
-  width: 100%;
+  width: 582px;
+  margin: 0 auto;
   height: 100%;
 }
 .requestRecPas form {
@@ -378,7 +381,8 @@ code {
   position: relative;
   z-index: 100;
   padding-top: 84px;
-  width: 100%;
+  width: 582px;
+  margin: 0 auto;
   height: 100%;
 }
 .recoveryPas form {
@@ -613,4 +617,51 @@ code {
   height: 40px;
   width: 40px;
   margin-left: 20px;
+}
+
+.personalPage {
+  padding-top: 20px;
+  z-index: 100;
+  position: relative;
+  margin: 0 auto;
+  width: 582px;
+}
+.personalPage .statics {
+  padding: 20px 30px;
+  margin-top: 40px;
+  border: 1px solid #83E4E4;
+  border-radius: 20px;
+  display: grid;
+  grid-gap: 29px;
+  grid-template-columns: 157px 157px 157px;
+}
+.personalPage .statics span {
+  font-family: "cyberdyne";
+  color: #56CCF2;
+}
+.personalPage .statics .personalPage__statics-column1 div {
+  position: relative;
+  margin-bottom: 10px;
+}
+.personalPage .statics .personalPage__statics-column1 span {
+  top: 0px;
+  right: 0px;
+  position: absolute;
+}
+.personalPage .statics .personalPage__statics-column2 {
+  text-align: center;
+}
+.personalPage .statics .personalPage__statics-column2 p {
+  margin-bottom: 10px;
+  font-weight: bold;
+  font-size: 18px;
+}
+.personalPage .statics .personalPage__statics-column3 div {
+  position: relative;
+  margin-bottom: 10px;
+}
+.personalPage .statics .personalPage__statics-column3 span {
+  top: 0px;
+  right: 0px;
+  position: absolute;
 }

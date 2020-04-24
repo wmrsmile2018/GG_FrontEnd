@@ -1,5 +1,4 @@
 import React, {Component} from 'react';
-import Sprintf from 'sprintf-js';
 import Leaders from '../../components/leaders/index';
 import Avatar1 from '../../components/avatar1/index';
 import Outline from '../../public/svg/outline.svg';

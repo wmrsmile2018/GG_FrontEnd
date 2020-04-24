@@ -122,8 +122,8 @@ class Pictures extends Component {
   }
 
   handleOnClickPrev() {
-    let {index, currentSrc} = this.state;
-    index = index == 0 ? this.props.photos.length - 1 : +index - 1;
+    let {index} = this.state;
+    index = +index === 0 ? this.props.photos.length - 1 : +index - 1;
     this.setState({
       currentSrc: this.props.photos[index].photo,
       index: index,
@@ -131,8 +131,8 @@ class Pictures extends Component {
   }
 
   handleOnClickNext() {
-    let {index, currentSrc} = this.state;
-    index = index == this.props.photos.length - 1 ? 0 : +index + 1;
+    let {index} = this.state;
+    index = +index === this.props.photos.length - 1 ? 0 : +index + 1;
     this.setState({
       currentSrc: this.props.photos[index].photo,
       index: index,
@@ -146,7 +146,7 @@ class Pictures extends Component {
       >
         <Picture index={index} key={index.toString(36) + index}
           src={photo.photo} mapSize={this.props.photos.length}
-          actionOnClick={this.handleOnClick} index={index}
+          actionOnClick={this.handleOnClick}
         />
       </div>
     );
@@ -166,15 +166,15 @@ class Pictures extends Component {
               <div className={this.props.classN + "__portal-wrap"}>
                 <img className={this.props.classN + "__portal-prevPicture"}
                   src={PrevSvg} onClick={this.handleOnClickPrev}
-                  ref={this.prevPicture}
+                  ref={this.prevPicture} alt=""
                 />
                 <img className={this.props.classN + "__portal-picture"}
                   src={this.state.currentSrc} onClick={this.handleClickOutside}
-                  ref={this.currentSrc}
+                  ref={this.currentSrc} alt=""
                 />
                 <img className={this.props.classN + "__portal-nextPicture"}
                   src={NextSvg} onClick={this.handleOnClickNext}
-                  ref={this.nextPicture}
+                  ref={this.nextPicture} alt=""
                 />
               </div>
             </div>

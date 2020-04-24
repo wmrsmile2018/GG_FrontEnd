@@ -2,13 +2,27 @@ import React from 'react';
 import CircularProgressBar from './../circularProgressBar/index';
 
 const Statics = (props) => {
+  const display = props.visibility ? {display: "grid"} :{display: "none"};
   return (
-      <div className={"statics " + props.classN + "__statics"} style={{border: "1px solid black"}}>
+      <div className={"statics " + props.classN + "__statics"}
+        style={ display }>
         <div className={props.classN + "__statics-column1"}>
-          <p className={props.classn + "statics-kills"}>{props.kills}</p>
-          <p className={props.classn + "statics-deaths"}>{props.deaths}</p>
-          <p className={props.classn + "statics-matchedPlayed"}>{props.matchesPlayed}</p>
-          <p className={props.classn + "statics-mathcesWon"}>{props.mathcesWon}</p>
+          <div className={props.classN + "statics-kills"}>
+            <label>Убийства</label>
+            <span>{props.kills}</span>
+          </div>
+          <div className={props.classN + "statics-deaths"}>
+            <label>Смерти</label>
+            <span>{props.deaths}</span>
+          </div>
+          <div className={props.classN + "statics-matchedPlayed"}>
+            <label>Сыгранные <br/> матчи</label>
+            <span>{props.matchesPlayed}</span>
+          </div>
+          <div className={props.classN + "statics-mathcesWon"}>
+            <label>Выигранные <br/> матчи</label>
+            <span>{props.mathcesWon}</span>
+          </div>
         </div>
         <div className={props.classN + "__statics-column2"}>
         <p>Процент побед</p>
@@ -19,9 +33,18 @@ const Statics = (props) => {
         />
         </div>
         <div className={props.classN + "__statics-column3"}>
-          <p className={props.classn + "statics-roundsPlayed"}>{props.roundsPlayed}</p>
-          <p className={props.classn + "statics-roundsWon"}>{props.roundsWon}</p>
-          <p className={props.classn + "statics-MVP"}>{props.mvp}</p>
+          <div className={props.classN + "statics-roundsPlayed"}>
+            <label>Сыгранные <br/> раунды</label>
+            <span>{props.roundsPlayed}</span>
+          </div>
+          <div className={props.classN + "statics-roundsWon"}>
+            <label>Выигранные <br/> раунды</label>
+            <span>{props.roundsWon}</span>
+          </div>
+          <div className={props.classN + "statics-MVP"}>
+            <label>MVP</label>
+            <span>{props.mvp}</span>
+          </div>
         </div>
       </div>
   );

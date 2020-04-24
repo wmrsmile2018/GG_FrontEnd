@@ -1,8 +1,7 @@
 // https://whawker.github.io/react-jsx-highcharts/examples/AreaWithAnnotations/index.html
 
-import React, {Component} from 'react';
+import React from 'react';
 import Highcharts from 'highcharts';
-import HighchartsReact from 'highcharts-react-official';
 import addAnnotations from 'highcharts/modules/annotations';
 import {
   HighchartsChart,
@@ -10,9 +9,6 @@ import {
   withHighcharts,
   XAxis,
   YAxis,
-  Title,
-  Subtitle,
-  Annotation,
   Legend,
   AreaSeries,
   LineSeries,

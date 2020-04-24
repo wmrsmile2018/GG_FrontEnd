@@ -25,13 +25,11 @@ class RadioB extends Component {
     e.persist();
     const index = e.target.dataset.index;
     let {visibility, value} = this.state;
-    visibility[index] = "visible";
     value = e.target.dataset.value;
     for(let i = 0; i < this.props.values.length; i++) {
-      if(i !== index) {
-        visibility[i] = "hidden";
-      }
+      visibility[i] = "hidden";
     }
+    visibility[index] = "visible";
     this.setState({
       visibility: visibility,
       value: value

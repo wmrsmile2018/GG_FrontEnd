@@ -4,9 +4,7 @@ import Avatar1 from '../avatar1/index';
 
 
 class Leaders extends Component {
-  constructor(props) {
-    super(props);
-  }
+
   render() {
     const TopPlayers = this.props.objs.map((element, index) =>
       <div key={index} className="leader">

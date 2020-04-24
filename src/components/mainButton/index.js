@@ -1,14 +1,6 @@
 import React, {Component} from 'react';
-import { Link } from 'react-router-dom';
 
 class MainButton extends Component {
-  constructor(props){
-    super(props);
-    this.state = {
-
-    }
-  }
-
   render() {
     return(
       <div className={"mainButton " + this.props.classN + "__mainButton"}

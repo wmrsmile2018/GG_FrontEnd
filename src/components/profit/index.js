@@ -45,7 +45,7 @@ class Profits extends Component {
     const red = "1px solid #EB5757";
     const green = "1px solid #B2DF8A";
     return (
-      <div className={"profit " + this.props.classN + "__profit" + this.props.iter} style={{border: this.props.isWin === true ? green : red}}>
+      <div className={"currentProfit " + this.props.classN + "__currentProfit" + this.props.iter} style={{border: this.props.isWin === true ? green : red}}>
         <div className={this.props.classN + "__profit-team1"}>
           {this.props.team1.map((player, i) => <Avatar2 key={i.toString(36) + i} src={player.photo}/>)}
         </div>
@@ -61,8 +61,9 @@ class Profits extends Component {
 }
 
 const Profit = (props) => {
+  const display = props.visibility ? {display: "block"} : {display: "none"}
   let currentDate = '';
-  let output = [];
+  let output = [], tmp = [];
   output.push(
     <div key={"columns"} className={props.classN + "__columns"}>
       <p className={props.classN + "__colums-column1"}>Команда1</p>
@@ -74,11 +75,19 @@ const Profit = (props) => {
   for (let i = 0; i < props.response.length; i ++) {
     if (currentDate !== getDate(props.response[i].timestamp)) {
       currentDate = getDate(props.response[i].timestamp);
+      output.push(
+        <div key={i}
+          className={"currentDay " + props.classN + "__currentDay"}
+          >
+          {tmp}
+        </div>
+      );
       output.push(<div
         key={i.toString(36) + i + "delimiter"}
         className={props.classN + "__delimiter"}>Дата: {currentDate}
         </div>
       )
+      tmp = [];
     }
     output.push(<Profits
       key={i.toString(36) + i}
@@ -92,7 +101,22 @@ const Profit = (props) => {
       profit={props.response[i].profit}
       />)
   }
-  return output;
+
+  output.push(
+    <div key={props.response.length}
+      className={"currentDay " + props.classN + "__currentDay"}
+      >
+      {tmp}
+    </div>
+  );
+
+  return (
+    <div style={display}
+      className={"profit " + props.classN + "__profit"}
+      >
+      {output}
+    </div>
+  );
 }
 
 export default Profit;

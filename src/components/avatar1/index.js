@@ -1,17 +1,6 @@
 import React, {Component} from 'react';
-import Shield from '../../public/svg/shield.svg';
-import placeholder from '../../public/images/placeholder.jpg';
 // аватар с контуром в виде щита
 class Avatar1 extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-
-    };
-  }
-
-
-
   render() {
     return (
       <div className={"avatar1 " + this.props.classN}>
