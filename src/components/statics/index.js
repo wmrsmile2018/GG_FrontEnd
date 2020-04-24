@@ -31,6 +31,7 @@ const Statics = (props) => {
           sqSize="150"
           percentage={props.winRate}
         />
+      
         </div>
         <div className={props.classN + "__statics-column3"}>
           <div className={props.classN + "statics-roundsPlayed"}>
