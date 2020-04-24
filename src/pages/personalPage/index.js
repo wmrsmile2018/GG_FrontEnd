@@ -1,11 +1,11 @@
 import React, {Component} from 'react';
 
 import Finances from '../finances/index';
-import History from '../../elements/history/index';
-import Profit from '../../elements/profit/index';
-import Statics from '../../elements/statics/index';
-import MainButton from '../../elements/mainButton/index';
-import Graphic from '../../elements/graphic/index';
+import History from '../../components/history/index';
+import Profit from '../../components/profit/index';
+import Statics from '../../components/statics/index';
+import MainButton from '../../components/mainButton/index';
+import Graphic from '../../components/graphic/index';
 
 const currentDateTime = new Date();
 const startTimeOfCurrentYear = (new Date(currentDateTime.getFullYear(), 0, 1)).getTime();

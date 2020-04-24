@@ -11,7 +11,7 @@ class RadioB extends Component {
     this.handleClick = this.handleClick.bind(this);
   }
 
-  componentWillMount() {
+  componentDidMount() {
     let visibility = [];
     for(let i = 0; i < this.props.values.length; i++) {
       visibility.push("hidden")

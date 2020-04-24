@@ -6,6 +6,8 @@ import placeholder from '../../public/images/placeholder.jpg';
 import SendSvg from '../../public/svg/send.svg';
 import ContentEditable from 'react-contenteditable';
 
+//onFocus
+
 class Comment extends Component  {
   constructor(props) {
     super(props);
@@ -32,10 +34,10 @@ class Comment extends Component  {
   }
 
   handleClickOutside(e) {
+    // console.log(e);
     let text, length;
     let {color} = this.state;
     if (this.contentEditable.current && this.contentEditable.current.contains(e.target)) {
-      window.a = this.contentEditable.current
       text = this.contentEditable.current.textContent;
       length = this.contentEditable.current.textContent.length;
       if(text === 'Написать комментарий...') {
@@ -51,6 +53,13 @@ class Comment extends Component  {
           color = this.state.blue;
         }
       }
+
+    // if (this.contentEditable.current && this.contentEditable.current.contains(e.target)) {
+    //     console.log("inside");
+    // }
+    // if (this.contentEditable.current && !this.contentEditable.current.contains(e.target)) {
+    //   console.log("outsisde");
+    // }
     this.setState({
       text: text,
       length: length,

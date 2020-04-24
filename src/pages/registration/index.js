@@ -1,9 +1,11 @@
 import React, {Component} from 'react';
 import { Select } from 'antd';
-import TextIF from '../../elements/textInputField/index';
-import InputS from '../../elements/inputSubmit/index';
-import ButtonS from '../../elements/buttonSubmit/index';
-import RadioB from '../../elements/radioButton/index';
+import TextIF from '../../components/textInputField/index';
+import InputS from '../../components/inputSubmit/index';
+import ButtonS from '../../components/buttonSubmit/index';
+import RadioB from '../../components/radioButton/index';
+
+//use Ref to decrease count code.
 
 const { Option } = Select;
 
@@ -132,6 +134,7 @@ class Registration extends Component {
       {display: this.state.stylePas, actionOnChange: this.updateDataP ,classN1: "registration__password", classN2: "registration", name: "Пароль", type: "password", classN3: "registration__error", text: "Пароль не подходит"},
       {display: this.state.styleConfirmPas, actionOnChange: this.updateDataConfP ,classN1: "registration__confirm-password", classN2: "registration", name: "Повторите пароль", type: "password", classN3: "registration__error", text: "Пароли не совпадают"},
     ]
+
     let days, months, years;
     days = generatorDate(1, 31);
     months = generatorDate(1, 12);

@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import Post from '../../elements/post/index'
+import Post from '../../components/post/index'
 
 const obj= [
   {
@@ -8,7 +8,7 @@ const obj= [
     "author": "some author",
     "date": "12/01/2020",
     "time": "13:25",
-    "text": "Ullamco officia duis labore est. Eiusmod occaecat officia est non sint aliqua consectetur aliqua. Fugiat amet minim magna cupidatat ut eiusmod qui veniam labore consectetur duis qui et. Cupidatat nulla velit sit esse. Tempor non cillum nulla excepteur velit sit. Deserunt consequat minim dolore aliquip nulla sint excepteur ullamco. Et adipisicing irure esse Lorem sint deserunt pariatur anim adipisicing fugiat ad.\r\n",
+    "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sit integer cras purus laoreet cum ut ridiculus. Feugiat nec fringilla in consectetur ipsum maecenas. Quam id rhoncus hendrerit varius suspendisse nibh non id. Elit id id montes, aliquam lectus faucibus convallis ultrices adipiscing.",
     "photos": [
       {
         "id_photo": "5e736589ab0635e2ba339736",

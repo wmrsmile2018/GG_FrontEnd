@@ -1,7 +1,13 @@
 import React, {Component} from 'react';
 import {Radio} from 'antd';
-import InputS from '../../elements/inputSubmit/index';
-import Leaders from '../../elements/leaders/index';
+import InputS from '../../components/inputSubmit/index';
+import Leaders from '../../components/leaders/index';
+
+const tmpObjs = [
+  {photo: "http://placehold.it/32x32", display1: "none", display2: "block", outline: null, nickname: "nagibator1234"},
+  // {"photo": "http://placehold.it/32x32"},
+  // {"photo": "http://placehold.it/32x32"},
+]
 
 class ModeSelection extends Component {
   constructor(props) {

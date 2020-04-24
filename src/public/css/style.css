@@ -1,5 +1,6 @@
 @import '~antd/dist/antd.css';
 @import './cyberdyne.css';
+@import './robotoMono.css';
 @keyframes comeIn {
   0% {
     transform: scale(0.5);
@@ -40,7 +41,7 @@ div {
 
 body {
   margin: 0;
-  font-family: "Roboto", "Segoe UI", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
+  font-family: "Roboto Mono", "Roboto", "Segoe UI", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   color: #F2F2F2;
@@ -113,8 +114,61 @@ code {
 .inputS input {
   border: none;
   height: 28px;
+  -webkit-mask-image: url("../svg/border.svg");
   mask-image: url("../svg/border.svg");
+  -webkit-mask-repeat: no-repeat;
+  mask-repeat: no-repeat;
+  -webkit-mask-position: center center;
+  mask-position: center center;
   cursor: pointer;
+}
+
+.avatar1 {
+  cursor: pointer;
+}
+.avatar1 .outline {
+  position: absolute;
+  display: flex;
+  background: #020024;
+  background: linear-gradient(90deg, #020024 0%, #090979 35%, #00d4ff 100%);
+  -webkit-mask-size: 128px;
+  width: 133px;
+  height: 130px;
+  -webkit-mask-image: url("../svg/outline.svg");
+  mask-image: url("../svg/outline.svg");
+  -webkit-mask-repeat: no-repeat;
+  mask-repeat: no-repeat;
+  mask-position: center center;
+}
+.avatar1 .avatar {
+  height: 70px;
+  width: 70px;
+  margin: 0 auto;
+  align-self: center;
+}
+.avatar1 .avatar .shield {
+  position: absolute;
+  background: #f1efef;
+  background: linear-gradient(180deg, #f1efef 0%, #cbfafc 100%);
+  width: 70px;
+  height: 83px;
+  -webkit-mask-image: url("../svg/shieldOutline.svg");
+  mask-image: url("../svg/shieldOutline.svg");
+  -webkit-mask-repeat: no-repeat;
+  mask-repeat: no-repeat;
+  mask-position: center center;
+}
+.avatar1 .avatar .photo {
+  position: absolute;
+  width: 70px;
+  height: 83px;
+  display: block;
+  -webkit-mask-image: url("../svg/shield.svg");
+  mask-image: url("../svg/shield.svg");
+  -webkit-mask-position: center center;
+  mask-position: center center;
+  -webkit-mask-repeat: no-repeat;
+  mask-repeat: no-repeat;
 }
 
 .buttonS {
@@ -364,14 +418,14 @@ code {
   border-radius: 15px;
   margin-bottom: 5px;
   margin-top: 35px;
-  padding: 15px 20px 8px 20px;
+  padding: 10px 20px 8px 20px;
 }
 .news .post .news__post-header {
   font-family: "cyberdyne";
   border-bottom: 1px solid #F2F2F2;
   display: grid;
   grid-template-columns: 375px 165px;
-  padding-bottom: 5px;
+  padding-bottom: 7px;
   margin-bottom: 15px;
 }
 .news .post .news__post-header .news__post-leftSide, .news .post .news__post-header .news__post-rightSide {
@@ -380,34 +434,66 @@ code {
 }
 .news .post .news__post-header .news__post-leftSide {
   font-size: 18px;
+  display: flex;
+}
+.news .post .news__post-header .news__post-leftSide .news__post-author {
+  align-self: center;
 }
 .news .post .news__post-header .news__post-leftSide .avatar1 {
   margin-right: 20px;
+  width: 41px;
+  height: 48px;
+}
+.news .post .news__post-header .news__post-leftSide .avatar1 .outline {
+  width: 41px;
+  height: 48px;
+  background: none;
+}
+.news .post .news__post-header .news__post-leftSide .avatar1 .avatar {
+  align-self: auto;
+  width: 41px;
+  height: 48px;
+}
+.news .post .news__post-header .news__post-leftSide .avatar1 .avatar .photo {
+  width: 41px;
+  height: 48px;
+  -webkit-mask-size: 40px;
+  mask-size: 40px;
+}
+.news .post .news__post-header .news__post-leftSide .avatar1 .avatar .shield {
+  width: 41px;
+  height: 48px;
+  -webkit-mask-size: 40px;
+  mask-size: 40px;
 }
 .news .post .news__post-header .news__post-rightSide {
-  padding-top: 7px;
+  display: flex;
   font-size: 12px;
 }
 .news .post .news__post-header .news__post-rightSide .news__post-date {
+  align-self: center;
   margin-right: 30px;
 }
-.news .post .news__post-text {
-  font-family: "Roboto";
-  margin-bottom: 15px;
+.news .post .news__post-header .news__post-rightSide .news__post-time {
+  align-self: center;
 }
-.news .post .news__post-photos {
+.news .post .news__post-content .news__post-text {
+  margin-bottom: 15px;
+  line-height: 120%;
+}
+.news .post .news__post-content .news__post-photos {
   width: 540px;
   height: 100%;
 }
-.news .post .news__post-photos .picture {
+.news .post .news__post-content .news__post-photos .picture {
   max-width: 540px;
   margin-right: 5px;
   margin-bottom: 5px;
 }
-.news .post .news__post-photos .picture img {
+.news .post .news__post-content .news__post-photos .picture img {
   max-width: 540px;
 }
-.news .post .news__post-photos .pictures {
+.news .post .news__post-content .news__post-photos .pictures {
   animation: comeIn ease 0.5s;
   animation-iteration-count: 1;
   transition: left 0.3s ease, top 0.3s ease;
@@ -495,4 +581,36 @@ code {
   border-radius: 5px;
   min-height: 40px;
   padding: 6px 10px 2px 10px;
+}
+
+.news__portal {
+  background: #181e26bf;
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  z-index: 200;
+  top: 0;
+  display: flex;
+}
+.news__portal .news__portal-wrap {
+  width: calc(70vw + 120px);
+  min-width: 720px;
+  max-width: 920px;
+  margin: 0 auto;
+  align-self: center;
+}
+.news__portal .news__portal-picture {
+  width: 70vw;
+  min-width: 600px;
+  max-width: 800px;
+}
+.news__portal .news__portal-prevPicture {
+  height: 40px;
+  width: 40px;
+  margin-right: 20px;
+}
+.news__portal .news__portal-nextPicture {
+  height: 40px;
+  width: 40px;
+  margin-left: 20px;
 }

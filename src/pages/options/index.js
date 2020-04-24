@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 import { Radio } from 'antd';
-import TextIF from '../../elements/textInputField/index';
+import TextIF from '../../components/textInputField/index';
 
 const DataElement = (props) => {
   return (

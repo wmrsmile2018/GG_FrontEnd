@@ -1,5 +1,5 @@
 import React, {Component} from 'react'
-import Avatar2 from '../../elements/avatar2/index'
+import Avatar2 from '../../components/avatar2/index'
 
 const getDate = (unix_timestamp) => {
   const currentDate = new Date(unix_timestamp * 1000);

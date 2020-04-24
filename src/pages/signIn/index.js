@@ -1,7 +1,7 @@
 import React, {Component} from 'react'
-import TextIF from '../../elements/textInputField/index';
-import InputS from '../../elements/inputSubmit/index';
-import ButtonS from '../../elements/buttonSubmit/index';
+import TextIF from '../../components/textInputField/index';
+import InputS from '../../components/inputSubmit/index';
+import ButtonS from '../../components/buttonSubmit/index';
 
 const SignInElement = (props) => {
   return (

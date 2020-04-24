@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
-import TextIF from '../../elements/textInputField/index';
-import InputS from '../../elements/inputSubmit/index';
+import TextIF from '../../components/textInputField/index';
+import InputS from '../../components/inputSubmit/index';
 
 const patternEmail = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
 
@@ -8,7 +8,7 @@ const Validate = (input, pattern) => {
   return pattern.test(input);
 }
 
-const ReqRecPasElement = (props) => {
+const ReqResPasElement = (props) => {
   return (
     <div className={props.classN1}>
       <TextIF classN={props.classN2 + "__"} actionOnChange={props.actionOnChange} name={props.name} type={props.type} />
@@ -19,7 +19,7 @@ const ReqRecPasElement = (props) => {
   );
 }
 
-class RequestRecPas extends Component {
+class RequestResPas extends Component {
   constructor(props) {
     super(props)
     this.state = {
@@ -43,12 +43,13 @@ class RequestRecPas extends Component {
     }
     e.preventDefault();
   }
+
   render() {
     return(
       <div className = "requestRecPas">
         <form onSubmit={this.handleSubmit}>
           <h1>Восстановление пароли</h1>
-          <ReqRecPasElement
+          <ReqResPasElement
             classN1="requestRecPas__email"
             classN2="requestRecPas"
             actionOnChange={this.updateDataE} name="Введите почту"
@@ -64,4 +65,4 @@ class RequestRecPas extends Component {
   }
 }
 
-export default RequestRecPas;
+export default RequestResPas;

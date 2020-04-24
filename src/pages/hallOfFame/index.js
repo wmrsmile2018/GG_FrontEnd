@@ -1,6 +1,6 @@
 import React from 'react';
-import Leaders from '../../elements/leaders/index';
-import Avatar1 from '../../elements/avatar1/index';
+import Leaders from '../../components/leaders/index';
+import Avatar1 from '../../components/avatar1/index';
 import placeholder from '../../public/images/placeholder.jpg';
 import Outline from '../../public/svg/outline.svg';
 

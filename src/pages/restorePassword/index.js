@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
-import TextIF from '../../elements/textInputField/index';
-import InputS from '../../elements/inputSubmit/index';
+import TextIF from '../../components/textInputField/index';
+import InputS from '../../components/inputSubmit/index';
 
 const patternPassword = /(?=.*[0-9])(?=.*[!@#$%^&*])(?=.*[a-z])(?=.*[A-Z])[0-9a-zA-Z!@#$%^&*]{6,}/;
 // наличие спец знаков, заглавной буквы, обычной буквы, цифры и от 6 символов
@@ -9,7 +9,7 @@ const Validate = (input, pattern) => {
   return pattern.test(input);
 }
 
-const RecoveryPasElement = (props) => {
+const RestorePasElement = (props) => {
   return (
     <div className={props.classN1}>
       <TextIF classN={props.classN2 + "__"} actionOnChange={props.actionOnChange} name={props.name} type={props.type} />
@@ -20,7 +20,7 @@ const RecoveryPasElement = (props) => {
   );
 }
 
-class RecoveryPas extends Component {
+class RestorePas extends Component {
   constructor(props) {
     super(props)
     this.state = {
@@ -63,7 +63,7 @@ class RecoveryPas extends Component {
       <div className = "recoveryPas">
         <form onSubmit={this.handleSubmit}>
           <h1>Восстановление пароли</h1>
-          <RecoveryPasElement
+          <RestorePasElement
             classN1="recoveryPas__password"
             classN2="recoveryPas"
             actionOnChange={this.updateDataP} name="Введите новый пароль"
@@ -71,7 +71,7 @@ class RecoveryPas extends Component {
             classN3="requestRecPas__error"
             text="Пароль не подходит"
           />
-          <RecoveryPasElement
+          <RestorePasElement
             classN1="recoveryPas__confirmPas"
             classN2="recoveryPas"
             actionOnChange={this.updateDataConfP} name="Повторите пароль"
@@ -86,4 +86,4 @@ class RecoveryPas extends Component {
   }
 }
 
-export default RecoveryPas;
+export default RestorePas;
