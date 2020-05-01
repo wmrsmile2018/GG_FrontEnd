@@ -7,9 +7,11 @@ class InputS extends Component {
       blue: '#83E4E4',
       yellow: '#FFD074',
       color: '#83E4E4',
+      isActivity: false,
     }
     this.handleOnMouseOver = this.handleOnMouseOver.bind(this);
     this.handleOnMouseOut = this.handleOnMouseOut.bind(this);
+    this.handleOnClick = this.handleOnClick.bind(this);
   }
 
   handleOnMouseOver() {
@@ -24,22 +26,49 @@ class InputS extends Component {
     })
   }
 
+  handleOnClick() {
+    this.setState({
+      color: this.state.yellow,
+      isActivity: true,
+    })
+    if (this.props.actionOnClick) {
+      this.props.actionOnClick()
+    }
+  }
+
   render() {
+
+    const { active } = this.props;
+    const color = active ? this.state.yellow : this.state.color;
+
     return(
       <div
+        style={{display: this.props.display}}
         className={"inputS " + this.props.classN + "__inputS"}
+        onMouseOut={this.handleOnMouseOut}
+        onMouseOver={this.handleOnMouseOver}
+        onClick={this.handleOnClick}
       >
-        <p style={{"color": this.state.color}}>{this.props.value}</p>
-        <input
-          style={{"backgroundColor": this.state.color}}
-          onMouseOut={this.handleOnMouseOut}
-          onMouseOver={this.handleOnMouseOver}
-          type={this.props.type}
-          value={this.props.value}
-        />
+        <p style={{color: color}}>{this.props.value}</p>
+        <div
+          style={{background: color}}
+          className={"inputS-outline " + this.props.classN + "__inputS-outline"}
+          >
+        </div>
       </div>
     )
   }
 }
 
+
+
+
+
+//
+// <input
+//   style={{backgroundColor: this.state.color}}
+//   type={this.props.type}
+//   value={this.props.value}
+//   onClick={this.handleOnClick}
+// />
 export default InputS;

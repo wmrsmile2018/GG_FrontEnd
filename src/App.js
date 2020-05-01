@@ -18,7 +18,7 @@ import PersonalPage from './pages/personalPage/index';
 
 const Error = () => {
   return (
-    <div>404</div>
+    <div>404 NOT FOUND</div>
   )
 }
 

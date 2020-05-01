@@ -4,6 +4,7 @@ import History from '../../components/history/index';
 import Profit from '../../components/profit/index';
 import Statics from '../../components/statics/index';
 import MainButton from '../../components/mainButton/index';
+import InputS from '../../components/inputSubmit/index';
 import Graphic from '../../components/graphic/index';
 
 // const currentDateTime = new Date();
@@ -229,20 +230,56 @@ class PersonalPage extends Component {
   constructor(props){
     super(props);
     this.state = {
+      showHGames: true,
+      showHFinances: false,
+      showMMoney: false,
+
       showButtons: 'none',
       data1: [],
       YAxis: [],
     }
-    this.handleVisibleButtons = this.handleVisibleButtons.bind(this);
     this.showYears = this.showYears.bind(this);
     this.showHalvesYear = this.showHalvesYear.bind(this);
     this.showMonths = this.showMonths.bind(this);
     this.showWeeks = this.showWeeks.bind(this);
     this.showDays = this.showDays.bind(this);
+    this.handleOnClickMMoney = this.handleOnClickMMoney.bind(this);
+    this.handleOnClickHGames = this.handleOnClickHGames.bind(this);
+    this.handleOnClickHFinances = this.handleOnClickHFinances.bind(this);
+  }
+
+  handleOnClickHGames() {
+    console.log("hello1");
+    this.setState({
+      showHGames: true,
+      showHFinances: false,
+      showMMoney: false,
+      showButtons: 'none'
+    })
+  }
+
+  handleOnClickHFinances() {
+    console.log("hello2");
+    this.setState({
+      showHGames: false,
+      showHFinances: true,
+      showMMoney: false,
+      showButtons: 'block'
+    })
+
+  }
+
+  handleOnClickMMoney() {
+    console.log("hello3");
+    this.setState({
+      showHGames: false,
+      showHFinances: false,
+      showMMoney: true,
+      showButtons: 'block'
+    })
   }
 
   showDays() {
-    console.log(Data);
     const {XAxis, YAxis} = fillXAxis(base, Data, getDiffDay, getDate1);
     this.setState({
       XAxis: XAxis,
@@ -282,35 +319,32 @@ class PersonalPage extends Component {
     })
   }
 
-  handleVisibleButtons() {
-    if (this.state.showButtons === 'none') {
-      this.setState({
-        showButtons: 'block'
-      })
-    } else {
-      this.setState({
-        showButtons: 'none'
-      })
-    }
-  }
 
   render() {
     return (
       <div className="personalPage">
-
-        <MainButton classN="personalPage" link="/"
-          actionOnClick={this.test} text="Игры"
-          />
-        <MainButton classN="personalPage" link="/"
-          actionOnClick={this.handleVisibleButtons} text="Финансы"
-          />
-        <MainButton  actionOnClick={this.handleVisibleButtons} text="Статистика"
-          link="/" classN="personalPage" display={this.state.showButtons}
-          />
-        <MainButton classN="personalPage" display={this.state.showButtons}
-          link="/" actionOnClick={this.handleVisibleButtons}
-          text="Управление деньгами"
-          />
+        <div className="personalPage__header">
+          <div className="personalPage__header-top">
+            <InputS type="submit" value="Игры" classN="personalPage"
+              actionOnClick={this.handleOnClickHGames}
+              active={this.state.showHGames}
+              />
+            <InputS type="submit" value="Финансы" classN="personalPage"
+              actionOnClick={this.handleOnClickHFinances}
+              active={!this.state.showHGames}
+              />
+          </div>
+          <div className="personalPage__header-bottom">
+            <InputS type="submit" value="Статистика" classN="personalPage"
+              display={this.state.showButtons} active={this.state.showHFinances}
+              actionOnClick={this.handleOnClickHFinances}
+              />
+            <InputS type="submit" value="Управление деньгами" classN="personalPage"
+              display={this.state.showButtons} active={this.state.showMMoney}
+              actionOnClick={this.handleOnClickMMoney}
+              />
+          </div>
+        </div>
 
         <div className="personalPage__graphic" style={{display: "none"}}>
           <Graphic XAxis={this.state.XAxis} YAxis={this.state.YAxis}/>
@@ -343,7 +377,7 @@ class PersonalPage extends Component {
           roundsPlayed="7100"
           roundsWon="3213"
           mvp="849"
-          winRate="45"
+          winRate="55"
         />
 
       <History visibility={true} classN="personalPage" response={Data}/>

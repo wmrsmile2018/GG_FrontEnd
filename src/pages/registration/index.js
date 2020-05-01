@@ -16,8 +16,8 @@ const patternLogin = /^(?!(?:\D*\d){})[a-z][\w-]{5,}$/i;
 const patternEmail = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
 
 const generatorDate = (min, max) => {
-  var output = [];
-  for (var i = max; i >= min; i --) {
+  const output = [];
+  for (let i = max; i >= min; i --) {
     output.push(<Option key={i.toString(36) + i} value={i}>{i}</Option>)
   }
   return output;
@@ -172,7 +172,9 @@ class Registration extends Component {
           <div className="registration__sex">
             <p className="registration_tittle">Пол</p>
             <RadioB classN="registration" actionOnChange={this.updateDataS}
-              values={["Мужской", "Женский", "Другое"]} />
+              values={["Мужской", "Женский", "Другое"]}
+              actionOnClick={null}
+            />
             <div style={{display: this.state.styleSex}} className="registration__error">
               Выберите пол
             </div>

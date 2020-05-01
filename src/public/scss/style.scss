@@ -1,9 +1,8 @@
 @import '~antd/dist/antd.css';
 @import './cyberdyne.css';
 @import './robotoMono.css';
-
 $color-dark-blue: #56CCF2;
-$color-blue: #83E4E4;
+$color-white-blue: #83E4E4;
 $color-red: #EB5757;
 $color-yellow: #FFD074;
 $color-black: #11161B;
@@ -16,6 +15,8 @@ $size-big: 18px;
 $size-mini: 12px;
 
 $width-big: 210px;
+$width-medium: 160px;
+$width-small: 110px;
 
 @keyframes comeIn {
     0% { transform: scale(.5); opacity: 0; }
@@ -92,9 +93,8 @@ code {
 }
 
 .circle-text {
-	font-size: 3em;
-	font-weight: bold;
-	fill: red;
+  font-family: "cyberdyne";
+  font-size: 35px;
 }
 
 //avatar2 ______________________________________________________________________
@@ -118,7 +118,7 @@ code {
     padding: 0 10px;
     color: $color-white;
     background: $color-black;
-    border: $color-blue 1px solid;
+    border: $color-white-blue 1px solid;
     border-radius: 3px;
     font-size: $size-mini;
     width: 366px;
@@ -128,13 +128,12 @@ code {
 //input submit _________________________________________________________________
 .inputS {
   p {
-    color: $color-blue;
+    color: $color-white-blue;
     font-size: $size-standart;
     position: absolute;
   }
 
-  input{
-    border: none;
+  .inputS-outline {
     height: 28px;
     -webkit-mask-image: url('../svg/border.svg');
     mask-image: url('../svg/border.svg');
@@ -143,7 +142,6 @@ code {
     -webkit-mask-position: center center;
     mask-position: center center;
     cursor: pointer;
-
   }
 }
 
@@ -270,7 +268,7 @@ code {
     .ant-select-selector {
       height: 17px;
       background: $color-black;
-      border: $color-blue 1px solid;
+      border: $color-white-blue 1px solid;
       border-radius: 3px;
       font-size: $size-mini;
       color: $color-gray;
@@ -331,7 +329,7 @@ code {
 
       .registration__outline {
         border-radius: 2px;
-        border: 1px solid $color-blue;
+        border: 1px solid $color-white-blue;
         margin-top: -2px;
         width: 22px;
         height: 22px;
@@ -350,11 +348,11 @@ code {
       width: $width-big;
     }
 
-    input {
-      background-size: $width-big 28px;
-      color: $color-gray;
-      width: $width-big;
-    }
+    // input {
+    //   background-size: $width-big 28px;
+    //   color: $color-gray;
+    //   width: $width-big;
+    // }
   }
 
   .registration__exist {
@@ -393,11 +391,12 @@ code {
       text-align: center;
       width: $width-big;
     }
-    input {
-      background-size: $width-big 28px;
-      color: $color-gray;
-      width: $width-big;
-    }
+
+    // .inputS-outline {
+    //     background-size: $width-big 28px;
+    //     color: $color-gray;
+    //     width: $width-big;
+    // }
   }
 
   .signIn_button {
@@ -504,7 +503,7 @@ code {
   .post {
     width: 100%;
     background: $color-black;
-    border: 1px solid $color-blue;
+    border: 1px solid $color-white-blue;
     border-radius: 15px;
     margin-bottom: 5px;
     margin-top: 35px;
@@ -637,7 +636,7 @@ code {
 
   .comments {
     background: $color-black;
-    border: 1px solid $color-blue;
+    border: 1px solid $color-white-blue;
     // padding: 15px 40px 8px 40px;
     border-radius: 15px;
     margin-bottom: 25px;
@@ -650,7 +649,7 @@ code {
 
     .comment {
       font-family: 'Roboto';
-      border-bottom: 1px solid $color-blue;
+      border-bottom: 1px solid $color-white-blue;
       // margin-bottom: 15px;
       margin: 0 40px 15px 40px;
       .news__comment-content {
@@ -661,7 +660,7 @@ code {
         .news__comment-rightSide {
           .news__comment-nickName {
             font-size: $size-big;
-            color: $color-blue;
+            color: $color-white-blue;
           }
 
           .news__comment-text {
@@ -703,7 +702,7 @@ code {
       }
 
       .news__reply-input {
-        border: 1px solid $color-blue;
+        border: 1px solid $color-white-blue;
         border-radius: 5px;
         min-height: 40px;
         padding: 6px 10px 2px 10px;
@@ -761,7 +760,7 @@ code {
   .statics {
     padding: 20px 30px;
     margin-top: 40px;
-    border: 1px solid $color-blue;
+    border: 1px solid $color-white-blue;
     border-radius: 20px;
     display: grid;
     grid-gap: 29px;
@@ -775,7 +774,7 @@ code {
     .personalPage__statics-column1 {
       div {
         position: relative;
-        margin-bottom: 10px;
+        margin-bottom: 20px;
       }
 
       span {
@@ -791,7 +790,7 @@ code {
       text-align: center;
 
       p {
-        margin-bottom: 10px;
+        margin-bottom: 15px;
         font-weight: bold;
         font-size: $size-big;
       }
@@ -800,7 +799,7 @@ code {
     .personalPage__statics-column3 {
       div {
         position: relative;
-        margin-bottom: 10px;
+        margin-bottom: 20px;
       }
 
       span {
@@ -809,5 +808,46 @@ code {
         position: absolute;
       }
     }
+  }
+
+  .personalPage__header {
+    .inputS {
+      width: $width-medium;
+      display: block;
+      p {
+        text-align: center;
+        width: $width-medium;
+      }
+    }
+    .personalPage__header-top {
+      display: flex;
+      flex-direction: row;
+    }
+
+    .personalPage__header-bottom {
+      margin-top: 10px;
+      display: flex;
+      flex-direction: row;
+      margin-left: $width-medium;
+
+      .inputS:nth-child(2) {
+        width: $width-big;
+        display: block;
+        p {
+          text-align: center;
+          width: $width-big;
+        }
+      }
+    }
+
+  }
+
+  .personalPage__columns {
+    font-size: $size-standart;
+    font-weight: bold;
+    display: grid;
+    grid-template-columns: 81px 39px 52px 81px;
+    grid-gap: 100px;
+
   }
 }

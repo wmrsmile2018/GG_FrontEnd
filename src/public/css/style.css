@@ -78,9 +78,8 @@ code {
 }
 
 .circle-text {
-  font-size: 3em;
-  font-weight: bold;
-  fill: red;
+  font-family: "cyberdyne";
+  font-size: 35px;
 }
 
 .avatar2 {
@@ -111,8 +110,7 @@ code {
   font-size: 16px;
   position: absolute;
 }
-.inputS input {
-  border: none;
+.inputS .inputS-outline {
   height: 28px;
   -webkit-mask-image: url("../svg/border.svg");
   mask-image: url("../svg/border.svg");
@@ -293,11 +291,6 @@ code {
   text-align: center;
   width: 210px;
 }
-.registration .registration__inputS input {
-  background-size: 210px 28px;
-  color: #F2F2F2;
-  width: 210px;
-}
 .registration .registration__exist {
   color: #F2F2F2;
   font-size: 12px;
@@ -326,11 +319,6 @@ code {
 }
 .signIn .signIn__inputS p {
   text-align: center;
-  width: 210px;
-}
-.signIn .signIn__inputS input {
-  background-size: 210px 28px;
-  color: #F2F2F2;
   width: 210px;
 }
 .signIn .signIn_button {
@@ -641,7 +629,7 @@ code {
 }
 .personalPage .statics .personalPage__statics-column1 div {
   position: relative;
-  margin-bottom: 10px;
+  margin-bottom: 20px;
 }
 .personalPage .statics .personalPage__statics-column1 span {
   top: 0px;
@@ -652,16 +640,49 @@ code {
   text-align: center;
 }
 .personalPage .statics .personalPage__statics-column2 p {
-  margin-bottom: 10px;
+  margin-bottom: 15px;
   font-weight: bold;
   font-size: 18px;
 }
 .personalPage .statics .personalPage__statics-column3 div {
   position: relative;
-  margin-bottom: 10px;
+  margin-bottom: 20px;
 }
 .personalPage .statics .personalPage__statics-column3 span {
   top: 0px;
   right: 0px;
   position: absolute;
+}
+.personalPage .personalPage__header .inputS {
+  width: 160px;
+  display: block;
+}
+.personalPage .personalPage__header .inputS p {
+  text-align: center;
+  width: 160px;
+}
+.personalPage .personalPage__header .personalPage__header-top {
+  display: flex;
+  flex-direction: row;
+}
+.personalPage .personalPage__header .personalPage__header-bottom {
+  margin-top: 10px;
+  display: flex;
+  flex-direction: row;
+  margin-left: 160px;
+}
+.personalPage .personalPage__header .personalPage__header-bottom .inputS:nth-child(2) {
+  width: 210px;
+  display: block;
+}
+.personalPage .personalPage__header .personalPage__header-bottom .inputS:nth-child(2) p {
+  text-align: center;
+  width: 210px;
+}
+.personalPage .personalPage__columns {
+  font-size: 16px;
+  font-weight: bold;
+  display: grid;
+  grid-template-columns: 81px 39px 52px 81px;
+  grid-gap: 100px;
 }
