@@ -984,8 +984,6 @@ class PersonalPage extends Component {
     const { showHFinances, showHGames, showMMoney } = this.state;
     const { activeD, activeW, activeM, activeHY, activeY } = this.state;
     const displayF = showHFinances ? {display: "block"} : {display: "none"};
-    const displayG = showHGames ? {display: "block"} : {display: "none"};
-    const displayM = showMMoney ? {display: "block"} : {display: "none"};
     return (
       <div className="personalPage">
         <div className="personalPage__header">

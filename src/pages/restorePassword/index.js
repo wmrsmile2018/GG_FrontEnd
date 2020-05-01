@@ -62,7 +62,7 @@ class RestorePas extends Component {
     return(
       <div className = "recoveryPas">
         <form onSubmit={this.handleSubmit}>
-          <h1>Восстановление пароли</h1>
+          <h1>Восстановление пароля</h1>
           <RestorePasElement
             classN1="recoveryPas__password"
             classN2="recoveryPas"

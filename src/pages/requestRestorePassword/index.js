@@ -48,7 +48,7 @@ class RequestResPas extends Component {
     return(
       <div className = "requestRecPas">
         <form onSubmit={this.handleSubmit}>
-          <h1>Восстановление пароли</h1>
+          <h1>Восстановление пароля</h1>
           <ReqResPasElement
             classN1="requestRecPas__email"
             classN2="requestRecPas"
