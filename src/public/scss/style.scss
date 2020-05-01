@@ -16,7 +16,7 @@ $size-mini: 12px;
 
 $width-big: 210px;
 $width-medium: 160px;
-$width-small: 110px;
+$width-small: 80px;
 
 @keyframes comeIn {
     0% { transform: scale(.5); opacity: 0; }
@@ -127,6 +127,7 @@ code {
 
 //input submit _________________________________________________________________
 .inputS {
+  position: relative;
   p {
     color: $color-white-blue;
     font-size: $size-standart;
@@ -142,6 +143,11 @@ code {
     -webkit-mask-position: center center;
     mask-position: center center;
     cursor: pointer;
+  }
+
+  .inputS-shadow {
+    position: absolute;
+    top: 14px;
   }
 }
 
@@ -757,6 +763,7 @@ code {
   margin: 0 auto;
   width: 582px;
 
+
   .statics {
     padding: 20px 30px;
     margin-top: 40px;
@@ -818,6 +825,9 @@ code {
         text-align: center;
         width: $width-medium;
       }
+      .inputS-shadow {
+        width: $width-medium;
+      }
     }
     .personalPage__header-top {
       display: flex;
@@ -842,12 +852,177 @@ code {
 
   }
 
-  .personalPage__columns {
-    font-size: $size-standart;
-    font-weight: bold;
-    display: grid;
-    grid-template-columns: 81px 39px 52px 81px;
-    grid-gap: 100px;
 
+
+  .personalPage__delimiter {
+    background: $color-black;
+    margin-bottom: 15px;
+    margin-top: 15px;
+    padding-left: 10px;
+    height: 28px;
+  }
+
+  .personalPage__history {
+
+    .personalPage__columns {
+      font-size: $size-standart;
+      font-weight: bold;
+      display: grid;
+      grid-template-columns: 81px 39px 52px 81px;
+      grid-gap: 90px;
+      margin-left: 30px;
+      margin-top: 15px;
+      margin-bottom: 5px;
+    }
+
+    .currentDay {
+      .currentHistory {
+        margin-bottom: 10px;
+        position: relative;
+
+        .personalPage__currentHistory-wrap {
+          display: grid;
+          grid-template-columns: 90px 55px 90px 70px;
+          grid-gap: 70px;
+          padding-left: 35px;
+          height: 35px;
+          align-items: center;
+          position: relative;
+        }
+
+        .avatar2 {
+          img {
+            height: 28px;
+            width: 28px;
+          }
+        }
+
+        .personalPage__history-team1 {
+          display: flex;
+          flex-direction: row;
+        }
+
+        .personalPage__history-team2 {
+          display: flex;
+          flex-direction: row;
+        }
+      }
+
+      .currentHistory-outline {
+        -webkit-mask-image: url('../svg/border.svg');
+        mask-image: url('../svg/border.svg');
+        -webkit-mask-repeat: no-repeat;
+        mask-repeat: no-repeat;
+        -webkit-mask-position: center center;
+        mask-position: center center;
+        cursor: pointer;
+        height: 35px;
+        position: absolute;
+        top: 0;
+        width: 582px;
+      }
+    }
+
+  }
+
+  .personalPage__graphic {
+    .highcharts-axis-labels, .highcharts-legend {
+      text {
+        fill: $color-white!important;
+      }
+    }
+
+    .highcharts-background {
+      fill: none;
+    }
+
+    .personalPage__chooseInterval {
+      display: grid;
+      grid-template-columns: 80px 80px 80px 80px 80px;
+      grid-gap: 10px;
+      width: 400px;
+      margin: 0 auto;
+
+      .inputS {
+        width: $width-small;
+        display: block;
+      }
+
+      p {
+        text-align: center;
+        width: $width-small;
+      }
+
+      .inputS-shadow {
+        width: $width-small;
+      }
+    }
+  }
+
+  .personalPage__profit {
+
+    .personalPage__columns {
+      font-size: $size-standart;
+      font-weight: bold;
+      display: grid;
+      grid-template-columns: 81px 81px  81px 52px 72px;
+      grid-gap: 40px;
+      margin-left: 30px;
+      margin-top: 15px;
+      margin-bottom: 5px;
+    }
+
+
+    .currentDay {
+      .currentProfit {
+        margin-bottom: 10px;
+        position: relative;
+
+        .personalPage__currentProfit-wrap {
+          display: grid;
+          grid-template-columns: 96px 89px 72px 86px 48px;
+          grid-gap: 30px;
+          padding-left: 35px;
+          height: 35px;
+          align-items: center;
+          position: relative;
+
+          .personalPage__profit-profit {
+            text-align: center;
+          }
+        }
+
+        .avatar2 {
+          img {
+            height: 28px;
+            width: 28px;
+          }
+        }
+
+        .personalPage__profit-team1 {
+          display: flex;
+          flex-direction: row;
+        }
+
+        .personalPage__profit-team2 {
+          display: flex;
+          flex-direction: row;
+        }
+
+        .currentProfit-outline {
+          -webkit-mask-image: url('../svg/border.svg');
+          mask-image: url('../svg/border.svg');
+          -webkit-mask-repeat: no-repeat;
+          mask-repeat: no-repeat;
+          -webkit-mask-position: center center;
+          mask-position: center center;
+          cursor: pointer;
+          height: 35px;
+          position: absolute;
+          top: 0;
+          width: 582px;
+        }
+      }
+    }
   }
 }

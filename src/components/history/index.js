@@ -25,7 +25,10 @@ class Histories extends Component {
     super(props);
     this.state = {
       isOpen: false,
+      red: "#EB5757",
+      green: "#83E4E4"
     };
+
     this.handleClick = this.handleClick.bind(this);
   }
 
@@ -42,18 +45,34 @@ class Histories extends Component {
   }
 
   render(){
-    const red = "1px solid #EB5757";
-    const green = "1px solid #83E4E4";
+    const { red, green } = this.state;
     return (
-      <div className={"currentHistory " + this.props.classN + "__currentHistory" + this.props.iter} onClick={this.handleClick} style={{border: this.props.isWin === true ? green : red}}>
-        <div className={this.props.classN + "__history-team1"}>
-          {this.props.team1.map((player, i) => <Avatar2 key={i.toString(36) + i} src={player.photo}/>)}
+      <div onClick={this.handleClick}
+        className={"currentHistory " + this.props.classN + "__currentHistory" + this.props.iter}
+      >
+        <div className={this.props.classN + "__currentHistory-wrap"}>
+          <div className={this.props.classN + "__history-team1"}>
+            {this.props.team1.map((player, i) =>
+              <Avatar2
+                classN={this.props.classN + "__history-avatar2"}
+                key={i.toString(36) + i}
+                src={player.photo}
+              />
+            )}
+          </div>
+          <div className={this.props.classN + "__history-score"}>{this.props.score}</div>
+          <div className={this.props.classN + "__history-time"}>{getTime(this.props.timestamp)}</div>
+          <div className={this.props.classN + "__history-team2"}>
+            {this.props.team2.map((player, i) =>
+              <Avatar2
+                classN={this.props.classN + "__history-avatar2"}
+                key={i.toString(36) + i}
+                src={player.photo}/>)}
+          </div>
         </div>
-        <div className={this.props.classN + "__history-score"}>{this.props.score}</div>
-        <div className={this.props.classN + "__history-time"}>{getTime(this.props.timestamp)}</div>
-        <div className={this.props.classN + "__history-team2"}>
-          {this.props.team2.map((player, i) => <Avatar2 key={i.toString(36) + i} src={player.photo}/>)}
-        </div>
+        <div className={"currentHistory-outline"}
+        style={{background: this.props.isWin === true ? green : red}}
+        />
       </div>
     )
   }
@@ -75,13 +94,15 @@ const History = (props) => {
   for (let i = 0; i < props.response.length; i ++) {
     if (currentDate !== getDate(props.response[i].timestamp)) {
       currentDate = getDate(props.response[i].timestamp);
-      output.push(
-        <div key={i}
-          className={"currentDay " + props.classN + "__currentDay"}
-          >
-          {tmp}
-        </div>
-      );
+      if (i !== 0) {
+        output.push(
+          <div key={i}
+            className={"currentDay " + props.classN + "__currentDay"}
+            >
+            {tmp}
+          </div>
+        );
+      }
       output.push(<div
         key={i.toString(36) + i + "delimiter"}
         className={props.classN + "__delimiter"}>Дата: {currentDate}

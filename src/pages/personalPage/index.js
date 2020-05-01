@@ -3,7 +3,6 @@ import React, {Component} from 'react';
 import History from '../../components/history/index';
 import Profit from '../../components/profit/index';
 import Statics from '../../components/statics/index';
-import MainButton from '../../components/mainButton/index';
 import InputS from '../../components/inputSubmit/index';
 import Graphic from '../../components/graphic/index';
 
@@ -106,7 +105,637 @@ const Data = [
         "photo": "http://placehold.it/32x32"
       }
     ]
-  }
+  },
+  {
+    "number": 1,
+    "id_history": "5e8a2987c21ec6922e6bd101",
+    "id_user": "5e8a2987e5c916d96bd9fd03",
+    "id_command": "5e8a2987460df88378760144",
+    "profit": 5,
+    "timestamp": 1585490413,
+    "score": "16:23",
+    "isWin": true,
+    "team1": [
+      {
+        "id_user": "5e8a2987ffd3a96ee6e483dd",
+        "photo": "http://placehold.it/32x32"
+      },
+      {
+        "id_user": "5e8a2987b145d37943eba877",
+        "photo": "http://placehold.it/32x32"
+      }
+    ],
+    "team2": [
+      {
+        "id_user": "5e8a2987ec982528621bb3c4",
+        "photo": "http://placehold.it/32x32"
+      },
+      {
+        "id_user": "5e8a29873b92b7cf4aa46d2e",
+        "photo": "http://placehold.it/32x32"
+      }
+    ]
+  },
+  {
+    "number": 1,
+    "id_history": "5e8a2987c21ec6922e6bd101",
+    "id_user": "5e8a2987e5c916d96bd9fd03",
+    "id_command": "5e8a2987460df88378760144",
+    "profit": 5,
+    "timestamp": 1585490413,
+    "score": "16:23",
+    "isWin": false,
+    "team1": [
+      {
+        "id_user": "5e8a2987ffd3a96ee6e483dd",
+        "photo": "http://placehold.it/32x32"
+      },
+      {
+        "id_user": "5e8a2987b145d37943eba877",
+        "photo": "http://placehold.it/32x32"
+      }
+    ],
+    "team2": [
+      {
+        "id_user": "5e8a2987ec982528621bb3c4",
+        "photo": "http://placehold.it/32x32"
+      },
+      {
+        "id_user": "5e8a29873b92b7cf4aa46d2e",
+        "photo": "http://placehold.it/32x32"
+      }
+    ]
+  },
+  {
+    "number": 1,
+    "id_history": "5e8a2987c21ec6922e6bd101",
+    "id_user": "5e8a2987e5c916d96bd9fd03",
+    "id_command": "5e8a2987460df88378760144",
+    "profit": 5,
+    "timestamp": 1585590413,
+    "score": "16:23",
+    "isWin": true,
+    "team1": [
+      {
+        "id_user": "5e8a2987ffd3a96ee6e483dd",
+        "photo": "http://placehold.it/32x32"
+      },
+      {
+        "id_user": "5e8a2987b145d37943eba877",
+        "photo": "http://placehold.it/32x32"
+      }
+    ],
+    "team2": [
+      {
+        "id_user": "5e8a2987ec982528621bb3c4",
+        "photo": "http://placehold.it/32x32"
+      },
+      {
+        "id_user": "5e8a29873b92b7cf4aa46d2e",
+        "photo": "http://placehold.it/32x32"
+      }
+    ]
+  },
+  {
+    "number": 1,
+    "id_history": "5e8a2987c21ec6922e6bd101",
+    "id_user": "5e8a2987e5c916d96bd9fd03",
+    "id_command": "5e8a2987460df88378760144",
+    "profit": 5,
+    "timestamp": 1585690413,
+    "score": "16:23",
+    "isWin": true,
+    "team1": [
+      {
+        "id_user": "5e8a2987ffd3a96ee6e483dd",
+        "photo": "http://placehold.it/32x32"
+      },
+      {
+        "id_user": "5e8a2987b145d37943eba877",
+        "photo": "http://placehold.it/32x32"
+      }
+    ],
+    "team2": [
+      {
+        "id_user": "5e8a2987ec982528621bb3c4",
+        "photo": "http://placehold.it/32x32"
+      },
+      {
+        "id_user": "5e8a29873b92b7cf4aa46d2e",
+        "photo": "http://placehold.it/32x32"
+      }
+    ]
+  },
+  {
+    "number": 1,
+    "id_history": "5e8a2987c21ec6922e6bd101",
+    "id_user": "5e8a2987e5c916d96bd9fd03",
+    "id_command": "5e8a2987460df88378760144",
+    "profit": 5,
+    "timestamp": 1585790413,
+    "score": "16:23",
+    "isWin": false,
+    "team1": [
+      {
+        "id_user": "5e8a2987ffd3a96ee6e483dd",
+        "photo": "http://placehold.it/32x32"
+      },
+      {
+        "id_user": "5e8a2987b145d37943eba877",
+        "photo": "http://placehold.it/32x32"
+      }
+    ],
+    "team2": [
+      {
+        "id_user": "5e8a2987ec982528621bb3c4",
+        "photo": "http://placehold.it/32x32"
+      },
+      {
+        "id_user": "5e8a29873b92b7cf4aa46d2e",
+        "photo": "http://placehold.it/32x32"
+      }
+    ]
+  },
+  {
+    "number": 1,
+    "id_history": "5e8a2987c21ec6922e6bd101",
+    "id_user": "5e8a2987e5c916d96bd9fd03",
+    "id_command": "5e8a2987460df88378760144",
+    "profit": 5,
+    "timestamp": 1585190413,
+    "score": "16:23",
+    "isWin": true,
+    "team1": [
+      {
+        "id_user": "5e8a2987ffd3a96ee6e483dd",
+        "photo": "http://placehold.it/32x32"
+      },
+      {
+        "id_user": "5e8a2987b145d37943eba877",
+        "photo": "http://placehold.it/32x32"
+      }
+    ],
+    "team2": [
+      {
+        "id_user": "5e8a2987ec982528621bb3c4",
+        "photo": "http://placehold.it/32x32"
+      },
+      {
+        "id_user": "5e8a29873b92b7cf4aa46d2e",
+        "photo": "http://placehold.it/32x32"
+      }
+    ]
+  },
+  {
+    "number": 1,
+    "id_history": "5e8a2987856e68b2fd62605b",
+    "id_user": "5e8a29876fa50f774116f06e",
+    "id_command": "5e8a29879b0ebd78cb436d9e",
+    "profit": 2538,
+    "timestamp": 1585190413,
+    "score": "16:23",
+    "isWin": true,
+    "team1": [
+      {
+        "id_user": "5e8a2987a4f04c6a12d532a2",
+        "photo": "http://placehold.it/32x32"
+      },
+      {
+        "id_user": "5e8a29873e702a53d6b05ba3",
+        "photo": "http://placehold.it/32x32"
+      }
+    ],
+    "team2": [
+      {
+        "id_user": "5e8a2987b5de9651783d4fcb",
+        "photo": "http://placehold.it/32x32"
+      },
+      {
+        "id_user": "5e8a2987ec868c92d1b28f32",
+        "photo": "http://placehold.it/32x32"
+      }
+    ]
+  },
+  {
+    "number": 1,
+    "id_history": "5e8a29877eac29d29268b6ca",
+    "id_user": "5e8a29873aed3a85a7667c7f",
+    "id_command": "5e8a298775904164724fb18a",
+    "profit": -2049,
+    "timestamp": 1585490413,
+    "score": "16:23",
+    "isWin": false,
+    "team1": [
+      {
+        "id_user": "5e8a29874ff0c79304a514c7",
+        "photo": "http://placehold.it/32x32"
+      },
+      {
+        "id_user": "5e8a29870a55bf77b831721f",
+        "photo": "http://placehold.it/32x32"
+      }
+    ],
+    "team2": [
+      {
+        "id_user": "5e8a298774edac8e273e1e12",
+        "photo": "http://placehold.it/32x32"
+      },
+      {
+        "id_user": "5e8a298760a9d78881aa3727",
+        "photo": "http://placehold.it/32x32"
+      }
+    ]
+  },
+  {
+    "number": 1,
+    "id_history": "5e8a2987c21ec6922e6bd101",
+    "id_user": "5e8a2987e5c916d96bd9fd03",
+    "id_command": "5e8a2987460df88378760144",
+    "profit": 5,
+    "timestamp": 1585490413,
+    "score": "16:23",
+    "isWin": true,
+    "team1": [
+      {
+        "id_user": "5e8a2987ffd3a96ee6e483dd",
+        "photo": "http://placehold.it/32x32"
+      },
+      {
+        "id_user": "5e8a2987b145d37943eba877",
+        "photo": "http://placehold.it/32x32"
+      }
+    ],
+    "team2": [
+      {
+        "id_user": "5e8a2987ec982528621bb3c4",
+        "photo": "http://placehold.it/32x32"
+      },
+      {
+        "id_user": "5e8a29873b92b7cf4aa46d2e",
+        "photo": "http://placehold.it/32x32"
+      }
+    ]
+  },
+  {
+    "number": 1,
+    "id_history": "5e8a2987c21ec6922e6bd101",
+    "id_user": "5e8a2987e5c916d96bd9fd03",
+    "id_command": "5e8a2987460df88378760144",
+    "profit": 5,
+    "timestamp": 1585490413,
+    "score": "16:23",
+    "isWin": false,
+    "team1": [
+      {
+        "id_user": "5e8a2987ffd3a96ee6e483dd",
+        "photo": "http://placehold.it/32x32"
+      },
+      {
+        "id_user": "5e8a2987b145d37943eba877",
+        "photo": "http://placehold.it/32x32"
+      }
+    ],
+    "team2": [
+      {
+        "id_user": "5e8a2987ec982528621bb3c4",
+        "photo": "http://placehold.it/32x32"
+      },
+      {
+        "id_user": "5e8a29873b92b7cf4aa46d2e",
+        "photo": "http://placehold.it/32x32"
+      }
+    ]
+  },
+  {
+    "number": 1,
+    "id_history": "5e8a2987c21ec6922e6bd101",
+    "id_user": "5e8a2987e5c916d96bd9fd03",
+    "id_command": "5e8a2987460df88378760144",
+    "profit": 5,
+    "timestamp": 1585590413,
+    "score": "16:23",
+    "isWin": true,
+    "team1": [
+      {
+        "id_user": "5e8a2987ffd3a96ee6e483dd",
+        "photo": "http://placehold.it/32x32"
+      },
+      {
+        "id_user": "5e8a2987b145d37943eba877",
+        "photo": "http://placehold.it/32x32"
+      }
+    ],
+    "team2": [
+      {
+        "id_user": "5e8a2987ec982528621bb3c4",
+        "photo": "http://placehold.it/32x32"
+      },
+      {
+        "id_user": "5e8a29873b92b7cf4aa46d2e",
+        "photo": "http://placehold.it/32x32"
+      }
+    ]
+  },
+  {
+    "number": 1,
+    "id_history": "5e8a2987c21ec6922e6bd101",
+    "id_user": "5e8a2987e5c916d96bd9fd03",
+    "id_command": "5e8a2987460df88378760144",
+    "profit": 5,
+    "timestamp": 1585690413,
+    "score": "16:23",
+    "isWin": true,
+    "team1": [
+      {
+        "id_user": "5e8a2987ffd3a96ee6e483dd",
+        "photo": "http://placehold.it/32x32"
+      },
+      {
+        "id_user": "5e8a2987b145d37943eba877",
+        "photo": "http://placehold.it/32x32"
+      }
+    ],
+    "team2": [
+      {
+        "id_user": "5e8a2987ec982528621bb3c4",
+        "photo": "http://placehold.it/32x32"
+      },
+      {
+        "id_user": "5e8a29873b92b7cf4aa46d2e",
+        "photo": "http://placehold.it/32x32"
+      }
+    ]
+  },
+  {
+    "number": 1,
+    "id_history": "5e8a2987c21ec6922e6bd101",
+    "id_user": "5e8a2987e5c916d96bd9fd03",
+    "id_command": "5e8a2987460df88378760144",
+    "profit": 5,
+    "timestamp": 1585790413,
+    "score": "16:23",
+    "isWin": false,
+    "team1": [
+      {
+        "id_user": "5e8a2987ffd3a96ee6e483dd",
+        "photo": "http://placehold.it/32x32"
+      },
+      {
+        "id_user": "5e8a2987b145d37943eba877",
+        "photo": "http://placehold.it/32x32"
+      }
+    ],
+    "team2": [
+      {
+        "id_user": "5e8a2987ec982528621bb3c4",
+        "photo": "http://placehold.it/32x32"
+      },
+      {
+        "id_user": "5e8a29873b92b7cf4aa46d2e",
+        "photo": "http://placehold.it/32x32"
+      }
+    ]
+  },
+  {
+    "number": 1,
+    "id_history": "5e8a2987c21ec6922e6bd101",
+    "id_user": "5e8a2987e5c916d96bd9fd03",
+    "id_command": "5e8a2987460df88378760144",
+    "profit": 5,
+    "timestamp": 1585190413,
+    "score": "16:23",
+    "isWin": true,
+    "team1": [
+      {
+        "id_user": "5e8a2987ffd3a96ee6e483dd",
+        "photo": "http://placehold.it/32x32"
+      },
+      {
+        "id_user": "5e8a2987b145d37943eba877",
+        "photo": "http://placehold.it/32x32"
+      }
+    ],
+    "team2": [
+      {
+        "id_user": "5e8a2987ec982528621bb3c4",
+        "photo": "http://placehold.it/32x32"
+      },
+      {
+        "id_user": "5e8a29873b92b7cf4aa46d2e",
+        "photo": "http://placehold.it/32x32"
+      }
+    ]
+  },
+  {
+    "number": 1,
+    "id_history": "5e8a2987856e68b2fd62605b",
+    "id_user": "5e8a29876fa50f774116f06e",
+    "id_command": "5e8a29879b0ebd78cb436d9e",
+    "profit": 2538,
+    "timestamp": 1585190413,
+    "score": "16:23",
+    "isWin": true,
+    "team1": [
+      {
+        "id_user": "5e8a2987a4f04c6a12d532a2",
+        "photo": "http://placehold.it/32x32"
+      },
+      {
+        "id_user": "5e8a29873e702a53d6b05ba3",
+        "photo": "http://placehold.it/32x32"
+      }
+    ],
+    "team2": [
+      {
+        "id_user": "5e8a2987b5de9651783d4fcb",
+        "photo": "http://placehold.it/32x32"
+      },
+      {
+        "id_user": "5e8a2987ec868c92d1b28f32",
+        "photo": "http://placehold.it/32x32"
+      }
+    ]
+  },
+  {
+    "number": 1,
+    "id_history": "5e8a29877eac29d29268b6ca",
+    "id_user": "5e8a29873aed3a85a7667c7f",
+    "id_command": "5e8a298775904164724fb18a",
+    "profit": -2049,
+    "timestamp": 1585490413,
+    "score": "16:23",
+    "isWin": false,
+    "team1": [
+      {
+        "id_user": "5e8a29874ff0c79304a514c7",
+        "photo": "http://placehold.it/32x32"
+      },
+      {
+        "id_user": "5e8a29870a55bf77b831721f",
+        "photo": "http://placehold.it/32x32"
+      }
+    ],
+    "team2": [
+      {
+        "id_user": "5e8a298774edac8e273e1e12",
+        "photo": "http://placehold.it/32x32"
+      },
+      {
+        "id_user": "5e8a298760a9d78881aa3727",
+        "photo": "http://placehold.it/32x32"
+      }
+    ]
+  },
+  {
+    "number": 1,
+    "id_history": "5e8a2987c21ec6922e6bd101",
+    "id_user": "5e8a2987e5c916d96bd9fd03",
+    "id_command": "5e8a2987460df88378760144",
+    "profit": 5,
+    "timestamp": 1585490413,
+    "score": "16:23",
+    "isWin": true,
+    "team1": [
+      {
+        "id_user": "5e8a2987ffd3a96ee6e483dd",
+        "photo": "http://placehold.it/32x32"
+      },
+      {
+        "id_user": "5e8a2987b145d37943eba877",
+        "photo": "http://placehold.it/32x32"
+      }
+    ],
+    "team2": [
+      {
+        "id_user": "5e8a2987ec982528621bb3c4",
+        "photo": "http://placehold.it/32x32"
+      },
+      {
+        "id_user": "5e8a29873b92b7cf4aa46d2e",
+        "photo": "http://placehold.it/32x32"
+      }
+    ]
+  },
+  {
+    "number": 1,
+    "id_history": "5e8a2987c21ec6922e6bd101",
+    "id_user": "5e8a2987e5c916d96bd9fd03",
+    "id_command": "5e8a2987460df88378760144",
+    "profit": 5,
+    "timestamp": 1585490413,
+    "score": "16:23",
+    "isWin": false,
+    "team1": [
+      {
+        "id_user": "5e8a2987ffd3a96ee6e483dd",
+        "photo": "http://placehold.it/32x32"
+      },
+      {
+        "id_user": "5e8a2987b145d37943eba877",
+        "photo": "http://placehold.it/32x32"
+      }
+    ],
+    "team2": [
+      {
+        "id_user": "5e8a2987ec982528621bb3c4",
+        "photo": "http://placehold.it/32x32"
+      },
+      {
+        "id_user": "5e8a29873b92b7cf4aa46d2e",
+        "photo": "http://placehold.it/32x32"
+      }
+    ]
+  },
+  {
+    "number": 1,
+    "id_history": "5e8a2987c21ec6922e6bd101",
+    "id_user": "5e8a2987e5c916d96bd9fd03",
+    "id_command": "5e8a2987460df88378760144",
+    "profit": 5,
+    "timestamp": 1585590413,
+    "score": "16:23",
+    "isWin": true,
+    "team1": [
+      {
+        "id_user": "5e8a2987ffd3a96ee6e483dd",
+        "photo": "http://placehold.it/32x32"
+      },
+      {
+        "id_user": "5e8a2987b145d37943eba877",
+        "photo": "http://placehold.it/32x32"
+      }
+    ],
+    "team2": [
+      {
+        "id_user": "5e8a2987ec982528621bb3c4",
+        "photo": "http://placehold.it/32x32"
+      },
+      {
+        "id_user": "5e8a29873b92b7cf4aa46d2e",
+        "photo": "http://placehold.it/32x32"
+      }
+    ]
+  },
+  {
+    "number": 1,
+    "id_history": "5e8a2987c21ec6922e6bd101",
+    "id_user": "5e8a2987e5c916d96bd9fd03",
+    "id_command": "5e8a2987460df88378760144",
+    "profit": 5,
+    "timestamp": 1585690413,
+    "score": "16:23",
+    "isWin": true,
+    "team1": [
+      {
+        "id_user": "5e8a2987ffd3a96ee6e483dd",
+        "photo": "http://placehold.it/32x32"
+      },
+      {
+        "id_user": "5e8a2987b145d37943eba877",
+        "photo": "http://placehold.it/32x32"
+      }
+    ],
+    "team2": [
+      {
+        "id_user": "5e8a2987ec982528621bb3c4",
+        "photo": "http://placehold.it/32x32"
+      },
+      {
+        "id_user": "5e8a29873b92b7cf4aa46d2e",
+        "photo": "http://placehold.it/32x32"
+      }
+    ]
+  },
+  {
+    "number": 1,
+    "id_history": "5e8a2987c21ec6922e6bd101",
+    "id_user": "5e8a2987e5c916d96bd9fd03",
+    "id_command": "5e8a2987460df88378760144",
+    "profit": 5,
+    "timestamp": 1585790413,
+    "score": "16:23",
+    "isWin": false,
+    "team1": [
+      {
+        "id_user": "5e8a2987ffd3a96ee6e483dd",
+        "photo": "http://placehold.it/32x32"
+      },
+      {
+        "id_user": "5e8a2987b145d37943eba877",
+        "photo": "http://placehold.it/32x32"
+      }
+    ],
+    "team2": [
+      {
+        "id_user": "5e8a2987ec982528621bb3c4",
+        "photo": "http://placehold.it/32x32"
+      },
+      {
+        "id_user": "5e8a29873b92b7cf4aa46d2e",
+        "photo": "http://placehold.it/32x32"
+      }
+    ]
+  },
 ];
 
 ///////////////////
@@ -234,9 +863,15 @@ class PersonalPage extends Component {
       showHFinances: false,
       showMMoney: false,
 
+      activeD: true,
+      activeW: false,
+      activeM: false,
+      activeHY: false,
+      activeY: false,
+
       showButtons: 'none',
-      data1: [],
       YAxis: [],
+      XAxis: []
     }
     this.showYears = this.showYears.bind(this);
     this.showHalvesYear = this.showHalvesYear.bind(this);
@@ -249,7 +884,6 @@ class PersonalPage extends Component {
   }
 
   handleOnClickHGames() {
-    console.log("hello1");
     this.setState({
       showHGames: true,
       showHFinances: false,
@@ -259,7 +893,6 @@ class PersonalPage extends Component {
   }
 
   handleOnClickHFinances() {
-    console.log("hello2");
     this.setState({
       showHGames: false,
       showHFinances: true,
@@ -270,7 +903,6 @@ class PersonalPage extends Component {
   }
 
   handleOnClickMMoney() {
-    console.log("hello3");
     this.setState({
       showHGames: false,
       showHFinances: false,
@@ -284,6 +916,11 @@ class PersonalPage extends Component {
     this.setState({
       XAxis: XAxis,
       YAxis: YAxis,
+      activeD: true,
+      activeW: false,
+      activeM: false,
+      activeHY: false,
+      activeY: false,
     })
   }
 
@@ -291,7 +928,12 @@ class PersonalPage extends Component {
     const {XAxis, YAxis} = fillXAxisWeek(base, Data);
     this.setState({
       XAxis: XAxis,
-      YAxis: YAxis
+      YAxis: YAxis,
+      activeD: false,
+      activeW: true,
+      activeM: false,
+      activeHY: false,
+      activeY: false,
     })
   }
 
@@ -299,7 +941,12 @@ class PersonalPage extends Component {
     const {XAxis, YAxis} = fillXAxis(base, Data, getDiffMonth, getDate2);
     this.setState({
       XAxis: XAxis,
-      YAxis: YAxis
+      YAxis: YAxis,
+      activeD: false,
+      activeW: false,
+      activeM: true,
+      activeHY: false,
+      activeY: false,
     })
   }
 
@@ -307,7 +954,12 @@ class PersonalPage extends Component {
     const {XAxis, YAxis} = fillXAxis(base, Data, getDiffHalvesYear, getDate2);
     this.setState({
       XAxis: XAxis,
-      YAxis: YAxis
+      YAxis: YAxis,
+      activeD: false,
+      activeW: false,
+      activeM: false,
+      activeHY: true,
+      activeY: false,
     })
   }
 
@@ -315,12 +967,25 @@ class PersonalPage extends Component {
     const {XAxis, YAxis} = fillXAxis(base, Data, getDiffYear, getDate3);
     this.setState({
       XAxis: XAxis,
-      YAxis: YAxis
+      YAxis: YAxis,
+      activeD: false,
+      activeW: false,
+      activeM: false,
+      activeHY: false,
+      activeY: true,
     })
   }
 
+  componentDidMount() {
+    this.showDays()
+  }
 
   render() {
+    const { showHFinances, showHGames, showMMoney } = this.state;
+    const { activeD, activeW, activeM, activeHY, activeY } = this.state;
+    const displayF = showHFinances ? {display: "block"} : {display: "none"};
+    const displayG = showHGames ? {display: "block"} : {display: "none"};
+    const displayM = showMMoney ? {display: "block"} : {display: "none"};
     return (
       <div className="personalPage">
         <div className="personalPage__header">
@@ -331,44 +996,46 @@ class PersonalPage extends Component {
               />
             <InputS type="submit" value="Финансы" classN="personalPage"
               actionOnClick={this.handleOnClickHFinances}
-              active={!this.state.showHGames}
+              active={!showHGames}
               />
           </div>
           <div className="personalPage__header-bottom">
             <InputS type="submit" value="Статистика" classN="personalPage"
-              display={this.state.showButtons} active={this.state.showHFinances}
+              display={this.state.showButtons} active={showHFinances}
               actionOnClick={this.handleOnClickHFinances}
               />
             <InputS type="submit" value="Управление деньгами" classN="personalPage"
-              display={this.state.showButtons} active={this.state.showMMoney}
+              display={this.state.showButtons} active={showMMoney}
               actionOnClick={this.handleOnClickMMoney}
               />
           </div>
         </div>
 
-        <div className="personalPage__graphic" style={{display: "none"}}>
+        <div className="personalPage__graphic" style={displayF}>
           <Graphic XAxis={this.state.XAxis} YAxis={this.state.YAxis}/>
           <div className="personalPage__chooseInterval">
-            <MainButton classN="personalPage" xTittle="" link="/"
-              actionOnClick={this.showDays} text="день"
-            />
-            <MainButton classN="personalPage" xTittle="" link="/"
-              actionOnClick={this.showWeeks} text="неделя"
-            />
-            <MainButton classN="personalPage" xTittle="" link="/"
-              actionOnClick={this.showMonths} text="месяц"
-            />
-            <MainButton classN="personalPage" xTittle="" link="/"
-              actionOnClick={this.showHalvesYear} text="6 мес."
-            />
-            <MainButton classN="personalPage" xTittle="" link="/"
-              actionOnClick={this.showYears} text="12 мес."
-            />
+            <InputS type="submit" value="день" classN="personalPage"
+              actionOnClick={this.showDays} active={activeD}
+              />
+            <InputS type="submit" value="неделя" classN="personalPage"
+              actionOnClick={this.showWeeks} active={activeW}
+              />
+            <InputS type="submit" value="месяц" classN="personalPage"
+              actionOnClick={this.showMonths} active={activeM}
+              />
+            <InputS type="submit" value="6 мес" classN="personalPage"
+              actionOnClick={this.showHalvesYear} active={activeHY}
+              />
+            <InputS type="submit" value="12 мес." classN="personalPage"
+              actionOnClick={this.showYears} active={activeY}
+              />
+
+
           </div>
         </div>
 
         <Statics
-          visibility={true}
+          visibility={showHGames}
           classN="personalPage"
           kills="12649"
           deaths="7344"
@@ -380,8 +1047,8 @@ class PersonalPage extends Component {
           winRate="55"
         />
 
-      <History visibility={true} classN="personalPage" response={Data}/>
-        <Profit visibility={false} classN="personalPage" response={Data}/>
+        <History visibility={showHGames} classN="personalPage" response={Data}/>
+        <Profit visibility={showHFinances} classN="personalPage" response={Data}/>
       </div>
     )
   }

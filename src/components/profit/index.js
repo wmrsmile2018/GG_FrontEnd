@@ -25,6 +25,8 @@ class Profits extends Component {
     super(props);
     this.state = {
       isOpen: false,
+      red: "#EB5757",
+      green: "#B2DF8A"
     };
     // this.handleClick = this.handleClick.bind(this);
   }
@@ -42,19 +44,33 @@ class Profits extends Component {
   // }
 
   render(){
-    const red = "1px solid #EB5757";
-    const green = "1px solid #B2DF8A";
+    const { red, green } = this.state;
     return (
-      <div className={"currentProfit " + this.props.classN + "__currentProfit" + this.props.iter} style={{border: this.props.isWin === true ? green : red}}>
+      <div
+      className={"currentProfit " + this.props.classN + "__currentProfit" + this.props.iter}
+      >
+      <div className={this.props.classN + "__currentProfit-wrap"}>
         <div className={this.props.classN + "__profit-team1"}>
-          {this.props.team1.map((player, i) => <Avatar2 key={i.toString(36) + i} src={player.photo}/>)}
+          {this.props.team1.map((player, i) =>
+            <Avatar2 key={i.toString(36) + i} src={player.photo}/>)}
         </div>
-        <div className={this.props.classN + "__profit-bet"}>{this.props.score}</div>
+        <div className={this.props.classN + "__profit-bet"}>
+          {this.props.score}
+        </div>
         <div className={this.props.classN + "__profit-team2"}>
           {this.props.team2.map((player, i) => <Avatar2 key={i.toString(36) + i} src={player.photo}/>)}
         </div>
-        <div className={this.props.classN + "__profit-time"}>{getTime(this.props.timestamp)}</div>
-        <div className={this.props.classN + "__profit-profit"}>{this.props.profit}</div>
+        <div className={this.props.classN + "__profit-time"}>
+          {getTime(this.props.timestamp)}
+        </div>
+        <div className={this.props.classN + "__profit-profit"}>
+          {this.props.profit}
+        </div>
+      </div>
+      <div className={"currentProfit-outline"}
+        style={{background: this.props.isWin === true ? green : red}}
+      />
+
       </div>
     )
   }
@@ -67,21 +83,24 @@ const Profit = (props) => {
   output.push(
     <div key={"columns"} className={props.classN + "__columns"}>
       <p className={props.classN + "__colums-column1"}>Команда1</p>
-      <p className={props.classN + "__colums-column2"}>Счет</p>
+      <p className={props.classN + "__colums-column1"}>Призовой фонд</p>
+      <p className={props.classN + "__colums-column2"}>Команда2</p>
       <p className={props.classN + "__colums-column3"}>Время</p>
-      <p className={props.classN + "__colums-column4"}>Команда2</p>
+      <p className={props.classN + "__colums-column4"}>Прибыль</p>
     </div>
   )
   for (let i = 0; i < props.response.length; i ++) {
     if (currentDate !== getDate(props.response[i].timestamp)) {
       currentDate = getDate(props.response[i].timestamp);
-      output.push(
-        <div key={i}
-          className={"currentDay " + props.classN + "__currentDay"}
-          >
-          {tmp}
-        </div>
-      );
+      if(i !== 0) {
+        output.push(
+          <div key={i}
+            className={"currentDay " + props.classN + "__currentDay"}
+            >
+            {tmp}
+          </div>
+        );
+      }
       output.push(<div
         key={i.toString(36) + i + "delimiter"}
         className={props.classN + "__delimiter"}>Дата: {currentDate}
@@ -89,7 +108,7 @@ const Profit = (props) => {
       )
       tmp = [];
     }
-    output.push(<Profits
+    tmp.push(<Profits
       key={i.toString(36) + i}
       iter={i}
       classN={props.classN}

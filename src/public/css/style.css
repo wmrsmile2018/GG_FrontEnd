@@ -105,6 +105,9 @@ code {
   width: 366px;
 }
 
+.inputS {
+  position: relative;
+}
 .inputS p {
   color: #83E4E4;
   font-size: 16px;
@@ -119,6 +122,10 @@ code {
   -webkit-mask-position: center center;
   mask-position: center center;
   cursor: pointer;
+}
+.inputS .inputS-shadow {
+  position: absolute;
+  top: 14px;
 }
 
 .avatar1 {
@@ -661,6 +668,9 @@ code {
   text-align: center;
   width: 160px;
 }
+.personalPage .personalPage__header .inputS .inputS-shadow {
+  width: 160px;
+}
 .personalPage .personalPage__header .personalPage__header-top {
   display: flex;
   flex-direction: row;
@@ -679,10 +689,133 @@ code {
   text-align: center;
   width: 210px;
 }
-.personalPage .personalPage__columns {
+.personalPage .personalPage__delimiter {
+  background: #11161B;
+  margin-bottom: 15px;
+  margin-top: 15px;
+  padding-left: 10px;
+  height: 28px;
+}
+.personalPage .personalPage__history .personalPage__columns {
   font-size: 16px;
   font-weight: bold;
   display: grid;
   grid-template-columns: 81px 39px 52px 81px;
-  grid-gap: 100px;
+  grid-gap: 90px;
+  margin-left: 30px;
+  margin-top: 15px;
+  margin-bottom: 5px;
+}
+.personalPage .personalPage__history .currentDay .currentHistory {
+  margin-bottom: 10px;
+  position: relative;
+}
+.personalPage .personalPage__history .currentDay .currentHistory .personalPage__currentHistory-wrap {
+  display: grid;
+  grid-template-columns: 90px 55px 90px 70px;
+  grid-gap: 70px;
+  padding-left: 35px;
+  height: 35px;
+  align-items: center;
+  position: relative;
+}
+.personalPage .personalPage__history .currentDay .currentHistory .avatar2 img {
+  height: 28px;
+  width: 28px;
+}
+.personalPage .personalPage__history .currentDay .currentHistory .personalPage__history-team1 {
+  display: flex;
+  flex-direction: row;
+}
+.personalPage .personalPage__history .currentDay .currentHistory .personalPage__history-team2 {
+  display: flex;
+  flex-direction: row;
+}
+.personalPage .personalPage__history .currentDay .currentHistory-outline {
+  -webkit-mask-image: url("../svg/border.svg");
+  mask-image: url("../svg/border.svg");
+  -webkit-mask-repeat: no-repeat;
+  mask-repeat: no-repeat;
+  -webkit-mask-position: center center;
+  mask-position: center center;
+  cursor: pointer;
+  height: 35px;
+  position: absolute;
+  top: 0;
+  width: 582px;
+}
+.personalPage .personalPage__graphic .highcharts-axis-labels text, .personalPage .personalPage__graphic .highcharts-legend text {
+  fill: #FFFFFF !important;
+}
+.personalPage .personalPage__graphic .highcharts-background {
+  fill: none;
+}
+.personalPage .personalPage__graphic .personalPage__chooseInterval {
+  display: grid;
+  grid-template-columns: 80px 80px 80px 80px 80px;
+  grid-gap: 10px;
+  width: 400px;
+  margin: 0 auto;
+}
+.personalPage .personalPage__graphic .personalPage__chooseInterval .inputS {
+  width: 80px;
+  display: block;
+}
+.personalPage .personalPage__graphic .personalPage__chooseInterval p {
+  text-align: center;
+  width: 80px;
+}
+.personalPage .personalPage__graphic .personalPage__chooseInterval .inputS-shadow {
+  width: 80px;
+}
+.personalPage .personalPage__profit .personalPage__columns {
+  font-size: 16px;
+  font-weight: bold;
+  display: grid;
+  grid-template-columns: 81px 81px 81px 52px 72px;
+  grid-gap: 40px;
+  margin-left: 30px;
+  margin-top: 15px;
+  margin-bottom: 5px;
+}
+.personalPage .personalPage__profit .currentDay .currentProfit {
+  margin-bottom: 10px;
+  position: relative;
+}
+.personalPage .personalPage__profit .currentDay .currentProfit .personalPage__currentProfit-wrap {
+  display: grid;
+  grid-template-columns: 96px 89px 72px 86px 48px;
+  grid-gap: 30px;
+  padding-left: 35px;
+  height: 35px;
+  align-items: center;
+  position: relative;
+}
+.personalPage .personalPage__profit .currentDay .currentProfit .personalPage__currentProfit-wrap .personalPage__profit-profit {
+  text-align: center;
+}
+.personalPage .personalPage__profit .currentDay .currentProfit .avatar2 img {
+  height: 28px;
+  width: 28px;
+}
+.personalPage .personalPage__profit .currentDay .currentProfit .personalPage__profit-team1 {
+  display: flex;
+  flex-direction: row;
+}
+.personalPage .personalPage__profit .currentDay .currentProfit .personalPage__profit-team2 {
+  display: flex;
+  flex-direction: row;
+}
+.personalPage .personalPage__profit .currentDay .currentProfit .currentProfit-outline {
+  -webkit-mask-image: url("../svg/border.svg");
+  mask-image: url("../svg/border.svg");
+  -webkit-mask-repeat: no-repeat;
+  mask-repeat: no-repeat;
+  -webkit-mask-position: center center;
+  mask-position: center center;
+  cursor: pointer;
+  height: 35px;
+  position: absolute;
+  top: 0;
+  width: 582px;
 }
