@@ -7,12 +7,11 @@ class Leaders extends Component {
 
   render() {
     const TopPlayers = this.props.objs.map((element, index) =>
-      <div key={index} className="leader">
+      <div key={index} className={"leader leader" + (1 + index)}>
         <p className="leader__nickname" style={{display: element.display1}} >{element.nickname}</p>
         <Avatar1
-          classN="leader"
+          classN="_leader"
           display="block"
-          svg={element.outline}
           w="100px"
           h="100px"
           img={element.photo}
@@ -22,7 +21,7 @@ class Leaders extends Component {
     );
 
     return(
-      <div className={"leaders " + this.props.classN + "-leaders"}>
+      <div className="leaders">
         {TopPlayers}
       </div>
     )

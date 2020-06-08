@@ -83,10 +83,10 @@ const Profit = (props) => {
   output.push(
     <div key={"columns"} className={props.classN + "__columns"}>
       <p className={props.classN + "__colums-column1"}>Команда1</p>
-      <p className={props.classN + "__colums-column1"}>Призовой фонд</p>
-      <p className={props.classN + "__colums-column2"}>Команда2</p>
-      <p className={props.classN + "__colums-column3"}>Время</p>
-      <p className={props.classN + "__colums-column4"}>Прибыль</p>
+      <p className={props.classN + "__colums-column2"}>Призовой фонд</p>
+      <p className={props.classN + "__colums-column3"}>Команда2</p>
+      <p className={props.classN + "__colums-column4"}>Время</p>
+      <p className={props.classN + "__colums-column5"}>Прибыль</p>
     </div>
   )
   for (let i = 0; i < props.response.length; i ++) {

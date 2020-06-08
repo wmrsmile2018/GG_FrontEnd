@@ -5,7 +5,8 @@ $color-dark-blue: #56CCF2;
 $color-white-blue: #83E4E4;
 $color-red: #EB5757;
 $color-yellow: #FFD074;
-$color-black: #11161B;
+$color-black1: #11161bb8;
+$color-black2: #11161b61;
 $color-gray: #F2F2F2;
 $color-white: #FFFFFF;
 $color-green: #B2DF8A;
@@ -13,10 +14,12 @@ $color-green: #B2DF8A;
 $size-standart: 16px;
 $size-big: 18px;
 $size-mini: 12px;
+$size-medium: 13px;
+$size-large: 24px;
 
 $width-big: 210px;
 $width-medium: 160px;
-$width-small: 80px;
+$width-small: 90px;
 
 @keyframes comeIn {
     0% { transform: scale(.5); opacity: 0; }
@@ -79,6 +82,12 @@ code {
   left: calc(50% - 250px);
 }
 
+//button group _________________________________________________________________
+.btn-group {
+  display: flex;
+  flex-direction: row;
+}
+
 //circular progress bar ________________________________________________________
 .circle-background {
 	fill: none;
@@ -117,7 +126,7 @@ code {
   input {
     padding: 0 10px;
     color: $color-white;
-    background: $color-black;
+    background: $color-black1;
     border: $color-white-blue 1px solid;
     border-radius: 3px;
     font-size: $size-mini;
@@ -162,9 +171,23 @@ code {
     -webkit-mask-size: 128px;
     width: 133px;
     height: 130px;
-    // mask-size:
     -webkit-mask-image: url('../svg/outline.svg');
     mask-image: url('../svg/outline.svg');
+    -webkit-mask-repeat: no-repeat;
+    mask-repeat: no-repeat;
+    mask-position: center center;
+  }
+
+  .outlineBorder {
+    position: absolute;
+    display: flex;
+    background: rgb(2,0,36);
+    background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(9,9,121,1) 35%, rgba(0,212,255,1) 100%);
+    -webkit-mask-size: 128px;
+    width: 133px;
+    height: 130px;
+    -webkit-mask-image: url('../svg/outlineBorder.svg');
+    mask-image: url('../svg/outlineBorder.svg');
     -webkit-mask-repeat: no-repeat;
     mask-repeat: no-repeat;
     mask-position: center center;
@@ -216,7 +239,6 @@ code {
 
 ////////////////////////////REGISTRATION////////////////////////////////////////
 
-//registration _________________________________________________________________
 .registration {
   position: relative;
   z-index: 100;
@@ -273,7 +295,7 @@ code {
 
     .ant-select-selector {
       height: 17px;
-      background: $color-black;
+      background: $color-black1;
       border: $color-white-blue 1px solid;
       border-radius: 3px;
       font-size: $size-mini;
@@ -369,7 +391,6 @@ code {
 
 ////////////////////////////SIGN IN/////////////////////////////////////////////
 
-//sign in ______________________________________________________________________
 .signIn {
   position: relative;
   z-index: 100;
@@ -460,7 +481,6 @@ code {
 
 ////////////////////////////RECOVERY PASSWORD///////////////////////////////////
 
-//recovery passwod _____________________________________________________________
 .recoveryPas {
   position: relative;
   z-index: 100;
@@ -508,7 +528,7 @@ code {
   position: relative;
   .post {
     width: 100%;
-    background: $color-black;
+    background: $color-black1;
     border: 1px solid $color-white-blue;
     border-radius: 15px;
     margin-bottom: 5px;
@@ -565,6 +585,10 @@ code {
               -webkit-mask-size: 40px;
               mask-size: 40px;
             }
+          }
+
+          .outlineBorder {
+            display: none;
           }
         }
       }
@@ -641,7 +665,7 @@ code {
   }
 
   .comments {
-    background: $color-black;
+    background: $color-black1;
     border: 1px solid $color-white-blue;
     // padding: 15px 40px 8px 40px;
     border-radius: 15px;
@@ -718,6 +742,7 @@ code {
 
 }
 
+//news portal___________________________________________________________________
 .news__portal {
   background: #181e26bf;
   width: 100%;
@@ -762,7 +787,6 @@ code {
   position: relative;
   margin: 0 auto;
   width: 582px;
-
 
   .statics {
     padding: 20px 30px;
@@ -852,10 +876,8 @@ code {
 
   }
 
-
-
   .personalPage__delimiter {
-    background: $color-black;
+    background: $color-black1;
     margin-bottom: 15px;
     margin-top: 15px;
     padding-left: 10px;
@@ -944,6 +966,7 @@ code {
       margin: 0 auto;
 
       .inputS {
+        min-width: 80px;
         width: $width-small;
         display: block;
       }
@@ -970,6 +993,26 @@ code {
       margin-left: 30px;
       margin-top: 15px;
       margin-bottom: 5px;
+
+      .personalPage__colums-column1 {
+        min-width: 81px;
+      }
+
+      .personalPage__colums-column2 {
+        min-width: 81px;
+      }
+
+      .personalPage__colums-column3 {
+        min-width: 81px;
+      }
+
+      .personalPage__colums-column4 {
+        min-width: 52px;
+      }
+
+      .personalPage__colums-column5 {
+        min-width: 72px;
+      }
     }
 
 
@@ -1025,4 +1068,1015 @@ code {
       }
     }
   }
+}
+
+/////////////////////////////MODE SELECTION/////////////////////////////////////
+
+.modeSelection {
+  padding-top: 20px;
+  z-index: 100;
+  position: relative;
+  margin: 0 auto;
+  width: 582px;
+
+  .modeSelection__leaders {
+    position: relative;
+    height: 300px;
+    width: calc(390px + 390px + 60px);
+    left: calc(50% - (390px + 390px + 60px)/2);
+
+    .modeSelection__leaders-outline1 {
+      width: 390px;
+      height: 198px;
+      position: absolute;
+
+      .modeSelection__largeWing{
+        position: absolute;
+        background: $color-white-blue;
+        height: 198px;
+        width: 390px;
+        -webkit-mask-image: url('../svg/largeWing.svg');
+        mask-image: url('../svg/largeWing.svg');
+        -webkit-mask-repeat: no-repeat;
+        mask-repeat: no-repeat;
+        -webkit-mask-position: center center;
+        mask-position: center center;
+      }
+
+      .modeSelection__mediumWing{
+        top: 52px;
+        left: 2px;
+        position: absolute;
+        background: $color-white-blue;
+        height: 72px;
+        width: 202px;
+        -webkit-mask-image: url('../svg/mediumWing.svg');
+        mask-image: url('../svg/largeWing.svg');
+        -webkit-mask-repeat: no-repeat;
+        mask-repeat: no-repeat;
+        -webkit-mask-position: center center;
+        mask-position: center center;
+      }
+
+      .modeSelection__smallWing{
+        top: 110px;
+        left: 67px;
+        position: absolute;
+        background: $color-white-blue;
+        height: 44px;
+        width: 142px;
+        -webkit-mask-image: url('../svg/smallWing.svg');
+        mask-image: url('../svg/largeWing.svg');
+        -webkit-mask-repeat: no-repeat;
+        mask-repeat: no-repeat;
+        -webkit-mask-position: center center;
+        mask-position: center center;
+      }
+    }
+
+    .modeSelection__leaders-outline2 {
+      transform: rotateY(180deg);
+      width: 390px;
+      height: 198px;
+      position: absolute;
+      left: 450px;
+
+      .modeSelection__largeWing{
+        position: absolute;
+        background: $color-white-blue;
+        height: 198px;
+        width: 390px;
+        -webkit-mask-image: url('../svg/largeWing.svg');
+        mask-image: url('../svg/largeWing.svg');
+        -webkit-mask-repeat: no-repeat;
+        mask-repeat: no-repeat;
+        -webkit-mask-position: center center;
+        mask-position: center center;
+      }
+
+      .modeSelection__mediumWing{
+        top: 52px;
+        left: 2px;
+        position: absolute;
+        background: $color-white-blue;
+        height: 72px;
+        width: 202px;
+        -webkit-mask-image: url('../svg/mediumWing.svg');
+        mask-image: url('../svg/largeWing.svg');
+        -webkit-mask-repeat: no-repeat;
+        mask-repeat: no-repeat;
+        -webkit-mask-position: center center;
+        mask-position: center center;
+      }
+
+      .modeSelection__smallWing{
+        top: 110px;
+        left: 67px;
+        position: absolute;
+        background: $color-white-blue;
+        height: 44px;
+        width: 142px;
+        -webkit-mask-image: url('../svg/smallWing.svg');
+        mask-image: url('../svg/largeWing.svg');
+        -webkit-mask-repeat: no-repeat;
+        mask-repeat: no-repeat;
+        -webkit-mask-position: center center;
+        mask-position: center center;
+      }
+    }
+
+    .leaders {
+      height: 300px;
+
+      .leader {
+        width: 75px;
+        height: 90px;
+        left: calc(50% - 75px/2);
+        position: absolute;
+        top: 33px;
+        .leader__nickname {
+          text-overflow: ellipsis;
+          white-space: nowrap;
+          overflow: hidden;
+          font-size: $size-mini;
+        }
+        .avatar1 {
+          margin-right: 20px;
+          width: 75px;
+          height: 70px;
+          margin: 0;
+
+          .outline, .outlineBorder {
+            -webkit-mask-size: 75px;
+            width: 75px;
+            height: 70px;
+          }
+
+          .outlineBorder, .shield {
+            background: rgb(171,171,171);
+            background: linear-gradient(0deg, rgba(171,171,171,1) 0%, rgba(255,255,255,1) 75%);
+          }
+
+          .avatar {
+            align-self: auto;
+            width: 43px;
+            height: 51px;
+            margin-top: 14px;
+
+            .photo {
+              width: 43px;
+              height: 51px;
+              -webkit-mask-size: 41px;
+              mask-size: 42px;
+            }
+
+            .shield {
+              width: 43px;
+              height: 51px;
+              -webkit-mask-size: 41px;
+              mask-size: 42px;
+            }
+          }
+        }
+      }
+
+      .leader1 {
+        .outline {
+          background: linear-gradient(180deg, #FFFFFF 0%, rgba(255, 255, 255, 0) 100%), #0E1272;
+        }
+        .outlineBorder, .shield {
+          background: rgb(0,61,255)!important;
+          background: linear-gradient(0deg, rgba(0,61,255,1) 0%, rgba(254,254,254,1) 75%)!important;
+        }
+      }
+
+      .leader2 {
+        top: 65px;
+        left: calc(50% - 75px/2 - 100px);
+        .outline {
+          background: linear-gradient(180deg, #F5F7F8 0%, rgba(255, 255, 255, 0) 100%), #353E3E;
+        }
+      }
+
+      .leader3 {
+        top: 65px;
+        left: calc(50% - 75px/2 + 100px);
+
+        .outline {
+          background: linear-gradient(180deg, #F5F7F8 0%, rgba(255, 255, 255, 0) 100%), #353E3E;;
+        }
+      }
+
+      .leader4{
+        top: 155px;
+        left: 110px;
+
+        .outline {
+          background: linear-gradient(180deg, #F5F7F8 0%, rgba(255, 255, 255, 0) 100%), #353E3E;;
+        }
+      }
+
+      .leader5 {
+        top: 175px;
+        left: 205px;
+        .outline {
+          background: linear-gradient(180deg, #F5F7F8 0%, rgba(255, 255, 255, 0) 100%), #353E3E;;
+        }
+      }
+
+      .leader6 {
+        top: 200px;
+        left: 295px;
+        .outline {
+          background: linear-gradient(180deg, #F5F7F8 0%, rgba(255, 255, 255, 0) 100%), #353E3E;;
+        }
+      }
+
+      .leader7 {
+        top: 155px;
+        right: 110px;
+        left: auto;
+        .outline {
+          background: linear-gradient(180deg, #F5F7F8 0%, rgba(255, 255, 255, 0) 100%), #353E3E;;
+        }
+      }
+
+      .leader8 {
+        top: 175px;
+        right: 205px;
+        left: auto;
+        .outline {
+          background: linear-gradient(180deg, #F5F7F8 0%, rgba(255, 255, 255, 0) 100%), #353E3E;;
+        }
+      }
+
+      .leader9 {
+        top: 200px;
+        right: 295px;
+        left: auto;
+        .outline {
+          background: linear-gradient(180deg, #F5F7F8 0%, rgba(255, 255, 255, 0) 100%), #353E3E;;
+        }
+      }
+    }
+  }
+
+
+  .modeSelection__content {
+
+    .modeSelection-tittle {
+      font-family: 'Roboto Mono';
+      font-size: $size-big;
+      margin-bottom: 5px;
+      font-weight: bold;
+    }
+
+    .modeSelection__mode, .modeSelection__prize, .modeSelection__rules {
+      text-align: center;
+      margin-bottom: 20px;
+    }
+
+    .modeSelection__mode {
+      .inputS {
+        width: $width-medium;
+        p {
+          color: white!important;
+          font-family: 'cyberdyne';
+        }
+      }
+      .btn-group_modeSelection {
+        width: 350px;
+        margin: 0 auto;
+      }
+    }
+
+    .modeSelection__prize {
+      .btn-group_modeSelection1, .btn-group_modeSelection2 {
+        width: 400px;
+        margin: 0 auto;
+        margin-bottom: 10px;
+        justify-content: space-around;
+
+        .inputS {
+          p {
+            color: white!important;
+            font-family: 'cyberdyne';
+          }
+        }
+      }
+
+      .btn-group_modeSelection2 {
+        width: 300px;
+      }
+
+      .modeSelection__prize__inputS {
+        width: $width-small;
+      }
+    }
+
+
+    .modeSelection__rules {
+      .modeSelection__rules-content {
+        display: grid;
+        grid-template-columns: calc(100%/3) calc(100%/3) calc(100%/3);
+
+        .modeSelection__rule {
+          background: linear-gradient(180deg, #FFFFFF 0%, rgba(255, 255, 255, 0) 100%), #0E1272;
+          width: 100px;
+          height: 100px;
+          margin: 0 auto;
+        }
+      }
+    }
+
+    .inputS {
+      width: $width-small;
+      margin: 0 auto;
+
+      p {
+        text-align: center;
+        width: 100%;
+      }
+    }
+  }
+}
+
+/////////////////////////////HALL OF FAME///////////////////////////////////////
+
+.hallOfFame {
+  padding-top: 20px;
+  z-index: 100;
+  position: relative;
+  margin: 0 auto;
+  width: 582px;
+
+  .hallOfFame__header {
+    height: 250px;
+    display: grid;
+    grid-template-columns: 60% 30%;
+    grid-gap: 10%;
+
+    .hallOfFame__leaders {
+      .hallOfFame__leaders-tittle {
+        text-align: center;
+      }
+
+      .leaders {
+        width: 100%;
+        height: 75%;
+        position: relative;
+        top: 40px;
+        .leader {
+          width: 75px;
+          height: 90px;
+          left: calc(50% - 75px/2);
+          position: absolute;
+          .leader__nickname {
+            text-overflow: ellipsis;
+            white-space: nowrap;
+            overflow: hidden;
+            font-size: $size-mini;
+          }
+          .avatar1 {
+            margin-right: 20px;
+            width: 75px;
+            height: 70px;
+            margin: 0;
+
+            .outlineBorder, .shield {
+              background: rgb(171,171,171);
+              background: linear-gradient(0deg, rgba(171,171,171,1) 0%, rgba(255,255,255,1) 75%);
+            }
+
+            .outline, .outlineBorder {
+              -webkit-mask-size: 75px;
+              width: 75px;
+              height: 70px;
+            }
+
+            .avatar {
+              align-self: auto;
+              width: 43px;
+              height: 51px;
+              margin-top: 14px;
+
+              .photo {
+                width: 43px;
+                height: 51px;
+                -webkit-mask-size: 41px;
+                mask-size: 42px;
+              }
+
+              .shield {
+                width: 43px;
+                height: 51px;
+                -webkit-mask-size: 41px;
+                mask-size: 42px;
+              }
+            }
+          }
+        }
+
+        .leader1 {
+          .outline {
+            background: linear-gradient(180deg, #FFFFFF 0%, rgba(255, 255, 255, 0) 100%), #0E1272;
+          }
+          .outlineBorder, .shield {
+            background: rgb(0,61,255)!important;
+            background: linear-gradient(0deg, rgba(0,61,255,1) 0%, rgba(254,254,254,1) 75%)!important;
+          }
+        }
+
+        .leader2 {
+          top: 100px;
+          left: 35px;
+          .outline {
+            background: linear-gradient(180deg, #F5F7F8 0%, rgba(255, 255, 255, 0) 100%), #353E3E;;
+          }
+        }
+
+        .leader3 {
+          top: 100px;
+          left: 240px;
+          .outline {
+            background: linear-gradient(180deg, #F5F7F8 0%, rgba(255, 255, 255, 0) 100%), #353E3E;;
+          }
+
+        }
+      }
+      .hallOfFame__leaders-outline1 {
+        width: 159px;
+        height: 159px;
+        position: absolute;
+
+        .hallOfFame__largeWing{
+          position: absolute;
+          background: $color-white-blue;
+          height: 159px;
+          width: 159px;
+          -webkit-mask-image: url('../svg/largeWingMini.svg');
+          mask-image: url('../svg/largeWingMini.svg');
+          -webkit-mask-repeat: no-repeat;
+          mask-repeat: no-repeat;
+          -webkit-mask-position: center center;
+          mask-position: center center;
+        }
+
+        .hallOfFame__mediumWing{
+          top: 40px;
+          left: 2px;
+          position: absolute;
+          background: $color-white-blue;
+          height: 61px;
+          width: 83px;
+          -webkit-mask-image: url('../svg/mediumWingMini.svg');
+          mask-image: url('../svg/largeWingMini.svg');
+          -webkit-mask-repeat: no-repeat;
+          mask-repeat: no-repeat;
+          -webkit-mask-position: center center;
+          mask-position: center center;
+        }
+
+        .hallOfFame__smallWing{
+          top: 87px;
+          left: 30px;
+          position: absolute;
+          background: $color-white-blue;
+          height: 36px;
+          width: 58px;
+          -webkit-mask-image: url('../svg/smallWingMini.svg');
+          mask-image: url('../svg/largeWingMini.svg');
+          -webkit-mask-repeat: no-repeat;
+          mask-repeat: no-repeat;
+          -webkit-mask-position: center center;
+          mask-position: center center;
+        }
+      }
+      .hallOfFame__leaders-outline2 {
+        transform: rotateY(180deg);
+        left: 450px;
+        width: 159px;
+        height: 159px;
+        float: right;
+
+        .hallOfFame__largeWing{
+          position: absolute;
+          background: $color-white-blue;
+          height: 159px;
+          width: 159px;
+          -webkit-mask-image: url('../svg/largeWingMini.svg');
+          mask-image: url('../svg/largeWingMini.svg');
+          -webkit-mask-repeat: no-repeat;
+          mask-repeat: no-repeat;
+          -webkit-mask-position: center center;
+          mask-position: center center;
+        }
+
+        .hallOfFame__mediumWing{
+          top: 40px;
+          left: 2px;
+          position: absolute;
+          background: $color-white-blue;
+          height: 61px;
+          width: 83px;
+          -webkit-mask-image: url('../svg/mediumWingMini.svg');
+          mask-image: url('../svg/largeWingMini.svg');
+          -webkit-mask-repeat: no-repeat;
+          mask-repeat: no-repeat;
+          -webkit-mask-position: center center;
+          mask-position: center center;
+        }
+
+        .hallOfFame__smallWing{
+          top: 87px;
+          left: 30px;
+          position: absolute;
+          background: $color-white-blue;
+          height: 36px;
+          width: 58px;
+          -webkit-mask-image: url('../svg/smallWingMini.svg');
+          mask-image: url('../svg/largeWingMini.svg');
+          -webkit-mask-repeat: no-repeat;
+          mask-repeat: no-repeat;
+          -webkit-mask-position: center center;
+          mask-position: center center;
+        }
+
+      }
+    }
+
+    .hallOfFame__information {
+      border: 1px solid $color-yellow;
+      border-radius: 15px;
+
+      .hallOfFame__information-data {
+        font-size: $size-mini;
+        margin-left: 10px;
+        div {
+          margin-top: 5px;
+          display: grid;
+          grid-template-columns: 50% 45%;
+          grid-gap: 5%;
+
+          p {
+            font-family: 'Roboto Mono';
+            margin-right: 10px;
+            font-size: $size-medium;
+          }
+          label {
+            font-family: "cyberdyne";
+            color: $color-white-blue;
+            font-size: $size-medium;
+          }
+        }
+      }
+
+      .avatar1 {
+        margin: 10px auto;
+        height: 60px;
+        width: 50px;
+
+        .avatar {
+          height: 60px;
+          width: 50px;
+        }
+        .photo {
+          -webkit-mask-size: 50px;
+          height: 60px;
+          width: 50px;
+        }
+
+        .shield {
+          -webkit-mask-size: 50px;
+          height: 60px;
+          width: 50px;
+        }
+
+        .outline {
+          background: none;
+          height: 60px;
+          width: 50px;
+        }
+
+        .outlineBorder {
+          background: none;
+          display: none;
+        }
+      }
+    }
+  }
+
+  .hallOfFame__list {
+    margin-top: 30px;
+    .hallOfFame__list-header {
+      display: grid;
+      grid-template-columns: 55px 50px 65px 75px;
+      grid-gap: 50px;
+      background: $color-black1;
+      padding-left: 150px;
+      font-size: $size-mini;
+      height: 50px;
+      padding-top: 5px;
+    }
+
+    .hallOfFame__list-element {
+      display: grid;
+      grid-template-columns: 30px 99px 95px 90px 105px 113px;
+      grid-gap: 10px;
+      height: 105px;
+
+      .hallOfFame__position {
+        width: 30px;
+        padding-top: 30px;
+        font-size: $size-large;
+        font-family: "cyberdyne 3D";
+        color: $color-yellow;
+      }
+
+      .hallOfFame__raiting, .hallOfFame__winRate,
+        .hallOfFame__matchesPlayed, .hallOfFame__matchesWon {
+        padding-top: 30px;
+        font-family: 'cyberdyne';
+        font-size: $size-big;
+        color: $color-white-blue;
+      }
+
+      .hallOfFame__leader {
+        padding-top: 10px;
+        .avatar1 {
+          width: 75px;
+          height: 70px;
+          margin: 0 auto;
+
+          .outline {
+            -webkit-mask-size: 75px;
+            width: 75px;
+            height: 70px;
+            background: linear-gradient(180deg, #F5F7F8 0%, rgba(255, 255, 255, 0) 100%), #353E3E;
+            .avatar {
+              margin: 0 auto;
+              width: 43px;
+              height: 51px;
+              margin-top: 14px;
+              .photo {
+                width: 43px;
+                height: 51px;
+                -webkit-mask-size: 41px;
+              }
+
+              .shield {
+                width: 43px;
+                height: 51px;
+                -webkit-mask-size: 41px;
+              }
+            }
+          }
+
+          .outlineBorder {
+            -webkit-mask-size: 75px;
+            width: 75px;
+            height: 70px;
+            background: rgb(171,171,171);
+            background: linear-gradient(0deg, rgba(171,171,171,1) 0%, rgba(255,255,255,1) 75%);
+          }
+        }
+
+        .leader__nickname {
+          font-size: $size-mini;
+          text-align: center;
+        }
+      }
+    }
+
+    .hallOfFame__list-type0 {
+      background: $color-black2;
+    }
+  }
+}
+
+/////////////////////////////ARENA//////////////////////////////////////////////
+
+.arena {
+  padding-top: 20px;
+  z-index: 100;
+  position: relative;
+  margin: 0 auto;
+  width: 582px;
+
+  .arena__leaders {
+    position: relative;
+    height: 300px;
+    width: calc(390px + 390px + 60px);
+    left: calc(50% - (390px + 390px + 60px)/2);
+
+    .arena__leaders-outline1 {
+      width: 390px;
+      height: 198px;
+      position: absolute;
+
+      .arena__largeWing{
+        position: absolute;
+        background: $color-white-blue;
+        height: 198px;
+        width: 390px;
+        -webkit-mask-image: url('../svg/largeWing.svg');
+        mask-image: url('../svg/largeWing.svg');
+        -webkit-mask-repeat: no-repeat;
+        mask-repeat: no-repeat;
+        -webkit-mask-position: center center;
+        mask-position: center center;
+      }
+
+      .arena__mediumWing{
+        top: 52px;
+        left: 2px;
+        position: absolute;
+        background: $color-white-blue;
+        height: 72px;
+        width: 202px;
+        -webkit-mask-image: url('../svg/mediumWing.svg');
+        mask-image: url('../svg/largeWing.svg');
+        -webkit-mask-repeat: no-repeat;
+        mask-repeat: no-repeat;
+        -webkit-mask-position: center center;
+        mask-position: center center;
+      }
+
+      .arena__smallWing{
+        top: 110px;
+        left: 67px;
+        position: absolute;
+        background: $color-white-blue;
+        height: 44px;
+        width: 142px;
+        -webkit-mask-image: url('../svg/smallWing.svg');
+        mask-image: url('../svg/largeWing.svg');
+        -webkit-mask-repeat: no-repeat;
+        mask-repeat: no-repeat;
+        -webkit-mask-position: center center;
+        mask-position: center center;
+      }
+    }
+
+    .arena__leaders-outline2 {
+      transform: rotateY(180deg);
+      width: 390px;
+      height: 198px;
+      position: absolute;
+      left: 450px;
+
+      .arena__largeWing{
+        position: absolute;
+        background: $color-white-blue;
+        height: 198px;
+        width: 390px;
+        -webkit-mask-image: url('../svg/largeWing.svg');
+        mask-image: url('../svg/largeWing.svg');
+        -webkit-mask-repeat: no-repeat;
+        mask-repeat: no-repeat;
+        -webkit-mask-position: center center;
+        mask-position: center center;
+      }
+
+      .arena__mediumWing{
+        top: 52px;
+        left: 2px;
+        position: absolute;
+        background: $color-white-blue;
+        height: 72px;
+        width: 202px;
+        -webkit-mask-image: url('../svg/mediumWing.svg');
+        mask-image: url('../svg/largeWing.svg');
+        -webkit-mask-repeat: no-repeat;
+        mask-repeat: no-repeat;
+        -webkit-mask-position: center center;
+        mask-position: center center;
+      }
+
+      .arena__smallWing{
+        top: 110px;
+        left: 67px;
+        position: absolute;
+        background: $color-white-blue;
+        height: 44px;
+        width: 142px;
+        -webkit-mask-image: url('../svg/smallWing.svg');
+        mask-image: url('../svg/largeWing.svg');
+        -webkit-mask-repeat: no-repeat;
+        mask-repeat: no-repeat;
+        -webkit-mask-position: center center;
+        mask-position: center center;
+      }
+    }
+
+    .leaders {
+      height: 300px;
+
+      .leader {
+        width: 75px;
+        height: 90px;
+        left: calc(50% - 75px/2);
+        position: absolute;
+        top: 33px;
+        .leader__nickname {
+          text-overflow: ellipsis;
+          white-space: nowrap;
+          overflow: hidden;
+          font-size: $size-mini;
+        }
+        .avatar1 {
+          margin-right: 20px;
+          width: 75px;
+          height: 70px;
+          margin: 0;
+
+          .outlineBorder, .shield {
+            background: rgb(171,171,171);
+            background: linear-gradient(0deg, rgba(171,171,171,1) 0%, rgba(255,255,255,1) 75%);
+          }
+
+          .outline, .outlineBorder {
+            -webkit-mask-size: 75px;
+            width: 75px;
+            height: 70px;
+          }
+
+          .avatar {
+            align-self: auto;
+            width: 43px;
+            height: 51px;
+            margin-top: 14px;
+
+            .photo {
+              width: 43px;
+              height: 51px;
+              -webkit-mask-size: 41px;
+              mask-size: 42px;
+            }
+
+            .shield {
+              width: 43px;
+              height: 51px;
+              -webkit-mask-size: 41px;
+              mask-size: 42px;
+            }
+          }
+        }
+      }
+
+      .leader1 {
+        .outline {
+          background: linear-gradient(180deg, #FFFFFF 0%, rgba(255, 255, 255, 0) 100%), #0E1272;
+        }
+        .outlineBorder, .shield {
+          background: rgb(0,61,255)!important;
+          background: linear-gradient(0deg, rgba(0,61,255,1) 0%, rgba(254,254,254,1) 75%)!important;
+        }
+      }
+
+      .leader2 {
+        top: 65px;
+        left: calc(50% - 75px/2 - 100px);
+        .outline {
+          background: linear-gradient(180deg, #F5F7F8 0%, rgba(255, 255, 255, 0) 100%), #353E3E;
+        }
+      }
+
+      .leader3 {
+        top: 65px;
+        left: calc(50% - 75px/2 + 100px);
+
+        .outline {
+          background: linear-gradient(180deg, #F5F7F8 0%, rgba(255, 255, 255, 0) 100%), #353E3E;;
+        }
+      }
+
+      .leader4{
+        top: 155px;
+        left: 110px;
+
+        .outline {
+          background: linear-gradient(180deg, #F5F7F8 0%, rgba(255, 255, 255, 0) 100%), #353E3E;;
+        }
+      }
+
+      .leader5 {
+        top: 175px;
+        left: 205px;
+        .outline {
+          background: linear-gradient(180deg, #F5F7F8 0%, rgba(255, 255, 255, 0) 100%), #353E3E;;
+        }
+      }
+
+      .leader6 {
+        top: 200px;
+        left: 295px;
+        .outline {
+          background: linear-gradient(180deg, #F5F7F8 0%, rgba(255, 255, 255, 0) 100%), #353E3E;;
+        }
+      }
+
+      .leader7 {
+        top: 155px;
+        right: 110px;
+        left: auto;
+        .outline {
+          background: linear-gradient(180deg, #F5F7F8 0%, rgba(255, 255, 255, 0) 100%), #353E3E;;
+        }
+      }
+
+      .leader8 {
+        top: 175px;
+        right: 205px;
+        left: auto;
+        .outline {
+          background: linear-gradient(180deg, #F5F7F8 0%, rgba(255, 255, 255, 0) 100%), #353E3E;;
+        }
+      }
+
+      .leader9 {
+        top: 200px;
+        right: 295px;
+        left: auto;
+        .outline {
+          background: linear-gradient(180deg, #F5F7F8 0%, rgba(255, 255, 255, 0) 100%), #353E3E;;
+        }
+      }
+    }
+  }
+
+  .arena__header {
+    font-family: 'Roboto Mono';
+    font-weight: bold;
+    font-size: $size-large;
+    text-align: center;
+    margin: 20px 0;
+  }
+
+  .arena__content {
+    border: 1px solid $color-white-blue;
+    border-radius: 15px;
+    display: grid;
+    grid-template-columns: 150px calc(100% - 300px) 150px;
+    padding: 20px 0;
+
+    .avatar1 {
+      height: 85px;
+      width: 70px!important;
+      margin: 0 auto;
+      .avatar, .photo, .shield, .outline {
+        height: 85px;
+        width: 70px;
+      }
+      .outline {
+        background: none;
+      }
+      .outlineBorder {
+        display: none;
+      }
+    }
+
+    .arena__player1, .arena__player2 {
+      font-size: $size-big;
+      text-align: center;
+      font-weight: bold;
+
+      .inputS {
+        width: $width-small;
+        margin: 0 auto;
+        margin-top: 10px;
+
+        p {
+          font-weight: normal;
+          text-align: center;
+          width: 100%;
+          color: white!important;
+        }
+      }
+    }
+
+    .arena__ticker {
+      text-align: center;
+      .arena__tittle {
+        font-size: $size-big;
+      }
+
+      .arena__ticker {
+        font-family: 'cyberdyne outline';
+        font-size: 36px;
+        color: $color-yellow;
+        line-height: 25px;
+        height: 25px;
+
+      }
+
+      .arena__bet {
+        font-family: 'cyberdyne condensed';
+        font-size: 36px;
+        color: $color-red;
+
+      }
+    }
+  }
+
 }

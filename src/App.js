@@ -36,7 +36,7 @@ function App() {
 
         <Route path="/arena" component={Arena}/>
         <Route path="/hall-of-fame" component={HallOfFame}/>
-        <Route path="/mode-selection" component={ModeSelection}/>
+        <Route path="/mode-selection" component={ModeSelection}/> // доделать треугольники и рамку
         <Route path="/options" component={Option}/>
         <Route path="/personal-page" component={PersonalPage}/>
 

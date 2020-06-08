@@ -6,3 +6,27 @@
       url('cyberdyne.woff') format('woff'),
       url('cyberdyne.ttf') format('truetype');
 }
+
+@font-face
+{
+    font-family: 'cyberdyne 3D';
+    src: url('cyberdyne3d.ttf') format('truetype');
+}
+
+@font-face
+{
+    font-family: 'cyberdyne outline';
+    src: url('cyberdyneout.ttf') format('truetype');
+}
+
+@font-face
+{
+    font-family: 'cyberdyne italic';
+    src: url('cyberdyneoutital.ttf') format('truetype');
+}
+
+@font-face
+{
+    font-family: 'cyberdyne condensed';
+    src: url('cyberdynecond.ttf') format('truetype');
+}

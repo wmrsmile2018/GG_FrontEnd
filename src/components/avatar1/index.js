@@ -2,25 +2,26 @@ import React, {Component} from 'react';
 // аватар с контуром в виде щита
 class Avatar1 extends Component {
   render() {
+    const { classN, w, h, display } = this.props;
     return (
-      <div className={"avatar1 " + this.props.classN}>
-        <div className={"outline " + this.props.classN + "__outline"}
-          width={this.props.w}
-          height={this.props.h}
-          style={{display: this.props.display}}
+      <div className={"avatar1 " + classN}>
+        <div className={"outline " + classN + "__outline"}
+          width={w}
+          height={h}
+          style={{display: display}}
           alt=""
           >
-          <div className={"avatar " +  this.props.classN + "__avatar"}>
-            <img className={"photo " +  this.props.classN + "__avatar"}
+          <div className={"avatar " +  classN + "__avatar"}>
+            <img className={"photo " +  classN + "__avatar"}
               src={"http://tympanus.net/codrops-playground/assets/images/cssref/properties/mask-image/field.jpg"}
-              width={this.props.w}
-              height={this.props.h}
+              width={w}
+              height={h}
               alt=""
             />
-            <div className={"shield " +  this.props.classN + "__border"}/>
+            <div className={"shield " +  classN + "__border"}/>
           </div>
         </div>
-
+        <div className={"outlineBorder " + classN + "__outlineBorder"}></div>
       </div>
     )
   }

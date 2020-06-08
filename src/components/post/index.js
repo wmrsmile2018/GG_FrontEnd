@@ -72,7 +72,7 @@ class Post extends Component {
               <Avatar1
                 classN={this.props.classN + "__post-avatar1"}
                 avatar={this.props.img}
-                w="20" h="20"/>
+              />
               <p className={this.props.classN + "__post-author"}>
                 {this.props.author}
               </p>

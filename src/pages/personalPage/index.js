@@ -899,7 +899,6 @@ class PersonalPage extends Component {
       showMMoney: false,
       showButtons: 'block'
     })
-
   }
 
   handleOnClickMMoney() {

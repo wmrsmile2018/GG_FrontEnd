@@ -5,9 +5,9 @@ import placeholder from '../../public/images/placeholder.jpg';
 import Outline from '../../public/svg/outline.svg';
 
 const leaders = [
-  {photo: placeholder, display1: "none", display2: "block", outline: Outline, nickname: "nagibator1234"},
-  // {"photo": "http://placehold.it/32x32"},
-  // {"photo": "http://placehold.it/32x32"},
+  {photo: placeholder, display1: "block", display2: "none", outline: Outline, nickname: "nagibator1234"},
+  {photo: placeholder, display1: "block", display2: "none", outline: Outline, nickname: "nagibator1234"},
+  {photo: placeholder, display1: "block", display2: "none", outline: Outline, nickname: "nagibator1234"},
 ]
 
 
@@ -19,7 +19,7 @@ const tmpObjs = [
     "win_rate": "45%",
     "matches_played": 5000,
     "matches_won": 2000,
-    "name": "Nagibator12",
+    "nickname": "Nagibator12",
     "photo": "http://placehold.it/32x32",
     "position": 1
   },
@@ -30,7 +30,7 @@ const tmpObjs = [
     "win_rate": "45%",
     "matches_played": 5000,
     "matches_won": 2000,
-    "name": "Nagibator12",
+    "nickname": "Nagibator12",
     "photo": "http://placehold.it/32x32",
     "position": 2
   },
@@ -41,7 +41,7 @@ const tmpObjs = [
     "win_rate": "45%",
     "matches_played": 5000,
     "matches_won": 2000,
-    "name": "Nagibator12",
+    "nickname": "Nagibator12",
     "photo": "http://placehold.it/32x32",
     "position": 3
   },
@@ -52,7 +52,7 @@ const tmpObjs = [
     "win_rate": "45%",
     "matches_played": 5000,
     "matches_won": 2000,
-    "name": "Nagibator12",
+    "nickname": "Nagibator12",
     "photo": "http://placehold.it/32x32",
     "position": 4
   },
@@ -63,7 +63,7 @@ const tmpObjs = [
     "win_rate": "45%",
     "matches_played": 5000,
     "matches_won": 2000,
-    "name": "Nagibator12",
+    "nickname": "Nagibator12",
     "photo": "http://placehold.it/32x32",
     "position": 5
   },
@@ -74,7 +74,7 @@ const tmpObjs = [
     "win_rate": "45%",
     "matches_played": 5000,
     "matches_won": 2000,
-    "name": "Nagibator12",
+    "nickname": "Nagibator12",
     "photo": "http://placehold.it/32x32",
     "position": 6
   },
@@ -85,30 +85,29 @@ const tmpObjs = [
     "win_rate": "45%",
     "matches_played": 5000,
     "matches_won": 2000,
-    "name": "Nagibator12",
+    "nickname": "Nagibator12",
     "photo": "http://placehold.it/32x32",
     "position": 7
   }
 ];
-
+// (+element.raiting).toLocaleString()
 const List = tmpObjs.map((element, index) =>
-  <div key={index} className={"hallOfFame__list" + index + " hallOfFame__list-type" + index % 2}>
+  <div key={index} className={"hallOfFame__list-element hallOfFame__list-type" + index % 2}>
     <p className="hallOfFame__position">{element.position}</p>
     <div className="hallOfFame__leader">
       <Avatar1
-        classN="hallOfFame"
+        classN="_leader"
         display="block"
-        svg={Outline}
         w="100px"
         h="100px"
-        img={placeholder}
-        />
-    <p className="leader__nickname" style={{display: element.display2}} >{element.nickname}</p>
+        img={element.photo}
+      />
+      <p className="leader__nickname" style={{display: element.display2}}>{element.nickname}</p>
     </div>
     <p className="hallOfFame__raiting">{element.raiting}</p>
-    <p className="hallOfFame__winRate">{element.winRate}</p>
-    <p className="hallOfFame__matchesPlayed">{element.matchesPlayed}</p>
-    <p className="hallOfFame__matchesWon">{element.matchesWon}</p>
+    <p className="hallOfFame__winRate">{element.win_rate}</p>
+    <p className="hallOfFame__matchesPlayed">{element.matches_played}</p>
+    <p className="hallOfFame__matchesWon">{element.matches_won}</p>
   </div>
 )
 
@@ -116,24 +115,55 @@ const HallOfFame = () => {
   return(
     <div className="hallOfFame">
       <div className="hallOfFame__header">
-        <Leaders classN="hallOfFame" objs={leaders}/>
+        <div className="hallOfFame__leaders">
+          <p className="hallOfFame__leaders-tittle">
+            ЗАЛ СЛАВЫ
+          </p>
+          <div className="hallOfFame__leaders-outline1">
+            <div className="hallOfFame__largeWing"></div>
+            <div className="hallOfFame__mediumWing"></div>
+            <div className="hallOfFame__smallWing"></div>
+          </div>
+          <div className="hallOfFame__leaders-outline2">
+            <div className="hallOfFame__largeWing"></div>
+            <div className="hallOfFame__mediumWing"></div>
+            <div className="hallOfFame__smallWing"></div>
+          </div>
+          <Leaders classN="hallOfFame" objs={leaders}/>
+        </div>
         <div className="hallOfFame__information">
           <Avatar1
-            classN="arena"
-            display="none"
-            svg={null}
+            classN="_arena"
             w="50px"
             h="50px"
-            img={placeholder}
+            avatar={placeholder}
           />
+        <div className="hallOfFame__information-data">
+            <div className="hallOfFame__information-raiting">
+              <p>Рейнтинг</p>
+              <label>7.762</label>
+            </div>
+            <div className="hallOfFame__information-winRate">
+              <p>Процент<br/>побед</p>
+              <label>45%</label>
+            </div>
+            <div className="hallOfFame__information-matchesPlayed">
+              <p>Сыгранные<br/>матчи</p>
+              <label>45%</label>
+            </div>
+            <div className="hallOfFame__information-matchesWon">
+              <p>Выигранные<br/>матчи</p>
+              <label>45%</label>
+            </div>
+          </div>
         </div>
       </div>
       <div className="hallOfFame__list">
         <div className="hallOfFame__list-header">
           <p>Рейнтинг</p>
-          <p>Процент побед</p>
-          <p>Сыгранные матчи</p>
-          <p>Выигранные матчи</p>
+          <p>Процент<br/>побед</p>
+          <p>Сыгранные<br/>матчи</p>
+          <p>Выигранные<br/>матчи</p>
         </div>
         {List}
       </div>
