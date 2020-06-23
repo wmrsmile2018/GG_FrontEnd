@@ -2,6 +2,9 @@ import React, {Component} from 'react';
 import InputS from '../../components/inputSubmit/index';
 import Leaders from '../../components/leaders/index';
 import ButtonGroup from '../../components/buttonGroup/index';
+import getHistory from '../../modules/history';
+import { setPath } from '../../actions/actionPath.js';
+import { connect } from 'react-redux';
 
 const tmpObjs = [
   {photo: "http://placehold.it/32x32", display1: "block", display2: "none", nickname: "12345678901234567890nagibator1234"},
@@ -59,12 +62,22 @@ class ModeSelection extends Component {
     })
   }
 
+  componentDidMount() {
+    this.props.setPath(getHistory().location.pathname);
+  }
+
+  handleOnClick() {
+    getHistory().push('/hall-of-fame');
+  }
+
   render() {
     const { prize20P, prize100P, prize200P, prize500P, prize1000P, prize2000P,
       prize4000P, mode11 ,mode22 } = this.state;
     return(
       <div className="modeSelection">
-        <div className="modeSelection__leaders">
+        <div className="modeSelection__leaders"
+          onClick={this.handleOnClick}
+          >
           <div className="modeSelection__leaders-outline1">
             <div className="modeSelection__largeWing"></div>
             <div className="modeSelection__mediumWing"></div>
@@ -81,35 +94,53 @@ class ModeSelection extends Component {
         <div className="modeSelection__content">
           <form>
             <div className="modeSelection__mode">
-              <p className="modeSelection__mode-tittle modeSelection-tittle">
+              <p className="modeSelection__mode-title modeSelection-title">
                 Выберите тип игры
               </p>
               <ButtonGroup classN="modeSelection">
-                <InputS actionOnClick={this.handleOnClickMode} classN="modeSelection__mode" type="submit" name="mode11" value="1:1" active={mode11}/>
-                <InputS actionOnClick={this.handleOnClickMode} classN="modeSelection__mode" type="submit" name="mode22" value="2:2" active={mode22}/>
+                <InputS actionOnClick={this.handleOnClickMode} classN="modeSelection__mode" type="submit" name="mode11" active={mode11}>
+                  <p data-name="mode11">1:1</p>
+                </InputS>
+                <InputS actionOnClick={this.handleOnClickMode} classN="modeSelection__mode" type="submit" name="mode22" active={mode22}>
+                  <p data-name="mode22">2:2</p>
+                </InputS>
               </ButtonGroup>
 
             </div>
             <div className="modeSelection__prize">
-              <p className="modeSelection__prize-tittle modeSelection-tittle">
+              <p className="modeSelection__prize-title modeSelection-title">
                 Выберите призовой фонд
               </p>
               <ButtonGroup classN="modeSelection1">
-                <InputS actionOnClick={this.handleOnClickPrize} classN="modeSelection__prize" type="submit" name="prize20P" value="20 P" active={prize20P}/>
-                <InputS actionOnClick={this.handleOnClickPrize} classN="modeSelection__prize" type="submit" name="prize100P" value="100 P" active={prize100P}/>
-                <InputS actionOnClick={this.handleOnClickPrize} classN="modeSelection__prize" type="submit" name="prize200P" value="200 P" active={prize200P}/>
-                <InputS actionOnClick={this.handleOnClickPrize} classN="modeSelection__prize" type="submit" name="prize500P" value="500 P" active={prize500P}/>
+                <InputS actionOnClick={this.handleOnClickPrize} classN="modeSelection__prize" type="submit" name="prize20P" active={prize20P}>
+                  <p data-name="prize20P">20 P</p>
+                </InputS>
+                <InputS actionOnClick={this.handleOnClickPrize} classN="modeSelection__prize" type="submit" name="prize100P" active={prize100P}>
+                  <p data-name="prize100P">100 P</p>
+                </InputS>
+                <InputS actionOnClick={this.handleOnClickPrize} classN="modeSelection__prize" type="submit" name="prize200P" active={prize200P}>
+                  <p data-name="prize200P">200 P</p>
+                </InputS>
+                <InputS actionOnClick={this.handleOnClickPrize} classN="modeSelection__prize" type="submit" name="prize500P" active={prize500P}>
+                  <p data-name="prize500P">500 P</p>
+                </InputS>
               </ButtonGroup>
 
               <ButtonGroup classN="modeSelection2">
-                <InputS actionOnClick={this.handleOnClickPrize} classN="modeSelection__prize" type="submit" name="prize1000P" value="1000 P" active={prize1000P}/>
-                <InputS actionOnClick={this.handleOnClickPrize} classN="modeSelection__prize" type="submit" name="prize2000P" value="2000 P" active={prize2000P}/>
-                <InputS actionOnClick={this.handleOnClickPrize} classN="modeSelection__prize" type="submit" name="prize4000P" value="4000 P" active={prize4000P}/>
+                <InputS actionOnClick={this.handleOnClickPrize} classN="modeSelection__prize" type="submit" name="prize1000P" active={prize1000P}>
+                  <p data-name="prize1000P">1000 P</p>
+                </InputS>
+                <InputS actionOnClick={this.handleOnClickPrize} classN="modeSelection__prize" type="submit" name="prize2000P" active={prize2000P}>
+                  <p data-name="prize2000P">2000 P</p>
+                </InputS>
+                <InputS actionOnClick={this.handleOnClickPrize} classN="modeSelection__prize" type="submit" name="prize4000P" active={prize4000P}>
+                  <p data-name="prize4000P">4000 P</p>
+                </InputS>
               </ButtonGroup>
 
             </div>
             <div className="modeSelection__rules">
-              <p className="modeSelection__rules-tittle modeSelection-tittle">
+              <p className="modeSelection__rules-title modeSelection-title">
                 Выполните все правила для начала игры
               </p>
               <div className="modeSelection__rules-content">
@@ -118,7 +149,9 @@ class ModeSelection extends Component {
                 <div className="modeSelection__rule3 modeSelection__rule">3</div>
               </div>
             </div>
-            <InputS classN="modeSelection" type="submit" value="Играть"/>
+            <InputS classN="modeSelection" type="submit">
+              <p>Играть</p>
+            </InputS>
           </form>
         </div>
       </div>
@@ -126,4 +159,4 @@ class ModeSelection extends Component {
   }
 }
 
-export default ModeSelection;
+export default connect(state => ({}), { setPath })(ModeSelection);

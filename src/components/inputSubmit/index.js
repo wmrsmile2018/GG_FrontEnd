@@ -1,5 +1,8 @@
 import React, {Component} from 'react'
 import PropTypes from 'prop-types';
+import { Link } from "react-router-dom";
+
+import getHistory from '../../modules/history';
 
 class InputS extends Component {
   constructor(props) {
@@ -22,8 +25,10 @@ class InputS extends Component {
     classN: PropTypes.string,
     name: PropTypes.string,
     value: PropTypes.string,
-    actionOnClick: PropTypes.func
-
+    actionOnClick: PropTypes.func,
+    image1: PropTypes.string,
+    image2: PropTypes.string,
+    link: PropTypes.string,
   }
 
   static defaultProps = {
@@ -34,12 +39,15 @@ class InputS extends Component {
     name: '',
     value: '',
     actionOnClick: () => {},
+    image1: '',
+    image2: '',
+    link: '',
   }
 
   handleOnMouseOver() {
-      this.setState({
-        color: this.state.yellow,
-      })
+    this.setState({
+      color: this.state.yellow,
+    })
   }
 
   handleOnMouseOut() {
@@ -58,11 +66,14 @@ class InputS extends Component {
     }
   }
 
-  render() {
 
-    const { active, display, classN, name, value } = this.props;
+  render() {
+    const { active, display, classN, name, value, image1, image2, children, link } = this.props;
     const color = active ? this.state.yellow : this.state.color;
     const shadow = active ? "0px 0px 33px 2px #FFD600" : "none";
+
+    const displayLeft = image1 === '' ? 'none' : 'block';
+    const displayRight = image2 === '' ? 'none' : 'block';
     return(
       <div
         style={{display: display}}
@@ -72,21 +83,44 @@ class InputS extends Component {
         onClick={this.handleOnClick}
         data-name={name}
       >
-        <p style={{color: color}}
-          data-name={name}
+        <div className="inputS_imgLeft"
+          style={{display: displayLeft}}
         >
-          {value}
-        </p>
+          <img src={image1}/>
+        </div>
+        <div style={{color: color}}
+          data-name={name}
+          className={"inputS-children "}
+          >
+          {children}
+
+        </div>
+        <div className="inputS_imgRight"
+          style={{display: displayRight}}
+        >
+          <img src={image2}/>
+        </div>
         <div style={{boxShadow: shadow}}
           className={"inputS-shadow " + classN + "__inputS-shadow"}
           data-name={name}
         />
+      { link === '' ?
         <div
           style={{background: color}}
           className={"inputS-outline " + classN + "__inputS-outline"}
           data-name={name}
         >
         </div>
+        :
+        <Link to={`${link}`}>
+          <div
+            style={{background: color}}
+            className={"inputS-outline " + classN + "__inputS-outline"}
+            data-name={name}
+          >
+          </div>
+        </Link>
+      }
       </div>
     )
   }

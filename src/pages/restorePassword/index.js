@@ -1,6 +1,9 @@
 import React, {Component} from 'react';
 import TextIF from '../../components/textInputField/index';
 import InputS from '../../components/inputSubmit/index';
+import getHistory from '../../modules/history';
+import { setPath } from '../../actions/actionPath.js';
+import { connect } from 'react-redux';
 
 const patternPassword = /(?=.*[0-9])(?=.*[!@#$%^&*])(?=.*[a-z])(?=.*[A-Z])[0-9a-zA-Z!@#$%^&*]{6,}/;
 // наличие спец знаков, заглавной буквы, обычной буквы, цифры и от 6 символов
@@ -58,6 +61,10 @@ class RestorePas extends Component {
     e.preventDefault();
   }
 
+  componentDidMount() {
+    this.props.setPath(getHistory().location.pathname);
+  }
+
   render() {
     return(
       <div className = "recoveryPas">
@@ -86,4 +93,4 @@ class RestorePas extends Component {
   }
 }
 
-export default RestorePas;
+export default connect(state => ({}), { setPath })(RestorePas);

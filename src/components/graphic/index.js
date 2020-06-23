@@ -30,7 +30,7 @@ const Graphic = (props) => {
       <Legend />
       <Tooltip valueSuffix=" k"/>
       <XAxis id="myXaxis" categories={props.XAxis}>
-        <XAxis.Title>{props.xTittle}</XAxis.Title>
+        <XAxis.Title>{props.xTitle}</XAxis.Title>
       </XAxis>
       <YAxis id="myYaxis">
         <AreaSeries data={props.YAxis} name="Вид1" color="rgba(124, 181, 236, 0.75)"/>

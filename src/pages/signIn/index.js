@@ -2,6 +2,9 @@ import React, {Component} from 'react'
 import TextIF from '../../components/textInputField/index';
 import InputS from '../../components/inputSubmit/index';
 import ButtonS from '../../components/buttonSubmit/index';
+import getHistory from '../../modules/history';
+import { setPath } from '../../actions/actionPath.js';
+import { connect } from 'react-redux';
 
 const SignInElement = (props) => {
   return (
@@ -48,6 +51,10 @@ class SignIn extends Component {
     e.preventDefault();
   }
 
+  componentDidMount() {
+    this.props.setPath(getHistory().location.pathname);
+  }
+
   render() {
     return (
       <div className = "signIn">
@@ -81,4 +88,4 @@ class SignIn extends Component {
   }
 }
 
-export default SignIn;
+export default connect(state => ({}), { setPath })(SignIn);

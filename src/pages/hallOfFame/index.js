@@ -1,8 +1,11 @@
-import React from 'react';
+import React, { Component } from 'react';
 import Leaders from '../../components/leaders/index';
 import Avatar1 from '../../components/avatar1/index';
 import placeholder from '../../public/images/placeholder.jpg';
 import Outline from '../../public/svg/outline.svg';
+import getHistory from '../../modules/history';
+import { setPath } from '../../actions/actionPath.js';
+import { connect } from 'react-redux';
 
 const leaders = [
   {photo: placeholder, display1: "block", display2: "none", outline: Outline, nickname: "nagibator1234"},
@@ -111,64 +114,69 @@ const List = tmpObjs.map((element, index) =>
   </div>
 )
 
-const HallOfFame = () => {
-  return(
-    <div className="hallOfFame">
-      <div className="hallOfFame__header">
-        <div className="hallOfFame__leaders">
-          <p className="hallOfFame__leaders-tittle">
-            ЗАЛ СЛАВЫ
-          </p>
-          <div className="hallOfFame__leaders-outline1">
-            <div className="hallOfFame__largeWing"></div>
-            <div className="hallOfFame__mediumWing"></div>
-            <div className="hallOfFame__smallWing"></div>
+class HallOfFame extends Component {
+  componentDidMount() {
+    this.props.setPath(getHistory().location.pathname);
+  }
+  render() {
+    return(
+      <div className="hallOfFame">
+        <div className="hallOfFame__header">
+          <div className="hallOfFame__leaders">
+            <p className="hallOfFame__leaders-title">
+              ЗАЛ СЛАВЫ
+            </p>
+            <div className="hallOfFame__leaders-outline1">
+              <div className="hallOfFame__largeWing"></div>
+              <div className="hallOfFame__mediumWing"></div>
+              <div className="hallOfFame__smallWing"></div>
+            </div>
+            <div className="hallOfFame__leaders-outline2">
+              <div className="hallOfFame__largeWing"></div>
+              <div className="hallOfFame__mediumWing"></div>
+              <div className="hallOfFame__smallWing"></div>
+            </div>
+            <Leaders classN="hallOfFame" objs={leaders}/>
           </div>
-          <div className="hallOfFame__leaders-outline2">
-            <div className="hallOfFame__largeWing"></div>
-            <div className="hallOfFame__mediumWing"></div>
-            <div className="hallOfFame__smallWing"></div>
+          <div className="hallOfFame__information">
+            <Avatar1
+              classN="_arena"
+              w="50px"
+              h="50px"
+              avatar={placeholder}
+            />
+          <div className="hallOfFame__information-data">
+              <div className="hallOfFame__information-raiting">
+                <p>Рейнтинг</p>
+                <label>7.762</label>
+              </div>
+              <div className="hallOfFame__information-winRate">
+                <p>Процент<br/>побед</p>
+                <label>45%</label>
+              </div>
+              <div className="hallOfFame__information-matchesPlayed">
+                <p>Сыгранные<br/>матчи</p>
+                <label>45%</label>
+              </div>
+              <div className="hallOfFame__information-matchesWon">
+                <p>Выигранные<br/>матчи</p>
+                <label>45%</label>
+              </div>
+            </div>
           </div>
-          <Leaders classN="hallOfFame" objs={leaders}/>
         </div>
-        <div className="hallOfFame__information">
-          <Avatar1
-            classN="_arena"
-            w="50px"
-            h="50px"
-            avatar={placeholder}
-          />
-        <div className="hallOfFame__information-data">
-            <div className="hallOfFame__information-raiting">
-              <p>Рейнтинг</p>
-              <label>7.762</label>
-            </div>
-            <div className="hallOfFame__information-winRate">
-              <p>Процент<br/>побед</p>
-              <label>45%</label>
-            </div>
-            <div className="hallOfFame__information-matchesPlayed">
-              <p>Сыгранные<br/>матчи</p>
-              <label>45%</label>
-            </div>
-            <div className="hallOfFame__information-matchesWon">
-              <p>Выигранные<br/>матчи</p>
-              <label>45%</label>
-            </div>
+        <div className="hallOfFame__list">
+          <div className="hallOfFame__list-header">
+            <p>Рейнтинг</p>
+            <p>Процент<br/>побед</p>
+            <p>Сыгранные<br/>матчи</p>
+            <p>Выигранные<br/>матчи</p>
           </div>
+          {List}
         </div>
       </div>
-      <div className="hallOfFame__list">
-        <div className="hallOfFame__list-header">
-          <p>Рейнтинг</p>
-          <p>Процент<br/>побед</p>
-          <p>Сыгранные<br/>матчи</p>
-          <p>Выигранные<br/>матчи</p>
-        </div>
-        {List}
-      </div>
-    </div>
-  );
+    );
+  }
 }
 
-export default HallOfFame;
+export default connect(state => ({}), { setPath })(HallOfFame);

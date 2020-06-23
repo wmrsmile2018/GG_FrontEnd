@@ -5,7 +5,9 @@ import Profit from '../../components/profit/index';
 import Statics from '../../components/statics/index';
 import InputS from '../../components/inputSubmit/index';
 import Graphic from '../../components/graphic/index';
-
+import getHistory from '../../modules/history';
+import { setPath } from '../../actions/actionPath.js';
+import { connect } from 'react-redux';
 // const currentDateTime = new Date();
 // const startTimeOfCurrentYear = (new Date(currentDateTime.getFullYear(), 0, 1)).getTime();
 // const currentTime = currentDateTime.getTime();
@@ -977,6 +979,7 @@ class PersonalPage extends Component {
 
   componentDidMount() {
     this.showDays()
+    this.props.setPath(getHistory().location.pathname);
   }
 
   render() {
@@ -987,47 +990,63 @@ class PersonalPage extends Component {
       <div className="personalPage">
         <div className="personalPage__header">
           <div className="personalPage__header-top">
-            <InputS type="submit" value="Игры" classN="personalPage"
+            <InputS type="submit" classN="personalPage"
               actionOnClick={this.handleOnClickHGames}
               active={this.state.showHGames}
-              />
-            <InputS type="submit" value="Финансы" classN="personalPage"
+              >
+              <p>Игры</p>
+            </InputS>
+            <InputS type="submit"  classN="personalPage"
               actionOnClick={this.handleOnClickHFinances}
               active={!showHGames}
-              />
+              >
+              <p>Финансы</p>
+            </InputS>
           </div>
           <div className="personalPage__header-bottom">
-            <InputS type="submit" value="Статистика" classN="personalPage"
+            <InputS type="submit" classN="personalPage"
               display={this.state.showButtons} active={showHFinances}
               actionOnClick={this.handleOnClickHFinances}
-              />
-            <InputS type="submit" value="Управление деньгами" classN="personalPage"
+              >
+              <p>Статистика</p>
+            </InputS>
+            <InputS type="submit" classN="personalPage"
               display={this.state.showButtons} active={showMMoney}
               actionOnClick={this.handleOnClickMMoney}
-              />
+              >
+              <p>Управление деньгами</p>
+            </InputS>
           </div>
         </div>
 
         <div className="personalPage__graphic" style={displayF}>
           <Graphic XAxis={this.state.XAxis} YAxis={this.state.YAxis}/>
           <div className="personalPage__chooseInterval">
-            <InputS type="submit" value="день" classN="personalPage"
+            <InputS type="submit" classN="personalPage"
               actionOnClick={this.showDays} active={activeD}
-              />
+              >
+              <p>день</p>
+            </InputS>
             <InputS type="submit" value="неделя" classN="personalPage"
               actionOnClick={this.showWeeks} active={activeW}
-              />
+              >
+              <p>неделя</p>
+            </InputS>
             <InputS type="submit" value="месяц" classN="personalPage"
               actionOnClick={this.showMonths} active={activeM}
-              />
+              >
+              <p>месяц</p>
+            </InputS>
             <InputS type="submit" value="6 мес" classN="personalPage"
               actionOnClick={this.showHalvesYear} active={activeHY}
-              />
+              >
+              <p>де6 мес.</p>
+            </InputS>
             <InputS type="submit" value="12 мес." classN="personalPage"
               actionOnClick={this.showYears} active={activeY}
-              />
-
-
+              >
+              <p>12 мес.</p>
+            </InputS>
           </div>
         </div>
 
@@ -1051,4 +1070,4 @@ class PersonalPage extends Component {
   }
 }
 
-export default PersonalPage;
+export default connect(state => ({}), { setPath })(PersonalPage);

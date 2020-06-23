@@ -4,7 +4,9 @@ import TextIF from '../../components/textInputField/index';
 import InputS from '../../components/inputSubmit/index';
 import ButtonS from '../../components/buttonSubmit/index';
 import RadioB from '../../components/radioButton/index';
-
+import getHistory from '../../modules/history';
+import { setPath } from '../../actions/actionPath.js';
+import { connect } from 'react-redux';
 //use Ref to decrease count code.
 
 const { Option } = Select;
@@ -93,6 +95,10 @@ class Registration extends Component {
     this.setState({year: value})
   };
 
+  componentDidMount() {
+    this.props.setPath(getHistory().location.pathname);
+  }
+
 
   handleSubmit(e) {
     if (!Validate(this.state.login, patternLogin)) {
@@ -159,7 +165,7 @@ class Registration extends Component {
           <h1>Регистрация</h1>
           {RegElements}
           <div className="registration__date">
-            <p className="registration_tittle">Дата рождения</p>
+            <p className="registration_title">Дата рождения</p>
             <div className="registration__dateSelector">
               <Select style={{ width: 80 }} onChange={this.updateDataD} > {days} </Select>
               <Select style={{ width: 80 }} onChange={this.updateDataM} > {months} </Select>
@@ -170,7 +176,7 @@ class Registration extends Component {
             </div>
           </div>
           <div className="registration__sex">
-            <p className="registration_tittle">Пол</p>
+            <p className="registration_title">Пол</p>
             <RadioB classN="registration" actionOnChange={this.updateDataS}
               values={["Мужской", "Женский", "Другое"]}
               actionOnClick={null}
@@ -200,4 +206,4 @@ class Registration extends Component {
   }
 }
 
-export default Registration;
+export default connect(state => ({}), { setPath })(Registration);

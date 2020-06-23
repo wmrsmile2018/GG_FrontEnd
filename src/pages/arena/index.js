@@ -3,6 +3,9 @@ import Leaders from '../../components/leaders/index';
 import Avatar1 from '../../components/avatar1/index';
 import placeholder from '../../public/images/placeholder.jpg';
 import InputS from '../../components/inputSubmit/index';
+import getHistory from '../../modules/history';
+import { setPath } from '../../actions/actionPath.js';
+import { connect } from 'react-redux';
 
 const dateFormat = require('dateformat');
 
@@ -29,6 +32,7 @@ class Arena extends Component {
   }
 
   componentDidMount() {
+    this.props.setPath(getHistory().location.pathname);
     this.timerID = setInterval(
       () => this.tick(),
       1000
@@ -79,10 +83,12 @@ class Arena extends Component {
               avatar={placeholder}
             />
             <p className="arena__raiting">6500</p>
-            <InputS type="submit" value="Готов" classN="arena"/>
+            <InputS type="submit"classN="arena">
+              <p>Готов</p>
+            </InputS>
           </div>
           <div className="arena__ticker">
-            <p className="arena__tittle">Время ожидания:</p>
+            <p className="arena__title">Время ожидания:</p>
             <p className="arena__ticker">{dateFormat(time, "MM:ss")}</p>
             <p className="arena__bet">2000 P</p>
           </div>
@@ -93,7 +99,9 @@ class Arena extends Component {
               avatar={placeholder}
             />
             <p className="arena__raiting">5434</p>
-            <InputS type="submit" value="Готов" classN="arena"/>
+            <InputS type="submit" value="Готов" classN="arena">
+              <p>Готов</p>
+            </InputS>
           </div>
         </div>
       </div>
@@ -101,4 +109,4 @@ class Arena extends Component {
   }
 }
 
-export default Arena;
+export default connect(state => ({}), { setPath })(Arena);

@@ -1,5 +1,8 @@
 import React, {Component} from 'react';
-import Post from '../../components/post/index'
+import Post from '../../components/post/index';
+import getHistory from '../../modules/history';
+import { setPath } from '../../actions/actionPath.js';
+import { connect } from 'react-redux';
 
 const obj= [
   {
@@ -224,6 +227,11 @@ const obj= [
 // console.log(JSON.parse(JSON.stringify(obj)));
 // console.log(obj[0].photos.length)
 class News extends Component {
+
+  componentDidMount = () => {
+    this.props.setPath(getHistory().location.pathname);
+  }
+
   render() {
     const Elements = obj.map((element, index) =>
     <Post
@@ -249,4 +257,4 @@ class News extends Component {
   }
 }
 
-export default News;
+export default connect(state => ({}), { setPath })(News);
