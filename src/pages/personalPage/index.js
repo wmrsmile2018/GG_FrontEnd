@@ -15,7 +15,7 @@ import { connect } from 'react-redux';
 // const hourOfMillisecs = 3600000;
 // const hoursOfOneWeek = 168;
 
-const base = 1577836800; // когда пользователь впервые получил деньги
+const base = 1577836800; // когда пользователь впервые получил деньги 01/01/2020 03:00:00
 
 const Data = [
   {
@@ -23,7 +23,7 @@ const Data = [
     "id_history": "5e8a2987c21ec6922e6bd101",
     "id_user": "5e8a2987e5c916d96bd9fd03",
     "id_command": "5e8a2987460df88378760144",
-    "profit": 5,
+    "profit": 1,
     "timestamp": 1585190413,
     "score": "16:23",
     "isWin": true,
@@ -49,11 +49,11 @@ const Data = [
     ]
   },
   {
-    "number": 1,
+    "number": 2,
     "id_history": "5e8a2987856e68b2fd62605b",
     "id_user": "5e8a29876fa50f774116f06e",
     "id_command": "5e8a29879b0ebd78cb436d9e",
-    "profit": 2538,
+    "profit": 2,
     "timestamp": 1585190413,
     "score": "16:23",
     "isWin": true,
@@ -79,11 +79,11 @@ const Data = [
     ]
   },
   {
-    "number": 1,
+    "number": 3,
     "id_history": "5e8a29877eac29d29268b6ca",
     "id_user": "5e8a29873aed3a85a7667c7f",
     "id_command": "5e8a298775904164724fb18a",
-    "profit": -2049,
+    "profit": 3,
     "timestamp": 1585490413,
     "score": "16:23",
     "isWin": false,
@@ -109,11 +109,11 @@ const Data = [
     ]
   },
   {
-    "number": 1,
+    "number": 4,
     "id_history": "5e8a2987c21ec6922e6bd101",
     "id_user": "5e8a2987e5c916d96bd9fd03",
     "id_command": "5e8a2987460df88378760144",
-    "profit": 5,
+    "profit": 4,
     "timestamp": 1585490413,
     "score": "16:23",
     "isWin": true,
@@ -139,7 +139,7 @@ const Data = [
     ]
   },
   {
-    "number": 1,
+    "number": 5,
     "id_history": "5e8a2987c21ec6922e6bd101",
     "id_user": "5e8a2987e5c916d96bd9fd03",
     "id_command": "5e8a2987460df88378760144",
@@ -169,11 +169,11 @@ const Data = [
     ]
   },
   {
-    "number": 1,
+    "number": 6,
     "id_history": "5e8a2987c21ec6922e6bd101",
     "id_user": "5e8a2987e5c916d96bd9fd03",
     "id_command": "5e8a2987460df88378760144",
-    "profit": 5,
+    "profit": 6,
     "timestamp": 1585590413,
     "score": "16:23",
     "isWin": true,
@@ -199,11 +199,11 @@ const Data = [
     ]
   },
   {
-    "number": 1,
+    "number": 7,
     "id_history": "5e8a2987c21ec6922e6bd101",
     "id_user": "5e8a2987e5c916d96bd9fd03",
     "id_command": "5e8a2987460df88378760144",
-    "profit": 5,
+    "profit": 7,
     "timestamp": 1585690413,
     "score": "16:23",
     "isWin": true,
@@ -229,11 +229,11 @@ const Data = [
     ]
   },
   {
-    "number": 1,
+    "number": 8,
     "id_history": "5e8a2987c21ec6922e6bd101",
     "id_user": "5e8a2987e5c916d96bd9fd03",
     "id_command": "5e8a2987460df88378760144",
-    "profit": 5,
+    "profit": 8,
     "timestamp": 1585790413,
     "score": "16:23",
     "isWin": false,
@@ -259,11 +259,11 @@ const Data = [
     ]
   },
   {
-    "number": 1,
+    "number": 9,
     "id_history": "5e8a2987c21ec6922e6bd101",
     "id_user": "5e8a2987e5c916d96bd9fd03",
     "id_command": "5e8a2987460df88378760144",
-    "profit": 5,
+    "profit": 9,
     "timestamp": 1585190413,
     "score": "16:23",
     "isWin": true,
@@ -289,11 +289,11 @@ const Data = [
     ]
   },
   {
-    "number": 1,
+    "number": 10,
     "id_history": "5e8a2987856e68b2fd62605b",
     "id_user": "5e8a29876fa50f774116f06e",
     "id_command": "5e8a29879b0ebd78cb436d9e",
-    "profit": 2538,
+    "profit": 10,
     "timestamp": 1585190413,
     "score": "16:23",
     "isWin": true,
@@ -319,11 +319,11 @@ const Data = [
     ]
   },
   {
-    "number": 1,
+    "number": 11,
     "id_history": "5e8a29877eac29d29268b6ca",
     "id_user": "5e8a29873aed3a85a7667c7f",
     "id_command": "5e8a298775904164724fb18a",
-    "profit": -2049,
+    "profit": 11,
     "timestamp": 1585490413,
     "score": "16:23",
     "isWin": false,
@@ -349,11 +349,11 @@ const Data = [
     ]
   },
   {
-    "number": 1,
+    "number": 12,
     "id_history": "5e8a2987c21ec6922e6bd101",
     "id_user": "5e8a2987e5c916d96bd9fd03",
     "id_command": "5e8a2987460df88378760144",
-    "profit": 5,
+    "profit": 12,
     "timestamp": 1585490413,
     "score": "16:23",
     "isWin": true,
@@ -379,11 +379,11 @@ const Data = [
     ]
   },
   {
-    "number": 1,
+    "number": 13,
     "id_history": "5e8a2987c21ec6922e6bd101",
     "id_user": "5e8a2987e5c916d96bd9fd03",
     "id_command": "5e8a2987460df88378760144",
-    "profit": 5,
+    "profit": 13,
     "timestamp": 1585490413,
     "score": "16:23",
     "isWin": false,
@@ -409,11 +409,11 @@ const Data = [
     ]
   },
   {
-    "number": 1,
+    "number": 14,
     "id_history": "5e8a2987c21ec6922e6bd101",
     "id_user": "5e8a2987e5c916d96bd9fd03",
     "id_command": "5e8a2987460df88378760144",
-    "profit": 5,
+    "profit": 14,
     "timestamp": 1585590413,
     "score": "16:23",
     "isWin": true,
@@ -439,11 +439,11 @@ const Data = [
     ]
   },
   {
-    "number": 1,
+    "number": 15,
     "id_history": "5e8a2987c21ec6922e6bd101",
     "id_user": "5e8a2987e5c916d96bd9fd03",
     "id_command": "5e8a2987460df88378760144",
-    "profit": 5,
+    "profit": 15,
     "timestamp": 1585690413,
     "score": "16:23",
     "isWin": true,
@@ -469,11 +469,11 @@ const Data = [
     ]
   },
   {
-    "number": 1,
+    "number": 16,
     "id_history": "5e8a2987c21ec6922e6bd101",
     "id_user": "5e8a2987e5c916d96bd9fd03",
     "id_command": "5e8a2987460df88378760144",
-    "profit": 5,
+    "profit": 16,
     "timestamp": 1585790413,
     "score": "16:23",
     "isWin": false,
@@ -499,11 +499,11 @@ const Data = [
     ]
   },
   {
-    "number": 1,
+    "number": 17,
     "id_history": "5e8a2987c21ec6922e6bd101",
     "id_user": "5e8a2987e5c916d96bd9fd03",
     "id_command": "5e8a2987460df88378760144",
-    "profit": 5,
+    "profit": 17,
     "timestamp": 1585190413,
     "score": "16:23",
     "isWin": true,
@@ -529,11 +529,11 @@ const Data = [
     ]
   },
   {
-    "number": 1,
+    "number": 18,
     "id_history": "5e8a2987856e68b2fd62605b",
     "id_user": "5e8a29876fa50f774116f06e",
     "id_command": "5e8a29879b0ebd78cb436d9e",
-    "profit": 2538,
+    "profit": 18,
     "timestamp": 1585190413,
     "score": "16:23",
     "isWin": true,
@@ -559,11 +559,11 @@ const Data = [
     ]
   },
   {
-    "number": 1,
+    "number": 19,
     "id_history": "5e8a29877eac29d29268b6ca",
     "id_user": "5e8a29873aed3a85a7667c7f",
     "id_command": "5e8a298775904164724fb18a",
-    "profit": -2049,
+    "profit": 19,
     "timestamp": 1585490413,
     "score": "16:23",
     "isWin": false,
@@ -589,11 +589,11 @@ const Data = [
     ]
   },
   {
-    "number": 1,
+    "number": 20,
     "id_history": "5e8a2987c21ec6922e6bd101",
     "id_user": "5e8a2987e5c916d96bd9fd03",
     "id_command": "5e8a2987460df88378760144",
-    "profit": 5,
+    "profit": 20,
     "timestamp": 1585490413,
     "score": "16:23",
     "isWin": true,
@@ -619,11 +619,11 @@ const Data = [
     ]
   },
   {
-    "number": 1,
+    "number": 21,
     "id_history": "5e8a2987c21ec6922e6bd101",
     "id_user": "5e8a2987e5c916d96bd9fd03",
     "id_command": "5e8a2987460df88378760144",
-    "profit": 5,
+    "profit": 21,
     "timestamp": 1585490413,
     "score": "16:23",
     "isWin": false,
@@ -649,11 +649,11 @@ const Data = [
     ]
   },
   {
-    "number": 1,
+    "number": 22,
     "id_history": "5e8a2987c21ec6922e6bd101",
     "id_user": "5e8a2987e5c916d96bd9fd03",
     "id_command": "5e8a2987460df88378760144",
-    "profit": 5,
+    "profit": 22,
     "timestamp": 1585590413,
     "score": "16:23",
     "isWin": true,
@@ -679,11 +679,11 @@ const Data = [
     ]
   },
   {
-    "number": 1,
+    "number": 23,
     "id_history": "5e8a2987c21ec6922e6bd101",
     "id_user": "5e8a2987e5c916d96bd9fd03",
     "id_command": "5e8a2987460df88378760144",
-    "profit": 5,
+    "profit": 23,
     "timestamp": 1585690413,
     "score": "16:23",
     "isWin": true,
@@ -709,11 +709,11 @@ const Data = [
     ]
   },
   {
-    "number": 1,
+    "number": 24,
     "id_history": "5e8a2987c21ec6922e6bd101",
     "id_user": "5e8a2987e5c916d96bd9fd03",
     "id_command": "5e8a2987460df88378760144",
-    "profit": 5,
+    "profit": 24,
     "timestamp": 1585790413,
     "score": "16:23",
     "isWin": false,
@@ -821,9 +821,11 @@ const getDate3 = (unixTimestamp) => {
 const fillXAxisWeek = (base, objs) => {
   let sum = 0;
   let flag = -1;
+  const times = objs.map(value => value.timestamp).sort();
   const XAxis = [], YAxis = [];
-  for (let i = 0; i < objs.length; i++) {
-    const diff = getDiffWeek(base, objs[i].timestamp)
+  let number = -1;
+  for (let i = 0; i < times.length; i++) {
+    const diff = getDiffWeek(base, times[i])
     if (diff !== flag) {
       flag = diff;
       if (sum !== 0) {
@@ -831,7 +833,11 @@ const fillXAxisWeek = (base, objs) => {
       }
       XAxis.push(diff);
     }
-    sum += objs[i].profit;
+    sum += objs.filter(val => val.timestamp === times[i])[0].profit;
+    if (objs.length > 1) {
+      number = objs.filter(val => val.timestamp === times[i])[0].number
+      objs = objs.filter(val => val.number !== number);
+    }
   }
   YAxis.push(sum);
   return {XAxis, YAxis};
@@ -840,17 +846,23 @@ const fillXAxisWeek = (base, objs) => {
 const fillXAxis = (base, objs, funDiff, funShow) => {
   let sum = 0;
   let flag = -1;
+  const times = objs.map(value => value.timestamp).sort();
   const XAxis = [], YAxis = [];
-  for (let i = 0; i < objs.length; i++) {
-    const diff = funDiff(base, objs[i].timestamp);
+  let number = -1;
+  for (let i = 0; i < times.length; i++) {
+    const diff = funDiff(base, times[i]);
     if(diff !== flag) {
       flag = diff;
       if (sum !== 0) {
         YAxis.push(sum);
       }
-      XAxis.push(funShow(objs[i].timestamp));
+      XAxis.push(funShow(times[i]));
     }
-    sum += objs[i].profit;
+    sum += objs.filter(val => val.timestamp === times[i])[0].profit;
+    if (objs.length > 1) {
+      number = objs.filter(val => val.timestamp === times[i])[0].number
+      objs = objs.filter(val => val.number !== number);
+    }
   }
   YAxis.push(sum);
   return {XAxis, YAxis};
