@@ -75,9 +75,9 @@ class App extends Component {
               <img className="background_g1" src={G} height="458" alt=""/>
               <img className="background_g2" src={G} height="458" alt=""/>
             </div>
-            <div className="header">
-              <Header/>
-            </div>
+
+            <Header/>
+
             <div className="content">
               <Switch>
                 <Route path="/signup" component={Reg}/>

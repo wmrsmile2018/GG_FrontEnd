@@ -13,15 +13,15 @@ class Header extends Component {
   componentDidUpdate = (prevProps) => {
     if (prevProps.path !== this.props.path) {
       let tag = null
-      if (this.props.path.path === '/') {
-        tag = null;
-      } else if (this.props.path.path === '/options' || this.props.path.path === '/personal-page') {
+      if (this.props.path.path === '/options' || this.props.path.path === '/personal-page') {
         tag = <HeaderPersonal/>;
       } else if (this.props.path.path === '/hall-of-fame' || this.props.path.path === '/arena'
        || this.props.path.path === '/mode-selection') {
          tag = <HeaderArena/>;
       } else if (this.props.path.path === '/news') {
         tag = <HeaderNews/>;
+      } else {
+        tag = null;
       }
       this.setState({
         path: this.props.path.path,
@@ -32,14 +32,16 @@ class Header extends Component {
 
   render() {
     const { path, tag } = this.state;
-
+    const show = tag ? 'block' : 'none';
     return (
-      <Fragment>
+      <div className="header"
+        style={{display: show}}
+        >
         <div className="header-content">{tag}</div>
         <div className="header-outline"></div>
         <div className="header-background"></div>
-      </Fragment>
-      
+      </div>
+
     )
   }
 }
