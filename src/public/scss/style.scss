@@ -27,14 +27,6 @@ $width-small: 90px;
     100% { transform: scale(1); opacity: 1; }
 }
 
-
-
-
-
-
-
-
-
 // main
 body, html, #root, .App {
   height: 100%;
@@ -329,11 +321,11 @@ code {
 
 .headerArena {
   display: grid;
-  grid-template-columns: 285px 350px 250px;
+  grid-template-columns: 210px 350px 210px;
 
-  .leftSide {
+  .headerArena-leftSide {
     width: $width-medium;
-    margin-left: 90px;
+    margin-left: 30px;
     margin-top: 20px;
     .inputS {
       .inputS-children {
@@ -360,7 +352,7 @@ code {
     }
   }
 
-  .center {
+  .headerArena-center {
     position: relative;
     width: 345px;
     height: 129px;
@@ -380,7 +372,7 @@ code {
     }
   }
 
-  .rightSide {
+  .headerArena-rightSide {
     width: $width-medium;
     margin-top: 20px;
     margin-left: 20px;
@@ -519,11 +511,11 @@ code {
 
 .headerPersonal {
   display: grid;
-  grid-template-columns: 185px 70px 250px 100px calc(100% - (185px + 70px + 250px + 100px) - 20px * 4);
+  grid-template-columns: 115px 70px 250px 100px calc(100% - (115px + 70px + 250px + 100px) - 20px * 4);
   grid-gap: 15px;
   .side1 {
     margin-top: 20px;
-    margin-left: 95px;
+    margin-left: 25px;
     .inputS {
       .inputS_imgLeft {
         width: 25px;
@@ -2251,7 +2243,9 @@ code {
 
     .leaders {
       height: 300px;
-
+      position: relative;
+      top: -25px;
+      
       .leader {
         width: 75px;
         height: 90px;
@@ -2569,9 +2563,18 @@ code {
   position: relative;
   width: 200px;
   height: 100%;
+  overflow: hidden;
+
+  .rightBar:hover {
+    margin-left: 0px;
+    transition: .5s ease-in-out;
+  }
+
   .rightBar {
     width: 200px;
     height: 494px;
+    margin-left: 175px;
+    transition: .5s ease-in-out;
 
     .header, .content, .footer {
       width: 100%;
@@ -2633,13 +2636,11 @@ code {
 
   }
 }
+
 /////////////////////////////LEFT BAR///////////////////////////////////////////
 
 
 /////////////////////////////CHAT///////////////////////////////////////////////
-
-
-
 .chat {
   width: 250px!important;
   height: 300px!important;

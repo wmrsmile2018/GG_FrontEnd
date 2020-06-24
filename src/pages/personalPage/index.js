@@ -885,6 +885,12 @@ class PersonalPage extends Component {
     this.handleOnClickHFinances = this.handleOnClickHFinances.bind(this);
   }
 
+  componentDidMount() {
+    this.showDays()
+    this.props.setPath(getHistory().location.pathname);
+  }
+
+
   handleOnClickHGames() {
     this.setState({
       showHGames: true,
@@ -977,10 +983,6 @@ class PersonalPage extends Component {
     })
   }
 
-  componentDidMount() {
-    this.showDays()
-    this.props.setPath(getHistory().location.pathname);
-  }
 
   render() {
     const { showHFinances, showHGames, showMMoney } = this.state;

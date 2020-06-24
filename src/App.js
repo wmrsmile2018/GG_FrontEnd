@@ -38,6 +38,7 @@ const Error = () => {
 class App extends Component {
   state = {
     showChat: false,
+    showRightBar: false,
   }
 
   componentDidMount() {
@@ -55,8 +56,6 @@ class App extends Component {
 
   render() {
     const { showChat } = this.state;
-    // onRequestClose={this.closeModal}
-    console.log(showChat);
 
     return (
       <div className="App">

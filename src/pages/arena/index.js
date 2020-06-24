@@ -55,12 +55,18 @@ class Arena extends Component {
     })
   }
 
+  handleOnClickLeaders() {
+    getHistory().push('/hall-of-fame');
+  }
+
   render() {
     const {minutes, seconds} = this.state;
     const time = new Date(0, 0, 0, 0, minutes, seconds);
     return (
       <div className="arena">
-          <div className="arena__leaders">
+          <div className="arena__leaders"
+            onClick={this.handleOnClickLeaders}
+            >
             <div className="arena__leaders-outline1">
               <div className="arena__largeWing"></div>
               <div className="arena__mediumWing"></div>
