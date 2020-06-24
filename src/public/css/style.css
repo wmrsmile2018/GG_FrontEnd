@@ -2208,6 +2208,7 @@ code {
 }
 .chat .flexible-modal-drag-area {
   height: 50px;
+  width: 250px !important;
   position: absolute;
   right: 0;
   top: 0;
