@@ -280,6 +280,10 @@ code {
   margin-left: 30px;
   margin-top: 20px;
 }
+.headerArena .headerArena-leftSide .inputS .inputS-outline {
+  -webkit-mask-image: url("../svg/borderSmall.svg");
+  mask-image: url("../svg/borderSmall.svg");
+}
 .headerArena .headerArena-leftSide .inputS .inputS-children p {
   color: inherit;
 }
@@ -294,7 +298,7 @@ code {
   line-height: 42px;
 }
 .headerArena .headerArena-leftSide .inputS .inputS-outline {
-  height: 50px;
+  height: 45px;
   transform: rotateY(180deg);
 }
 .headerArena .headerArena-center {
@@ -319,6 +323,10 @@ code {
   margin-top: 20px;
   margin-left: 20px;
 }
+.headerArena .headerArena-rightSide .inputS .inputS-outline {
+  -webkit-mask-image: url("../svg/borderSmall.svg");
+  mask-image: url("../svg/borderSmall.svg");
+}
 .headerArena .headerArena-rightSide .inputS .inputS_imgRight {
   right: 20px;
   top: 7px;
@@ -342,7 +350,7 @@ code {
   font-size: 13px;
 }
 .headerArena .headerArena-rightSide .inputS .inputS-outline {
-  height: 50px;
+  height: 45px;
 }
 
 .headerNews {
@@ -353,6 +361,10 @@ code {
   width: 160px;
   margin-left: 35px;
   margin-top: 20px;
+}
+.headerNews .headerNews-leftSide .inputS .inputS-outline {
+  -webkit-mask-image: url("../svg/borderSmall.svg");
+  mask-image: url("../svg/borderSmall.svg");
 }
 .headerNews .headerNews-leftSide .inputS .inputS-children p {
   color: inherit;
@@ -400,6 +412,10 @@ code {
   margin-top: 20px;
   margin-left: 20px;
 }
+.headerNews .headerNews-rightSide .inputS .inputS-outline {
+  -webkit-mask-image: url("../svg/borderSmall.svg");
+  mask-image: url("../svg/borderSmall.svg");
+}
 .headerNews .headerNews-rightSide .inputS .inputS_imgRight {
   right: 20px;
   top: 7px;
@@ -428,12 +444,16 @@ code {
 
 .headerPersonal {
   display: grid;
-  grid-template-columns: 115px 70px 250px 100px calc(100% - (115px + 70px + 250px + 100px) - 20px * 4);
+  grid-template-columns: 115px 70px 250px 100px calc(100% - (115px + 70px + 250px + 100px) - 15px * 4);
   grid-gap: 15px;
 }
 .headerPersonal .side1 {
   margin-top: 20px;
-  margin-left: 25px;
+  margin-left: 24px;
+}
+.headerPersonal .side1 .inputS .inputS-outline {
+  -webkit-mask-image: url("../svg/borderShort.svg");
+  mask-image: url("../svg/borderShort.svg");
 }
 .headerPersonal .side1 .inputS .inputS_imgLeft {
   width: 25px;
@@ -442,7 +462,7 @@ code {
   top: 5px;
 }
 .headerPersonal .side1 .inputS p {
-  padding-right: 7px;
+  padding-right: 9px;
   line-height: 38px;
   text-align: right;
 }
@@ -503,6 +523,10 @@ code {
   font-family: "cyberdyne condensed";
   margin-bottom: 10px;
   text-align: center;
+}
+.headerPersonal .side5 .inputS .inputS-outline {
+  -webkit-mask-image: url("../svg/borderSmall.svg");
+  mask-image: url("../svg/borderSmall.svg");
 }
 .headerPersonal .side5 .icon {
   margin-right: 10px;
@@ -620,13 +644,17 @@ code {
   width: 22px;
   height: 22px;
 }
-.registration .registration__inputS {
+.registration .inputS {
   width: 210px;
   display: block;
   margin: 0 auto;
   margin-top: 50px;
 }
-.registration .registration__inputS p {
+.registration .inputS .inputS-outline {
+  -webkit-mask-image: url("../svg/borderMedium.svg");
+  mask-image: url("../svg/borderMedium.svg");
+}
+.registration .inputS p {
   text-align: center;
   width: 210px;
 }
@@ -650,13 +678,17 @@ code {
 .signIn .signIn__login, .signIn .signIn__password {
   margin-bottom: 12px;
 }
-.signIn .signIn__inputS {
+.signIn .inputS {
   width: 210px;
   display: block;
   margin: 0 auto;
   margin-top: 50px;
 }
-.signIn .signIn__inputS p {
+.signIn .inputS .inputS-outline {
+  -webkit-mask-image: url("../svg/borderMedium.svg");
+  mask-image: url("../svg/borderMedium.svg");
+}
+.signIn .inputS p {
   text-align: center;
   width: 210px;
 }
@@ -683,17 +715,21 @@ code {
   width: 370px;
   margin: 0 auto;
 }
-.requestRecPas .requestRecPas__inputS {
+.requestRecPas .inputS {
   width: 210px;
   display: block;
   margin: 0 auto;
   margin-top: 50px;
 }
-.requestRecPas .requestRecPas__inputS p {
+.requestRecPas .inputS .inputS-outline {
+  -webkit-mask-image: url("../svg/borderMedium.svg");
+  mask-image: url("../svg/borderMedium.svg");
+}
+.requestRecPas .inputS p {
   text-align: center;
   width: 210px;
 }
-.requestRecPas .requestRecPas__inputS input {
+.requestRecPas .inputS input {
   background-size: 210px 28px;
   color: #F2F2F2;
   width: 210px;
@@ -719,17 +755,21 @@ code {
 .recoveryPas .recoveryPas__password, .recoveryPas .recoveryPas__confirmPas {
   margin-bottom: 12px;
 }
-.recoveryPas .recoveryPas__inputS {
+.recoveryPas .inputS {
   width: 210px;
   display: block;
   margin: 0 auto;
   margin-top: 50px;
 }
-.recoveryPas .recoveryPas__inputS p {
+.recoveryPas .inputS .inputS-outline {
+  -webkit-mask-image: url("../svg/borderMedium.svg");
+  mask-image: url("../svg/borderMedium.svg");
+}
+.recoveryPas .inputS p {
   text-align: center;
   width: 210px;
 }
-.recoveryPas .recoveryPas__inputS input {
+.recoveryPas .inputS input {
   background-size: 210px 28px;
   color: #F2F2F2;
   width: 210px;
@@ -999,6 +1039,10 @@ code {
   width: 160px;
   display: block;
 }
+.personalPage .personalPage__header .inputS .inputS-outline {
+  -webkit-mask-image: url("../svg/borderMedium.svg");
+  mask-image: url("../svg/borderMedium.svg");
+}
 .personalPage .personalPage__header .inputS p {
   text-align: center;
   width: 160px;
@@ -1050,7 +1094,7 @@ code {
   grid-template-columns: 90px 55px 90px 70px;
   grid-gap: 70px;
   padding-left: 35px;
-  height: 35px;
+  height: 40px;
   align-items: center;
   position: relative;
 }
@@ -1067,14 +1111,14 @@ code {
   flex-direction: row;
 }
 .personalPage .personalPage__history .currentDay .currentHistory-outline {
-  -webkit-mask-image: url("../svg/border.svg");
-  mask-image: url("../svg/border.svg");
+  -webkit-mask-image: url("../svg/borderLarge.svg");
+  mask-image: url("../svg/borderLarge.svg");
   -webkit-mask-repeat: no-repeat;
   mask-repeat: no-repeat;
   -webkit-mask-position: center center;
   mask-position: center center;
   cursor: pointer;
-  height: 35px;
+  height: 40px;
   position: absolute;
   top: 0;
   width: 582px;
@@ -1096,6 +1140,10 @@ code {
   min-width: 80px;
   width: 90px;
   display: block;
+}
+.personalPage .personalPage__graphic .personalPage__chooseInterval .inputS .inputS-outline {
+  -webkit-mask-image: url("../svg/borderShort.svg");
+  mask-image: url("../svg/borderShort.svg");
 }
 .personalPage .personalPage__graphic .personalPage__chooseInterval p {
   text-align: center;
@@ -1138,7 +1186,7 @@ code {
   grid-template-columns: 96px 89px 72px 86px 48px;
   grid-gap: 30px;
   padding-left: 35px;
-  height: 35px;
+  height: 40px;
   align-items: center;
   position: relative;
 }
@@ -1158,14 +1206,14 @@ code {
   flex-direction: row;
 }
 .personalPage .personalPage__profit .currentDay .currentProfit .currentProfit-outline {
-  -webkit-mask-image: url("../svg/border.svg");
-  mask-image: url("../svg/border.svg");
+  -webkit-mask-image: url("../svg/borderLarge.svg");
+  mask-image: url("../svg/borderLarge.svg");
   -webkit-mask-repeat: no-repeat;
   mask-repeat: no-repeat;
   -webkit-mask-position: center center;
   mask-position: center center;
   cursor: pointer;
-  height: 35px;
+  height: 40px;
   position: absolute;
   top: 0;
   width: 582px;
@@ -1279,6 +1327,8 @@ code {
 }
 .modeSelection .modeSelection__leaders .leaders {
   height: 300px;
+  position: relative;
+  top: -25px;
 }
 .modeSelection .modeSelection__leaders .leaders .leader {
   width: 75px;
@@ -1405,6 +1455,10 @@ code {
 .modeSelection .modeSelection__content .modeSelection__mode .inputS {
   width: 160px;
 }
+.modeSelection .modeSelection__content .modeSelection__mode .inputS .inputS-outline {
+  -webkit-mask-image: url("../svg/borderMedium.svg");
+  mask-image: url("../svg/borderMedium.svg");
+}
 .modeSelection .modeSelection__content .modeSelection__mode .inputS p {
   color: white !important;
   font-family: "cyberdyne";
@@ -1419,15 +1473,19 @@ code {
   margin-bottom: 10px;
   justify-content: space-around;
 }
+.modeSelection .modeSelection__content .modeSelection__prize .btn-group_modeSelection1 .inputS .inputS-outline, .modeSelection .modeSelection__content .modeSelection__prize .btn-group_modeSelection2 .inputS .inputS-outline {
+  -webkit-mask-image: url("../svg/borderSmall.svg");
+  mask-image: url("../svg/borderSmall.svg");
+}
 .modeSelection .modeSelection__content .modeSelection__prize .btn-group_modeSelection1 .inputS p, .modeSelection .modeSelection__content .modeSelection__prize .btn-group_modeSelection2 .inputS p {
   color: white !important;
   font-family: "cyberdyne";
 }
 .modeSelection .modeSelection__content .modeSelection__prize .btn-group_modeSelection2 {
-  width: 300px;
+  width: 390px;
 }
 .modeSelection .modeSelection__content .modeSelection__prize .modeSelection__prize__inputS {
-  width: 90px;
+  width: 120px;
 }
 .modeSelection .modeSelection__content .modeSelection__rules .modeSelection__rules-content {
   display: grid;
@@ -1442,6 +1500,10 @@ code {
 .modeSelection .modeSelection__content .inputS {
   width: 90px;
   margin: 0 auto;
+}
+.modeSelection .modeSelection__content .inputS .inputS-outline {
+  -webkit-mask-image: url("../svg/borderSmall.svg");
+  mask-image: url("../svg/borderSmall.svg");
 }
 .modeSelection .modeSelection__content .inputS p {
   text-align: center;
@@ -2019,6 +2081,10 @@ code {
   width: 90px;
   margin: 0 auto;
   margin-top: 10px;
+}
+.arena .arena__content .arena__player1 .inputS .inputS-outline, .arena .arena__content .arena__player2 .inputS .inputS-outline {
+  -webkit-mask-image: url("../svg/borderShort.svg");
+  mask-image: url("../svg/borderShort.svg");
 }
 .arena .arena__content .arena__player1 .inputS p, .arena .arena__content .arena__player2 .inputS p {
   font-weight: normal;

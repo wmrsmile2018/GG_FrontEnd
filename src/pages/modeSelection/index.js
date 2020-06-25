@@ -149,7 +149,7 @@ class ModeSelection extends Component {
                 <div className="modeSelection__rule3 modeSelection__rule">3</div>
               </div>
             </div>
-            <InputS classN="modeSelection" type="submit">
+            <InputS classN="modeSelection" type="submit" link="/arena">
               <p>Играть</p>
             </InputS>
           </form>

@@ -12,7 +12,7 @@ class HeaderNews extends Component {
     return (
       <div className="headerNews">
         <div className="headerNews-leftSide">
-          <InputS type="submit" classN="headerNews" image1={GG} link='arena'>
+          <InputS type="submit" classN="headerNews" image1={GG} link='/mode-selection'>
             <p>
               Арена
             </p>

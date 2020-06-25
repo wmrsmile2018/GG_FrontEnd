@@ -22,7 +22,7 @@ class HeaderPersonal extends Component {
     return (
       <div className="headerPersonal">
         <div className="side1">
-          <InputS type="submit" classN="headerPersonal" image1={GG} link='/arena'>
+          <InputS type="submit" classN="headerPersonal" image1={GG} link='/mode-selection'>
             <p>Арена</p>
           </InputS>
         </div>
