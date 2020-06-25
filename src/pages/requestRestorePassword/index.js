@@ -64,7 +64,9 @@ class RequestResPas extends Component {
             classN3="requestRecPas__error"
             text="почта не подходит"
           />
-          <InputS type="submit" value="Далее" classN="requestRecPas"/>
+          <InputS type="submit" classN="requestRecPas">
+            <p>Далее</p>
+          </InputS>
           <p className="requestRecPas__text">На введенную вами электронную почту было <br/>отправленно письмо с ссылкой для входа в аккаунт</p>
         </form>
       </div>

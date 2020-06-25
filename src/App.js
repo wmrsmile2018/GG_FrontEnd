@@ -18,13 +18,9 @@ import PersonalPage from './pages/personalPage/index';
 import Header from './components/header/index';
 import LeftBar from './components/leftBar/index';
 import RightBar from './components/rightBar/index';
-import DND from './components/DND/index';
 import Chat from './components/chat/index';
 
 import getHistory from './modules/history';
-
-import { setPath } from './actions/actionPath.js';
-
 
 import ReactModal from 'react-modal-resizable-draggable';
 
@@ -88,7 +84,7 @@ class App extends Component {
 
                 <Route path="/arena" component={Arena}/>
                 <Route path="/hall-of-fame" component={HallOfFame}/>
-                <Route path="/mode-selection" component={ModeSelection}/> // доделать треугольники и рамку
+                <Route path="/mode-selection" component={ModeSelection}/>
                 <Route path="/personal-page" component={PersonalPage}/>
                 <Route path="/options" component={Option}/>
                 <Route path="*" component={Error}/>

@@ -1,6 +1,5 @@
 import React, { Component, Fragment } from 'react';
 
-
 import InputS from '../components/inputSubmit/index';
 import Earth from '../public/svg/earth.svg';
 import Trapeze from '../public/svg/trapeze.svg';
@@ -20,8 +19,8 @@ class HeaderNews extends Component {
         </div>
         <div className="headerNews-center">
           <p className="headerNews-title">Новости</p>
-          <img className="headerNews-earth" src={Earth}/>
-          <img className="headerNews-trapeze" src={Trapeze}/>
+          <img className="headerNews-earth" src={Earth} alt=""/>
+          <img className="headerNews-trapeze" src={Trapeze} alt=""/>
         </div>
         <div className="headerNews-rightSide">
           <InputS type="submit" value="Арена" classN="headerNews" image2={Person} link='/personal-page'>

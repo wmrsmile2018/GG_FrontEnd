@@ -2,8 +2,6 @@ import React, {Component} from 'react'
 import PropTypes from 'prop-types';
 import { Link } from "react-router-dom";
 
-import getHistory from '../../modules/history';
-
 class InputS extends Component {
   constructor(props) {
     super(props);
@@ -24,7 +22,6 @@ class InputS extends Component {
     display: PropTypes.string,
     classN: PropTypes.string,
     name: PropTypes.string,
-    value: PropTypes.string,
     actionOnClick: PropTypes.func,
     image1: PropTypes.string,
     image2: PropTypes.string,
@@ -37,7 +34,6 @@ class InputS extends Component {
     display: '',
     classN: '',
     name: '',
-    value: '',
     actionOnClick: () => {},
     image1: '',
     image2: '',
@@ -68,7 +64,7 @@ class InputS extends Component {
 
 
   render() {
-    const { active, display, classN, name, value, image1, image2, children, link } = this.props;
+    const { active, display, classN, name, image1, image2, children, link } = this.props;
     const color = active ? this.state.yellow : this.state.color;
     const shadow = active ? "0px 0px 33px 2px #FFD600" : "none";
 
@@ -86,7 +82,7 @@ class InputS extends Component {
         <div className="inputS_imgLeft"
           style={{display: displayLeft}}
         >
-          <img src={image1}/>
+          <img src={image1} alt=""/>
         </div>
         <div style={{color: color}}
           data-name={name}
@@ -98,7 +94,7 @@ class InputS extends Component {
         <div className="inputS_imgRight"
           style={{display: displayRight}}
         >
-          <img src={image2}/>
+          <img src={image2} alt=""/>
         </div>
         <div style={{boxShadow: shadow}}
           className={"inputS-shadow " + classN + "__inputS-shadow"}

@@ -80,7 +80,9 @@ class SignIn extends Component {
           classN3="signIn__error"
           text="Введите пароль"
         />
-        <InputS type="submit" value="Войти" classN="signIn"/>
+        <InputS type="submit" classN="signIn">
+          <p>Войти</p>
+        </InputS>
       </form>
       <ButtonS classN="signIn_button" text="Забыли пароль?"/>
     </div>

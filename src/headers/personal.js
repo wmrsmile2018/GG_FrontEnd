@@ -1,13 +1,10 @@
-import React, { Component, Fragment } from 'react';
+import React, { Component } from 'react';
 
 import InputS from '../components/inputSubmit/index';
 import Avatar1 from '../components/avatar1/index';
 
-import CSGO from '../public/svg/csgo.svg';
-import Trapeze from '../public/svg/trapeze.svg';
 import GG from '../public/svg/gg.svg';
 import Options from '../public/svg/options.svg';
-import Person from '../public/svg/person.svg';
 import placeholder from '../public/images/placeholder.jpg';
 
 import getHistory from '../modules/history';
@@ -45,7 +42,7 @@ class HeaderPersonal extends Component {
           <InputS type="submit" classN="headerPersonal" link='/personal-page'>
             <p>23 000 P</p>
           </InputS>
-          <img className="icon" src={Options} onClick={this.handleOnClick} />
+          <img className="icon" src={Options} onClick={this.handleOnClick} alt=""/>
           <span className="nickName" onClick={this.handleOnClick} >Настройки</span>
         </div>
       </div>

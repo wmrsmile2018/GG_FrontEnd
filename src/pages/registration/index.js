@@ -195,7 +195,9 @@ class Registration extends Component {
             classN3="registration__error"
             text="почта не подходит"
             />
-          <InputS type="submit" classN="registration" value="Зарегистрироваться"/>
+          <InputS type="submit" classN="registration">
+            <p>Зарегистрироваться</p>
+          </InputS>
        </form>
        <div className="registration__signIn">
          <p className="registration__exist">Уже есть аккаунт?</p>

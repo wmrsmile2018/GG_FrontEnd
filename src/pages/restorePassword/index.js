@@ -86,7 +86,9 @@ class RestorePas extends Component {
             classN3="requestRecPas__error"
             text="Пароли не совпадают"
           />
-          <InputS type="submit" value="Далее" classN="recoveryPas"/>
+          <InputS type="submit" classN="recoveryPas">
+            <p>Далее</p>
+          </InputS>
         </form>
       </div>
     )

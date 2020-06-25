@@ -1,4 +1,4 @@
-import React, { Component, Fragment } from 'react';
+import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import HeaderNews from '../../headers/news.js';
 import HeaderArena from '../../headers/arena.js';
@@ -6,7 +6,6 @@ import HeaderPersonal from '../../headers/personal.js';
 
 class Header extends Component {
   state = {
-    path: '/',
     tag: null
   }
 
@@ -24,14 +23,13 @@ class Header extends Component {
         tag = null;
       }
       this.setState({
-        path: this.props.path.path,
         tag: tag,
       })
     }
   }
 
   render() {
-    const { path, tag } = this.state;
+    const { tag } = this.state;
     const show = tag ? 'block' : 'none';
     return (
       <div className="header"

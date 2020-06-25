@@ -18,8 +18,8 @@ class HeaderArena extends Component {
           </InputS>
         </div>
         <div className="headerArena-center">
-          <img className="headerArena-csgo" src={CSGO}/>
-          <img className="headerArena-trapeze" src={Trapeze}/>
+          <img className="headerArena-csgo" src={CSGO} alt=""/>
+          <img className="headerArena-trapeze" src={Trapeze} alt=""/>
         </div>
         <div className="headerArena-rightSide">
           <InputS type="submit" value="Арена" classN="headerArena" image2={Person} link='/personal-page'>

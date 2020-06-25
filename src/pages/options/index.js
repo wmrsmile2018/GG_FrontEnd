@@ -1,5 +1,4 @@
 import React, {Component} from 'react';
-import { Radio } from 'antd';
 import TextIF from '../../components/textInputField/index';
 import RadioB from '../../components/radioButton/index';
 import Avatar1 from '../../components/avatar1/index';
