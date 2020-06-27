@@ -1,5 +1,6 @@
 import React, {Component} from 'react'
-import Avatar2 from '../../components/avatar2/index'
+import Avatar2 from '../avatar2/index'
+import Statistics from '../statistics/index';
 
 const getDate = (unix_timestamp) => {
   const currentDate = new Date(unix_timestamp * 1000);
@@ -33,6 +34,7 @@ class Histories extends Component {
   }
 
   handleClick() {
+    console.log(this.state.isOpen);
     if (this.state.isOpen === false) {
         this.setState({
           isOpen: true
@@ -44,8 +46,21 @@ class Histories extends Component {
     }
   }
 
+  setType = (array) => {
+    if (array.length === 1) {
+      return '1:1';
+    } else if (array.length === 2) {
+      return '2:2';
+    } else if (array.length === 5) {
+      return '5:5';
+    }
+  }
+
   render(){
-    const { red, green } = this.state;
+    const { red, green, isOpen } = this.state;
+    const background1 = isOpen ? 'none' : this.props.isWin === true ? green : red;
+    const background2 = !isOpen ? 'none' : this.props.isWin === true ? green : red;
+    const type = this.setType(this.props.team1);
     return (
       <div onClick={this.handleClick}
         className={"currentHistory " + this.props.classN + "__currentHistory" + this.props.iter}
@@ -71,8 +86,9 @@ class Histories extends Component {
           </div>
         </div>
         <div className={"currentHistory-outline"}
-        style={{background: this.props.isWin === true ? green : red}}
+          style={{background: background1}}
         />
+        <Statistics background={background2} type={type}/>
       </div>
     )
   }
@@ -80,7 +96,6 @@ class Histories extends Component {
 
 const History = (props) => {
   const display = props.visibility ? {display: "block"} : {display: "none"}
-  console.log(display);
   let currentDate = '';
   let output = [], tmp = [];
   output.push(

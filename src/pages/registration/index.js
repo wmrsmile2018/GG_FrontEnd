@@ -32,7 +32,7 @@ const Validate = (input, pattern) => {
 const RegElement = (props) => {
   return (
     <div className={props.classN1}>
-      <TextIF classN={props.classN2 + "__"} actionOnChange={props.actionOnChange} name={props.name} type={props.type} />
+      <TextIF classN={props.classN2 + "__"} actionOnChange={props.actionOnChange} title={props.title} type={props.type} />
       <div style={{display: props.display}} className={props.classN3}>
         {props.text}
       </div>
@@ -136,9 +136,9 @@ class Registration extends Component {
 
   render() {
     const RegElementParametres = [
-      {display: this.state.styleLogin, actionOnChange: this.updateDataL ,classN1: "registration__login", classN2: "registration", name: "Логин", type: "text", classN3: "registration__error", text: "Логин не подходит"},
-      {display: this.state.stylePas, actionOnChange: this.updateDataP ,classN1: "registration__password", classN2: "registration", name: "Пароль", type: "password", classN3: "registration__error", text: "Пароль не подходит"},
-      {display: this.state.styleConfirmPas, actionOnChange: this.updateDataConfP ,classN1: "registration__confirm-password", classN2: "registration", name: "Повторите пароль", type: "password", classN3: "registration__error", text: "Пароли не совпадают"},
+      {display: this.state.styleLogin, actionOnChange: this.updateDataL ,classN1: "registration__login", classN2: "registration", title: "Логин", type: "text", classN3: "registration__error", text: "Логин не подходит"},
+      {display: this.state.stylePas, actionOnChange: this.updateDataP ,classN1: "registration__password", classN2: "registration", title: "Пароль", type: "password", classN3: "registration__error", text: "Пароль не подходит"},
+      {display: this.state.styleConfirmPas, actionOnChange: this.updateDataConfP ,classN1: "registration__confirm-password", classN2: "registration", title: "Повторите пароль", type: "password", classN3: "registration__error", text: "Пароли не совпадают"},
     ]
 
     let days, months, years;
@@ -152,7 +152,7 @@ class Registration extends Component {
         classN1={element.classN1}
         classN2={element.classN2}
         actionOnChange={element.actionOnChange}
-        name={element.name}
+        title={element.title}
         type={element.type}
         display={element.display}
         classN3={element.classN3}
@@ -189,7 +189,7 @@ class Registration extends Component {
             classN1="registration__email"
             classN2="registration"
             actionOnChange={this.updateDataE}
-            name="Почта"
+            title="Почта"
             type="text"
             display={this.state.styleEmail}
             classN3="registration__error"

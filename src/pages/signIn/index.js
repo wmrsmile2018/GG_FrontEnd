@@ -9,7 +9,7 @@ import { connect } from 'react-redux';
 const SignInElement = (props) => {
   return (
     <div className={props.classN1}>
-      <TextIF classN={props.classN2} updateData={props.update} name={props.name} type={props.type} />
+      <TextIF classN={props.classN2} actionOnChange={props.update} title={props.title} type={props.type} />
       <div style={{display: props.display}} className={props.classN3}>
         {props.text}
       </div>
@@ -37,7 +37,6 @@ class SignIn extends Component {
   };
 
   handleSubmit = (e) => {
-    console.log(this.state.password, this.state.login)
     if (this.state.login === '') {
       this.setState({styleLogin: "block"})
     } else {
@@ -64,7 +63,7 @@ class SignIn extends Component {
           classN1="signIn__login"
           classN2="signIn"
           update={this.updateDataL}
-          name="Логин"
+          title="Логин"
           type="text"
           display={this.state.styleLogin}
           classN3="signIn__error"
@@ -74,7 +73,7 @@ class SignIn extends Component {
           classN1="signIn__password"
           classN2="signIn"
           update={this.updateDataP}
-          name="Пароль"
+          title="Пароль"
           type="text"
           display={this.state.stylePas}
           classN3="signIn__error"

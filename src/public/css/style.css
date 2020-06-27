@@ -1,6 +1,7 @@
 @import '~antd/dist/antd.css';
 @import './cyberdyne.css';
 @import './robotoMono.css';
+@import './payment.css';
 @keyframes comeIn {
   0% {
     transform: scale(0.5);
@@ -1123,6 +1124,9 @@ code {
   top: 0;
   width: 582px;
 }
+.personalPage .personalPage__graphic {
+  margin-top: 50px;
+}
 .personalPage .personalPage__graphic .highcharts-axis-labels text, .personalPage .personalPage__graphic .highcharts-legend text {
   fill: #FFFFFF !important;
 }
@@ -1217,6 +1221,34 @@ code {
   position: absolute;
   top: 0;
   width: 582px;
+}
+.personalPage .addPaymentCard {
+  margin-top: 50px;
+}
+.personalPage .addPaymentCard .textIF {
+  margin-bottom: 20px;
+}
+.personalPage .addPaymentCard .inputS {
+  margin: 0 auto;
+  width: 160px;
+}
+.personalPage .addPaymentCard .inputS p {
+  text-align: center;
+}
+
+.statistics {
+  width: 582px;
+  height: 187px;
+}
+.statistics .statistics-outline {
+  width: 582px;
+  height: 187px;
+  -webkit-mask-image: url("../svg/sSmall.svg");
+  mask-image: url("../svg/sSmall.svg");
+  -webkit-mask-repeat: no-repeat;
+  mask-repeat: no-repeat;
+  -webkit-mask-position: center center;
+  mask-position: center center;
 }
 
 .modeSelection {

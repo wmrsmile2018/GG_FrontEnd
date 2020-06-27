@@ -14,7 +14,7 @@ const Validate = (input, pattern) => {
 const ReqResPasElement = (props) => {
   return (
     <div className={props.classN1}>
-      <TextIF classN={props.classN2 + "__"} actionOnChange={props.actionOnChange} name={props.name} type={props.type} />
+      <TextIF classN={props.classN2 + "__"} actionOnChange={props.actionOnChange} title={props.title} type={props.type} />
       <div style={{display: props.display}} className={props.classN3}>
         {props.text}
       </div>
@@ -34,7 +34,6 @@ class RequestResPas extends Component {
   }
 
   updateDataE(e) {
-    console.log(e.target.value);
      this.setState({email: e.target.value});
   };
 
@@ -59,7 +58,8 @@ class RequestResPas extends Component {
           <ReqResPasElement
             classN1="requestRecPas__email"
             classN2="requestRecPas"
-            actionOnChange={this.updateDataE} name="Введите почту"
+            actionOnChange={this.updateDataE}
+            title="Введите почту"
             type="text" display={this.state.styleEmail}
             classN3="requestRecPas__error"
             text="почта не подходит"

@@ -15,6 +15,7 @@ import ModeSelection from './pages/modeSelection/index';
 import Option from './pages/options/index';
 import PersonalPage from './pages/personalPage/index';
 
+
 import Header from './components/header/index';
 import LeftBar from './components/leftBar/index';
 import RightBar from './components/rightBar/index';

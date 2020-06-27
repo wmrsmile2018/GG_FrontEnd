@@ -1,6 +1,8 @@
 @import '~antd/dist/antd.css';
 @import './cyberdyne.css';
 @import './robotoMono.css';
+@import './payment.css';
+
 $color-dark-blue: #56CCF2;
 $color-white-blue: #83E4E4;
 $color-red: #EB5757;
@@ -116,6 +118,7 @@ code {
     margin-left: 1px;
     top: 0px;
     z-index: 1;
+
     -webkit-mask-image: url('../svg/headerBackground.svg');
     mask-image: url('../svg/headerBackground.svg');
     -webkit-mask-repeat: no-repeat;
@@ -1369,6 +1372,7 @@ code {
   }
 
   .personalPage__graphic {
+    margin-top: 50px;
     .highcharts-axis-labels, .highcharts-legend {
       text {
         fill: $color-white!important;
@@ -1495,8 +1499,40 @@ code {
       }
     }
   }
+
+  .addPaymentCard {
+    margin-top: 50px;
+    // text-align: center;
+    .textIF {
+      margin-bottom: 20px;
+    }
+
+    .inputS {
+      margin: 0 auto;
+      width: $width-medium;
+      p {
+        text-align: center;
+      }
+    }
+  }
 }
 
+.statistics {
+  // background: red;
+  width: 582px;
+  height: 187px;
+  .statistics-outline {
+    width: 582px;
+    height: 187px;
+    // background: red;
+    -webkit-mask-image: url('../svg/sSmall.svg');
+    mask-image: url('../svg/sSmall.svg');
+    -webkit-mask-repeat: no-repeat;
+    mask-repeat: no-repeat;
+    -webkit-mask-position: center center;
+    mask-position: center center;
+  }
+}
 /////////////////////////////MODE SELECTION/////////////////////////////////////
 
 .modeSelection {
@@ -1617,7 +1653,7 @@ code {
       height: 300px;
       position: relative;
       top: -25px;
-      
+
       .leader {
         width: 75px;
         height: 90px;

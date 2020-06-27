@@ -15,7 +15,7 @@ const Validate = (input, pattern) => {
 const RestorePasElement = (props) => {
   return (
     <div className={props.classN1}>
-      <TextIF classN={props.classN2 + "__"} actionOnChange={props.actionOnChange} name={props.name} type={props.type} />
+      <TextIF classN={props.classN2 + "__"} actionOnChange={props.actionOnChange} title={props.title} type={props.type} />
       <div style={{display: props.display}} className={props.classN3}>
         {props.text}
       </div>
@@ -38,12 +38,10 @@ class RestorePas extends Component {
   }
 
   updateDataP(e) {
-    console.log(e.target.value);
      this.setState({password: e.target.value});
   };
 
   updateDataConfP(e) {
-    console.log(e.target.value);
      this.setState({confirmPassword: e.target.value});
   };
 
@@ -73,7 +71,8 @@ class RestorePas extends Component {
           <RestorePasElement
             classN1="recoveryPas__password"
             classN2="recoveryPas"
-            actionOnChange={this.updateDataP} name="Введите новый пароль"
+            actionOnChange={this.updateDataP}
+            title="Введите новый пароль"
             type="text" display={this.state.stylePas}
             classN3="requestRecPas__error"
             text="Пароль не подходит"
@@ -81,7 +80,8 @@ class RestorePas extends Component {
           <RestorePasElement
             classN1="recoveryPas__confirmPas"
             classN2="recoveryPas"
-            actionOnChange={this.updateDataConfP} name="Повторите пароль"
+            actionOnChange={this.updateDataConfP}
+            title="Повторите пароль"
             type="text" display={this.state.styleConfirmPas}
             classN3="requestRecPas__error"
             text="Пароли не совпадают"

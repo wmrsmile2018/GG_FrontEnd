@@ -1,13 +1,17 @@
 import React, {Component} from 'react';
+import { connect } from 'react-redux';
 
 import History from '../../components/history/index';
 import Profit from '../../components/profit/index';
 import Statics from '../../components/statics/index';
 import InputS from '../../components/inputSubmit/index';
 import Graphic from '../../components/graphic/index';
+import AddPaymentCard from '../../components/addPaymentCard/index';
+
 import getHistory from '../../modules/history';
+
 import { setPath } from '../../actions/actionPath.js';
-import { connect } from 'react-redux';
+
 // const currentDateTime = new Date();
 // const startTimeOfCurrentYear = (new Date(currentDateTime.getFullYear(), 0, 1)).getTime();
 // const currentTime = currentDateTime.getTime();
@@ -902,7 +906,6 @@ class PersonalPage extends Component {
     this.props.setPath(getHistory().location.pathname);
   }
 
-
   handleOnClickHGames() {
     this.setState({
       showHGames: true,
@@ -1000,6 +1003,7 @@ class PersonalPage extends Component {
     const { showHFinances, showHGames, showMMoney } = this.state;
     const { activeD, activeW, activeM, activeHY, activeY } = this.state;
     const displayF = showHFinances ? {display: "block"} : {display: "none"};
+
     return (
       <div className="personalPage">
         <div className="personalPage__header">
@@ -1079,6 +1083,7 @@ class PersonalPage extends Component {
 
         <History visibility={showHGames} classN="personalPage" response={Data}/>
         <Profit visibility={showHFinances} classN="personalPage" response={Data}/>
+        <AddPaymentCard visibility={showMMoney} classN="personalPage"/>
       </div>
     )
   }
