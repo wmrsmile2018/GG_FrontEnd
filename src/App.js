@@ -17,6 +17,7 @@ import PersonalPage from './pages/personalPage/index';
 
 
 import Header from './components/header/index';
+import Footer from './components/footer/index';
 import LeftBar from './components/leftBar/index';
 import RightBar from './components/rightBar/index';
 import Chat from './components/chat/index';
@@ -53,15 +54,19 @@ class App extends Component {
 
   render() {
     const { showChat } = this.state;
-
     return (
       <div className="App">
-        <ReactModal
-        className="chat"
-        isOpen={showChat}
-        >
-           <Chat/>
-        </ReactModal>
+        {showChat &&
+          <ReactModal
+          className="chat"
+          isOpen={showChat}
+          top={100}
+          left={100}
+          >
+             <Chat/>
+          </ReactModal>
+        }
+        <div className="App-background"></div>
         <div className="App-content">
           <div className="left">
             <LeftBar/>
@@ -91,8 +96,9 @@ class App extends Component {
                 <Route path="*" component={Error}/>
               </Switch>
             </div>
+            <Footer/>
           </div>
-          <RightBar actionOnClick={this.handleOnClickChat}/>
+          <RightBar actionOnClick={this.handleOnClickChat} active={showChat}/>
         </div>
     </div>
     )

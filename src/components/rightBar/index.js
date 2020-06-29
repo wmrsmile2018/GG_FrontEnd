@@ -1,68 +1,67 @@
 import React, { Component } from 'react';
-import InputS from '../inputSubmit/index';
-import Chat from '../../public/svg/chat.svg';
 import PropTypes from 'prop-types';
+
+import InputS from '../inputSubmit/index';
+import TextIF from '../textInputField/index';
+
+import Friends from '../../public/images/friends.jpg'
 
 class RightBar extends Component {
   state = {
-    position: 110
+    search: ''
   }
 
   static propTypes = {
     actionOnClick: PropTypes.func,
+    active: PropTypes.bool,
   }
 
   static defaultProps = {
+    active: false,
     actionOnClick: () => {},
   }
 
-  componentDidMount() {
-    window.addEventListener('scroll', this.listenToScroll)
-  }
-
-  componentWillUnmount() {
-    window.removeEventListener('scroll', this.listenToScroll)
-  }
-
-  listenToScroll = () => {
-
-    const winScroll =
-      document.body.scrollTop || document.documentElement.scrollTop;
-    let position = 0;
-    if (winScroll >= 110) {
-      position = 0;
-    } else {
-      position = 110;
-    }
-    if (position !== this.state.position) {
-      this.setState({
-        position: position,
-      })
-    }
-
-  }
+  handleOnChange = value => {
+     this.setState({search: value});
+  };
 
   render() {
-    const { position } = this.state;
-    const { actionOnClick } = this.props;
-    const pos = position === 110 ? 'absolute' : 'fixed';
-    const top = position === 110 ? 110 : 0;
+    const { actionOnClick, active } = this.props;
     return (
-      <div className="right"
-        style={{marginTop: top}}
-        >
-        <div className="rightBar"
-          style={{position: pos}}
-          >
+      <div className="right">
+        <div className="rightBar">
           <div className="rightBar-outline"> </div>
           <div className="rightBar-background"> </div>
-          <div className="header"></div>
-          <div className="content"></div>
-          <div className="footer">
-            <InputS type="submit"classN="rightBar" image2={Chat} actionOnClick={actionOnClick}>
-              <p>Чат</p>
-            </InputS>
+          <div className="header">
+            <div className="header-buttons">
+              <div className="openChat">
+                <InputS type="submit"classN="rightBar" image2={true} actionOnClick={actionOnClick} active={active}>
+                </InputS>
+              </div>
+              <div className="newGroup">
+                <InputS type="submit"classN="rightBar" image2={true} actionOnClick={null}>
+                </InputS>
+              </div>
+              <div className="newFriend">
+                <InputS type="submit"classN="rightBar" image2={true} actionOnClick={null}>
+                </InputS>
+              </div>
+              <div className="challenge">
+                <InputS type="submit"classN="rightBar" image2={true} actionOnClick={null}>
+                </InputS>
+              </div>
+            </div>
+            <div className="header-search">
+              <div className="search-image"></div>
+              <TextIF classN="rightBar" actionOnChange={this.handleOnChange}
+                type="text" display={this.state.search}
+              />
+            </div>
           </div>
+          <div className="content">
+            <img src={Friends} alt=""/>
+          </div>
+
         </div>
       </div>
     )

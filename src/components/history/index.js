@@ -26,8 +26,12 @@ class Histories extends Component {
     super(props);
     this.state = {
       isOpen: false,
-      red: "#EB5757",
-      green: "#83E4E4"
+      red: "#eb57579e",
+      green: "#59a7ea75",
+      // green: "#3fd27a75",
+      // green: "#195e9ac9",
+
+
     };
 
     this.handleClick = this.handleClick.bind(this);
@@ -85,7 +89,10 @@ class Histories extends Component {
                 src={player.photo}/>)}
           </div>
         </div>
-        <div className={"currentHistory-outline"}
+        <div className="currentHistory-outline"
+          style={{background: background1}}
+        />
+      <div className="currentHistory-background"
           style={{background: background1}}
         />
         <Statistics background={background2} type={type}/>

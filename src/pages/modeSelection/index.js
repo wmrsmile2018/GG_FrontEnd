@@ -1,22 +1,16 @@
 import React, {Component} from 'react';
-import InputS from '../../components/inputSubmit/index';
-import Leaders from '../../components/leaders/index';
-import ButtonGroup from '../../components/buttonGroup/index';
-import getHistory from '../../modules/history';
-import { setPath } from '../../actions/actionPath.js';
 import { connect } from 'react-redux';
 
-const tmpObjs = [
-  {photo: "http://placehold.it/32x32", display1: "block", display2: "none", nickname: "12345678901234567890nagibator1234"},
-  {photo: "http://placehold.it/32x32", display1: "block", display2: "none", nickname: "nagibator1234"},
-  {photo: "http://placehold.it/32x32", display1: "block", display2: "none", nickname: "nagibator1234"},
-  {photo: "http://placehold.it/32x32", display1: "none", display2: "block", nickname: "nagibator1234"},
-  {photo: "http://placehold.it/32x32", display1: "none", display2: "block", nickname: "nagibator1234"},
-  {photo: "http://placehold.it/32x32", display1: "none", display2: "block", nickname: "nagibator1234"},
-  {photo: "http://placehold.it/32x32", display1: "none", display2: "block", nickname: "nagibator1234"},
-  {photo: "http://placehold.it/32x32", display1: "none", display2: "block", nickname: "nagibator1234"},
-  {photo: "http://placehold.it/32x32", display1: "none", display2: "block", nickname: "nagibator1234"},
-]
+import InputS from '../../components/inputSubmit/index';
+import ButtonGroup from '../../components/buttonGroup/index';
+
+import getHistory from '../../modules/history';
+
+import { setPath } from '../../actions/actionPath.js';
+
+import Book from '../../public/svg/book.svg';
+import Security from '../../public/svg/security.svg';
+import Camera from '../../public/svg/camera.svg';
 
 class ModeSelection extends Component {
   constructor(props) {
@@ -70,26 +64,31 @@ class ModeSelection extends Component {
     getHistory().push('/hall-of-fame');
   }
 
+
+
   render() {
     const { prize20P, prize100P, prize200P, prize500P, prize1000P, prize2000P,
       prize4000P, mode11 ,mode22 } = this.state;
+
+
+      // <div className="modeSelection__leaders"
+      //   onClick={this.handleOnClick}
+      //   >
+      //   <div className="modeSelection__leaders-outline1">
+      //     <div className="modeSelection__largeWing"></div>
+      //     <div className="modeSelection__mediumWing"></div>
+      //     <div className="modeSelection__smallWing"></div>
+      //   </div>
+      //   <div className="modeSelection__leaders-outline2">
+      //     <div className="modeSelection__largeWing"></div>
+      //     <div className="modeSelection__mediumWing"></div>
+      //     <div className="modeSelection__smallWing"></div>
+      //   </div>
+      //   <Leaders objs={tmpObjs}/>
+      // </div>
+
     return(
       <div className="modeSelection">
-        <div className="modeSelection__leaders"
-          onClick={this.handleOnClick}
-          >
-          <div className="modeSelection__leaders-outline1">
-            <div className="modeSelection__largeWing"></div>
-            <div className="modeSelection__mediumWing"></div>
-            <div className="modeSelection__smallWing"></div>
-          </div>
-          <div className="modeSelection__leaders-outline2">
-            <div className="modeSelection__largeWing"></div>
-            <div className="modeSelection__mediumWing"></div>
-            <div className="modeSelection__smallWing"></div>
-          </div>
-          <Leaders objs={tmpObjs}/>
-        </div>
 
         <div className="modeSelection__content">
           <form>
@@ -144,9 +143,27 @@ class ModeSelection extends Component {
                 Выполните все правила для начала игры
               </p>
               <div className="modeSelection__rules-content">
-                <div className="modeSelection__rule1 modeSelection__rule">1</div>
-                <div className="modeSelection__rule2 modeSelection__rule">2</div>
-                <div className="modeSelection__rule3 modeSelection__rule">3</div>
+                <div className="modeSelection__rule1 modeSelection__rule">
+                  <div className="modeSelection-outline"></div>
+                  <div className="modeSelection-background"></div>
+                  <div className="modeSelection-image">
+                    <img src={Camera} alt=""/>
+                  </div>
+                </div>
+                <div className="modeSelection__rule2 modeSelection__rule">
+                  <div className="modeSelection-outline"></div>
+                  <div className="modeSelection-background"></div>
+                  <div className="modeSelection-image">
+                    <img src={Book} alt=""/>
+                  </div>
+                </div>
+                <div className="modeSelection__rule3 modeSelection__rule">
+                  <div className="modeSelection-outline"></div>
+                  <div className="modeSelection-background"></div>
+                  <div className="modeSelection-image">
+                    <img src={Security} alt=""/>
+                  </div>
+                </div>
               </div>
             </div>
             <InputS classN="modeSelection" type="submit" link="/arena">

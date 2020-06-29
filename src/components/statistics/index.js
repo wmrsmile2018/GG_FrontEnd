@@ -1,11 +1,9 @@
-import React, { Component } from 'react';
+import React from 'react';
 import styled from '@emotion/styled';
 
 import StatisticsSmall from '../../public/svg/sSmall.svg';
 import StatisticsMedium from '../../public/svg/sSmall.svg';
 import StatisticsBig from '../../public/svg/sSmall.svg';
-
-import Avatar2 from '../../components/avatar2/index';
 
 // border: 1px dashed ${props => (props.isDragActive ? 'rgba(51,51,51,0.5)' : colors.GrayScale_200)};
 // border: 1px solid red;

@@ -7,7 +7,6 @@ import {
   formatCreditCardNumber,
   formatCVC,
   formatExpirationDate,
-  formatFormData
 } from "../../modules/payment";
 
 import "react-credit-cards/es/styles-compiled.css";
@@ -50,7 +49,6 @@ class AddPaymentCard extends Component {
 
   handleSubmit = e => {
     e.preventDefault();
-    const { issuer } = this.state;
     const formData = [...e.target.elements]
       .filter(d => d.name)
       .reduce((acc, d) => {
@@ -64,21 +62,23 @@ class AddPaymentCard extends Component {
 
 
   render() {
-    const { name, number, expiry, cvc, focused, issuer, formData } = this.state;
+    const { name, number, expiry, cvc, focused } = this.state;
+    const { visibility } = this.props;
+
 
     const Parametres = [
       {classN: "addPaymentCard", type: "tel", name: "number", actionOnChange: this.handleInputChange,
-        pattern: "[\d| ]{16}", placeholder: "Card Number", title: "Номер карты"},
+        placeholder: "Card Number", title: "Номер карты"},
       {classN: "addPaymentCard", type: "text", name: "name", actionOnChange: this.handleInputChange,
         placeholder: "Name", title: "Владелец карты"},
       {classN: "addPaymentCard", type: "tel", name: "expiry", actionOnChange: this.handleInputChange,
-        pattern: "\d\d/\d\d", placeholder: "Name", title: "Владелец карты"},
+        placeholder: "Name", title: "Владелец карты"},
       {classN: "addPaymentCard", type: "tel", name: "cvc", actionOnChange: this.handleInputChange,
-        pattern: "\d{3,4}", placeholder: "CVC/CVV", title: "CVC/CVV"},
+        placeholder: "CVC/CVV", title: "CVC/CVV"},
     ]
 
     return (
-      <div className="addPaymentCard">
+      <div className="addPaymentCard" style={{display: visibility ? 'block' : 'none'}}>
         <Card
           number={number}
           name={name}
@@ -96,7 +96,6 @@ class AddPaymentCard extends Component {
               type={element.type}
               name={element.name}
               actionOnChange={element.actionOnChange}
-              pattern={element.pattern}
               placeholder={element.placeholder}
               title={element.title}
               />

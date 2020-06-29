@@ -23,8 +23,8 @@ class InputS extends Component {
     classN: PropTypes.string,
     name: PropTypes.string,
     actionOnClick: PropTypes.func,
-    image1: PropTypes.string,
-    image2: PropTypes.string,
+    image1: PropTypes.bool,
+    image2: PropTypes.bool,
     link: PropTypes.string,
   }
 
@@ -35,8 +35,8 @@ class InputS extends Component {
     classN: '',
     name: '',
     actionOnClick: () => {},
-    image1: '',
-    image2: '',
+    image1: false,
+    image2: false,
     link: '',
   }
 
@@ -68,8 +68,10 @@ class InputS extends Component {
     const color = active ? this.state.yellow : this.state.color;
     const shadow = active ? "0px 0px 33px 2px #FFD600" : "none";
 
-    const displayLeft = image1 === '' ? 'none' : 'block';
-    const displayRight = image2 === '' ? 'none' : 'block';
+    const displayLeft = image1 ? 'block' : 'none';
+    const displayRight = image2 ? 'block' : 'none';
+    // <img src={image1} alt=""/>
+
     return(
       <div
         style={{display: display}}
@@ -82,7 +84,10 @@ class InputS extends Component {
         <div className="inputS_imgLeft"
           style={{display: displayLeft}}
         >
-          <img src={image1} alt=""/>
+          <div className="image"
+            style={{background: color}}
+            >
+          </div>
         </div>
         <div style={{color: color}}
           data-name={name}
@@ -94,7 +99,10 @@ class InputS extends Component {
         <div className="inputS_imgRight"
           style={{display: displayRight}}
         >
-          <img src={image2} alt=""/>
+            <div className="image"
+              style={{background: color}}
+              >
+            </div>
         </div>
         <div style={{boxShadow: shadow}}
           className={"inputS-shadow " + classN + "__inputS-shadow"}
@@ -112,6 +120,11 @@ class InputS extends Component {
           <div
             style={{background: color}}
             className={"inputS-outline " + classN + "__inputS-outline"}
+            data-name={name}
+          >
+          </div>
+          <div
+            className={"inputS-background " + classN + "__inputS-background"}
             data-name={name}
           >
           </div>
