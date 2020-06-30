@@ -28,7 +28,7 @@ const Graphic = (props) => {
     <HighchartsChart plotOptions={ plotOptions }>
       <Chart  zoomType="x"/>
       <Legend />
-      <Tooltip valueSuffix=" k"/>
+      <Tooltip valueSuffix=" Руб"/>
       <XAxis id="myXaxis" categories={props.XAxis}>
         <XAxis.Title>{props.xTitle}</XAxis.Title>
       </XAxis>

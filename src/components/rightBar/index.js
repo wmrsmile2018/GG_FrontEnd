@@ -33,16 +33,22 @@ class RightBar extends Component {
           <div className="rightBar-outline"> </div>
           <div className="rightBar-background"> </div>
           <div className="header">
+            <div className="header-search">
+              <div className="search-image"></div>
+              <TextIF classN="rightBar" actionOnChange={this.handleOnChange}
+                type="text" display={this.state.search}
+                />
+            </div>
             <div className="header-buttons">
               <div className="openChat">
                 <InputS type="submit"classN="rightBar" image2={true} actionOnClick={actionOnClick} active={active}>
                 </InputS>
               </div>
-              <div className="newGroup">
+              <div className="newFriend">
                 <InputS type="submit"classN="rightBar" image2={true} actionOnClick={null}>
                 </InputS>
               </div>
-              <div className="newFriend">
+              <div className="newGroup">
                 <InputS type="submit"classN="rightBar" image2={true} actionOnClick={null}>
                 </InputS>
               </div>
@@ -50,12 +56,6 @@ class RightBar extends Component {
                 <InputS type="submit"classN="rightBar" image2={true} actionOnClick={null}>
                 </InputS>
               </div>
-            </div>
-            <div className="header-search">
-              <div className="search-image"></div>
-              <TextIF classN="rightBar" actionOnChange={this.handleOnChange}
-                type="text" display={this.state.search}
-              />
             </div>
           </div>
           <div className="content">
