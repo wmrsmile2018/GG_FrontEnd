@@ -86,17 +86,6 @@ code {
   grid-template-columns: 200px calc(100% - 400px) 200px;
 }
 
-.chat-modal {
-  height: 100%;
-  width: 100%;
-  position: fixed;
-  z-index: 200;
-  .DND {
-    height: 100%;
-    width: 100%;
-  }
-}
-
 .center {
   min-width: 770px;
   // max-width: calc(100% - 400px);
@@ -1601,7 +1590,6 @@ code {
           mask-repeat: no-repeat;
           -webkit-mask-position: center center;
           mask-position: center center;
-          cursor: pointer;
           height: 40px;
           position: absolute;
           top: 0;
@@ -1628,20 +1616,53 @@ code {
   }
 }
 
-.statistics {
-  // background: red;
-  width: 582px;
-  height: 187px;
-  .statistics-outline {
-    width: 582px;
-    height: 187px;
-    // background: red;
-    -webkit-mask-image: url('../svg/sSmall.svg');
-    mask-image: url('../svg/sSmall.svg');
-    -webkit-mask-repeat: no-repeat;
-    mask-repeat: no-repeat;
-    -webkit-mask-position: center center;
-    mask-position: center center;
+.detailedInf {
+  width: 524px;
+  margin: 0 auto;
+  padding-top: 5px;
+  // background: #59a7ea75;
+  .detailedInf-user{
+    display: grid;
+    grid-template-columns: 32px 135px 145px 145px;
+    grid-gap: 15px;
+    padding: 0 20px;
+    margin-bottom: 3px;
+
+    .detailedInf-nickName {
+      display: inline-block;
+      white-space: nowrap;
+      overflow: hidden !important;
+      text-overflow: ellipsis;
+    }
+    .detailedInf-kills, .detailedInf-deaths  {
+      display: flex;
+      flex-direction: row;
+      .detailedInf-title {
+        margin-right: 20px;
+      }
+      .detailedInf-score {
+        font-family: 'Cyberdyne';
+        color: $color-white-blue;
+        line-height: 30px;
+      }
+    }
+  }
+
+  .detailedInf-winner {
+    .detailedInf-user{
+      background: #ffd07459;
+    }
+
+  }
+  .detailedInf-result {
+    background: $color-black1;
+    text-align: center;
+    font-family: 'Cyberdyne';
+  }
+  .detailedInf-loser {
+    .detailedInf-user{
+      background: #eb575759;
+    }
   }
 }
 /////////////////////////////MODE SELECTION/////////////////////////////////////
@@ -3157,7 +3178,7 @@ code {
 
 
 /////////////////////////////CHAT///////////////////////////////////////////////
-.chat {
+.modalForm {
   width: 250px!important;
   height: 300px!important;
   background: $color-black1;
@@ -3250,6 +3271,7 @@ code {
             font-size: $size-medium;
           }
         }
+
         .avatar {
           margin-right: 10px;
           img {
@@ -3258,6 +3280,57 @@ code {
             width: 30px;
           }
         }
+
+        .chat {
+          width: 250px!important;
+          height: 300px!important;
+          position: absolute;
+          border: 1px solid $color-white-blue;
+          border-top-right-radius: 16px;
+          border-top-left-radius: 16px;
+          background: $color-black1;
+          top: 100px;
+          left: 200px;
+          z-index: 300;
+
+          .chat__content {
+            padding: 5px 15px;
+          }
+
+          .chat__header {
+            height: 35px;
+            margin: 7px 15px;
+            border-bottom: 1px solid $color-white-blue;
+            width: 220px;
+            button {
+              position: relative;
+              z-index: 200;
+            }
+          }
+
+          .chat__footer {
+            position: absolute;
+            bottom: 0px;
+            width: 250px;
+            height: 30px;
+            form {
+              margin: 0;
+              display: flex;
+              flex-direction: row;
+            }
+            .textIF {
+              input {
+                width: 220px;
+                height: 30px;
+              }
+            }
+          }
+
+          .flexible-modal-drag-area-bottom, .flexible-modal-drag-area-right, .flexible-modal-drag-area-left {
+            display: none;
+          }
+        }
+
       }
     }
   }

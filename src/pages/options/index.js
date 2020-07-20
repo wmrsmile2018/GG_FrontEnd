@@ -78,7 +78,7 @@ class Options extends Component {
           <DataElement
             classN1="phone"
             classN2="options"
-            actionOnChange={null}
+
             name="Телефон"
             type="text"
             display={"none"}
@@ -88,7 +88,6 @@ class Options extends Component {
           <DataElement
             classN1="email"
             classN2="options"
-            actionOnChange={null}
             name="Почта"
             type="text"
             display={"none"}

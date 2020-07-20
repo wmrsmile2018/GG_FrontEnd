@@ -20,7 +20,7 @@ import Header from './components/header/index';
 import Footer from './components/footer/index';
 import LeftBar from './components/leftBar/index';
 import RightBar from './components/rightBar/index';
-import Chat from './components/chat/index';
+import ModalForm from './components/chat/index';
 
 import getHistory from './modules/history';
 
@@ -56,16 +56,14 @@ class App extends Component {
     const { showChat } = this.state;
     return (
       <div className="App">
-        {showChat &&
-          <ReactModal
-          className="chat"
-          isOpen={showChat}
-          top={100}
-          left={100}
-          >
-             <Chat/>
-          </ReactModal>
-        }
+        <ReactModal
+        className="modalForm"
+        isOpen={showChat}
+        top={100}
+        left={100}
+        >
+           <ModalForm/>
+        </ReactModal>
         <div className="App-background"></div>
         <div className="App-content">
           <div className="left">

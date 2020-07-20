@@ -66,17 +66,6 @@ code {
   grid-template-columns: 200px calc(100% - 400px) 200px;
 }
 
-.chat-modal {
-  height: 100%;
-  width: 100%;
-  position: fixed;
-  z-index: 200;
-}
-.chat-modal .DND {
-  height: 100%;
-  width: 100%;
-}
-
 .center {
   min-width: 770px;
   margin: 0 auto;
@@ -1296,7 +1285,6 @@ code {
   mask-repeat: no-repeat;
   -webkit-mask-position: center center;
   mask-position: center center;
-  cursor: pointer;
   height: 40px;
   position: absolute;
   top: 0;
@@ -1316,19 +1304,46 @@ code {
   text-align: center;
 }
 
-.statistics {
-  width: 582px;
-  height: 187px;
+.detailedInf {
+  width: 524px;
+  margin: 0 auto;
+  padding-top: 5px;
 }
-.statistics .statistics-outline {
-  width: 582px;
-  height: 187px;
-  -webkit-mask-image: url("../svg/sSmall.svg");
-  mask-image: url("../svg/sSmall.svg");
-  -webkit-mask-repeat: no-repeat;
-  mask-repeat: no-repeat;
-  -webkit-mask-position: center center;
-  mask-position: center center;
+.detailedInf .detailedInf-user {
+  display: grid;
+  grid-template-columns: 32px 135px 145px 145px;
+  grid-gap: 15px;
+  padding: 0 20px;
+  margin-bottom: 3px;
+}
+.detailedInf .detailedInf-user .detailedInf-nickName {
+  display: inline-block;
+  white-space: nowrap;
+  overflow: hidden !important;
+  text-overflow: ellipsis;
+}
+.detailedInf .detailedInf-user .detailedInf-kills, .detailedInf .detailedInf-user .detailedInf-deaths {
+  display: flex;
+  flex-direction: row;
+}
+.detailedInf .detailedInf-user .detailedInf-kills .detailedInf-title, .detailedInf .detailedInf-user .detailedInf-deaths .detailedInf-title {
+  margin-right: 20px;
+}
+.detailedInf .detailedInf-user .detailedInf-kills .detailedInf-score, .detailedInf .detailedInf-user .detailedInf-deaths .detailedInf-score {
+  font-family: "Cyberdyne";
+  color: #83E4E4;
+  line-height: 30px;
+}
+.detailedInf .detailedInf-winner .detailedInf-user {
+  background: #ffd07459;
+}
+.detailedInf .detailedInf-result {
+  background: #11161bb8;
+  text-align: center;
+  font-family: "Cyberdyne";
+}
+.detailedInf .detailedInf-loser .detailedInf-user {
+  background: #eb575759;
 }
 
 .modeSelection {
@@ -2423,7 +2438,7 @@ code {
   mask-position: center center;
 }
 
-.chat {
+.modalForm {
   width: 250px !important;
   height: 300px !important;
   background: #11161bb8;
@@ -2432,7 +2447,7 @@ code {
   position: fixed;
   z-index: 200;
 }
-.chat .flexible-modal-drag-area {
+.modalForm .flexible-modal-drag-area {
   height: 50px;
   width: 250px !important;
   position: absolute;
@@ -2440,7 +2455,7 @@ code {
   top: 0;
   cursor: move;
 }
-.chat .flexible-modal-drag-area-left {
+.modalForm .flexible-modal-drag-area-left {
   position: absolute;
   top: 0;
   left: 0;
@@ -2448,7 +2463,7 @@ code {
   width: 15px;
   cursor: move;
 }
-.chat .flexible-modal-drag-area-right {
+.modalForm .flexible-modal-drag-area-right {
   position: absolute;
   top: 0;
   right: 0;
@@ -2456,17 +2471,17 @@ code {
   width: 15px;
   cursor: move;
 }
-.chat .flexible-modal-drag-area-bottom {
+.modalForm .flexible-modal-drag-area-bottom {
   position: absolute;
   bottom: 0;
   height: 15px;
   width: 250px;
   cursor: move;
 }
-.chat .flexible-modal-resizer {
+.modalForm .flexible-modal-resizer {
   display: none;
 }
-.chat .header {
+.modalForm .header {
   height: 35px;
   margin: 7px 15px;
   border-bottom: 1px solid #83E4E4;
@@ -2474,44 +2489,87 @@ code {
   display: flex;
   justify-content: flex-end;
 }
-.chat .header .title {
+.modalForm .header .title {
   margin: 0 auto;
 }
-.chat .header img {
+.modalForm .header img {
   height: 18px;
   position: absolute;
   top: 5px;
   right: 10px;
 }
-.chat .content .dialogs {
+.modalForm .content .dialogs {
   list-style: none;
   width: 220px;
   padding: 5px 15px;
 }
-.chat .content .dialogs .dialog {
+.modalForm .content .dialogs .dialog {
   width: 100%;
   display: flex;
   margin-bottom: 10px;
 }
-.chat .content .dialogs .dialog .data {
+.modalForm .content .dialogs .dialog .data {
   width: calc(100% - 20px);
 }
-.chat .content .dialogs .dialog .data p {
+.modalForm .content .dialogs .dialog .data p {
   width: calc(100% - 70px);
   font-size: 12px;
   text-overflow: ellipsis;
   overflow: hidden;
   white-space: nowrap;
 }
-.chat .content .dialogs .dialog .data .nickName {
+.modalForm .content .dialogs .dialog .data .nickName {
   width: calc(100% - 20px);
   font-size: 13px;
 }
-.chat .content .dialogs .dialog .avatar {
+.modalForm .content .dialogs .dialog .avatar {
   margin-right: 10px;
 }
-.chat .content .dialogs .dialog .avatar img {
+.modalForm .content .dialogs .dialog .avatar img {
   border-radius: 15px;
   height: 30px;
   width: 30px;
+}
+.modalForm .content .dialogs .dialog .chat {
+  width: 250px !important;
+  height: 300px !important;
+  position: absolute;
+  border: 1px solid #83E4E4;
+  border-top-right-radius: 16px;
+  border-top-left-radius: 16px;
+  background: #11161bb8;
+  top: 100px;
+  left: 200px;
+  z-index: 300;
+}
+.modalForm .content .dialogs .dialog .chat .chat__content {
+  padding: 5px 15px;
+}
+.modalForm .content .dialogs .dialog .chat .chat__header {
+  height: 35px;
+  margin: 7px 15px;
+  border-bottom: 1px solid #83E4E4;
+  width: 220px;
+}
+.modalForm .content .dialogs .dialog .chat .chat__header button {
+  position: relative;
+  z-index: 200;
+}
+.modalForm .content .dialogs .dialog .chat .chat__footer {
+  position: absolute;
+  bottom: 0px;
+  width: 250px;
+  height: 30px;
+}
+.modalForm .content .dialogs .dialog .chat .chat__footer form {
+  margin: 0;
+  display: flex;
+  flex-direction: row;
+}
+.modalForm .content .dialogs .dialog .chat .chat__footer .textIF input {
+  width: 220px;
+  height: 30px;
+}
+.modalForm .content .dialogs .dialog .chat .flexible-modal-drag-area-bottom, .modalForm .content .dialogs .dialog .chat .flexible-modal-drag-area-right, .modalForm .content .dialogs .dialog .chat .flexible-modal-drag-area-left {
+  display: none;
 }

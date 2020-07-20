@@ -1,6 +1,6 @@
 import React, {Component} from 'react'
 import Avatar2 from '../avatar2/index'
-import Statistics from '../statistics/index';
+import DetailedInf from '../detailedInf/index';
 
 const getDate = (unix_timestamp) => {
   const currentDate = new Date(unix_timestamp * 1000);
@@ -90,12 +90,10 @@ class Histories extends Component {
           </div>
         </div>
         <div className="currentHistory-outline"
-          style={{background: background1}}
         />
       <div className="currentHistory-background"
-          style={{background: background1}}
         />
-        <Statistics background={background2} type={type}/>
+        <DetailedInf background={background2} type={type}/>
       </div>
     )
   }

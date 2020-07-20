@@ -5,13 +5,14 @@ import { sessionReducer } from 'redux-react-session';
 // import comments from './comments';
 // import patients from './patients';
 import path from './path';
+import ws from './webSocket';
 // import sessions from './sessions';
 // import profile from './profile';
 // import statistics from './statistics';
 // import recommendations from './recommendations';
 
 const rootReducer = combineReducers({
-   path, sessionReducer
+   path, sessionReducer, ws
  });
 
 export default rootReducer;
