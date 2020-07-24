@@ -1,4 +1,4 @@
-import { NEW_WS, NEW_MESSAGE } from '../constants';
+import { NEW_WS, NEW_MESSAGE } from '../../constants';
 
 const inititalState = {
   webSocket: {},

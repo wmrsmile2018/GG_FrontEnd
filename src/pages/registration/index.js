@@ -1,14 +1,21 @@
 import React, {Component} from 'react';
 import { Select } from 'antd';
+import dayjs from 'dayjs';
+
 import TextIF from '../../components/textInputField/index';
 import InputS from '../../components/inputSubmit/index';
 import ButtonS from '../../components/buttonSubmit/index';
 import RadioB from '../../components/radioButton/index';
-import getHistory from '../../modules/history';
-import { setPath } from '../../actions/actionPath.js';
-import { connect } from 'react-redux';
-//use Ref to decrease count code.
 
+import getHistory from '../../modules/history';
+
+import { setPath } from '../../redux/actions/actionPath';
+import { signUp } from '../../redux/actions/actionSignUp';
+import { connect } from 'react-redux';
+
+
+
+// login, password, email, birthday, creationDate, sex, typeUser
 const { Option } = Select;
 
 const patternPassword = /(?=.*[0-9])(?=.*[!@#$%^&*])(?=.*[a-z])(?=.*[A-Z])[0-9a-zA-Z!@#$%^&*]{6,}/;
@@ -32,8 +39,15 @@ const Validate = (input, pattern) => {
 const RegElement = (props) => {
   return (
     <div className={props.classN1}>
-      <TextIF classN={props.classN2 + "__"} actionOnChange={props.actionOnChange} title={props.title} type={props.type} />
-      <div style={{display: props.display}} className={props.classN3}>
+      <TextIF
+        type={props.type}
+        classN={props.classN2}
+        actionOnChange={props.actionOnChange}
+        name={props.name}
+        value={props.value}
+        title={props.title}
+        />
+      <div style={{display: props.display}} className={`${props.classN2}__error`}>
         {props.text}
       </div>
     </div>
@@ -41,129 +55,126 @@ const RegElement = (props) => {
 }
 
 class Registration extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      styleLogin: 'none',
-      stylePas: 'none',
-      styleConfirmPas: 'none',
-      styleEmail: 'none',
-      styleDate: 'none',
-      styleSex: 'none',
-      login: '',
-      password: '',
-      confirmPassword: '',
-      email: '',
-      day: '',
-      month: '',
-      year: '',
-      sex: '',
-    };
-    this.handleSubmit = this.handleSubmit.bind(this);
-    this.updateDataL = this.updateDataL.bind(this);
-    this.updateDataP = this.updateDataP.bind(this);
-    this.updateDataConfP = this.updateDataConfP.bind(this);
-    this.updateDataE = this.updateDataE.bind(this);
-    this.updateDataS = this.updateDataS.bind(this);
-    this.updateDataD = this.updateDataD.bind(this);
-    this.updateDataM = this.updateDataM.bind(this);
-    this.updateDataY = this.updateDataY.bind(this);
+  state = {
+    styleLogin: 'none',
+    stylePas: 'none',
+    styleConfirmPas: 'none',
+    styleEmail: 'none',
+    styleDate: 'none',
+    styleSex: 'none',
+    login: '',
+    password: '',
+    confirmPassword: '',
+    email: '',
+    day: '',
+    month: '',
+    year: '',
+    sex: '',
+  };
+
+  handleOnChange = ({target}) => {
+    this.setState({ [target.name]: target.value });
   }
 
-  updateDataL(e) {
-     this.setState({login: e.target.value});
-  };
-  updateDataP(e) {
-     this.setState({password: e.target.value});
-  };
-  updateDataConfP(e) {
-     this.setState({confirmPassword: e.target.value});
-  };
-  updateDataE(e) {
-     this.setState({email: e.target.value});
-  };
-  updateDataS(value) {
-    this.setState({sex: value});
-  };
-  updateDataD(value) {
-    this.setState({day: value})
-  };
-  updateDataM(value) {
-    this.setState({month: value})
-  };
-  updateDataY(value) {
-    this.setState({year: value})
-  };
+  updateDataS = (value) => {
+    let sex;
+    if (value === 'Мужской') {
+      sex = 'male';
+    } else if (value === 'Женский') {
+      sex = 'female';
+    } else {
+      sex = 'another'
+    }
+    this.setState({sex});
+  }
 
-  componentDidMount() {
+  updateDataD = (value) => {
+    this.setState({day: value})
+  }
+
+  updateDataM = (value) => {
+    this.setState({month: value})
+  }
+
+  updateDataY = (value) => {
+    this.setState({year: value})
+  }
+
+  componentDidMount = () => {
     this.props.setPath(getHistory().location.pathname);
   }
 
 
-  handleSubmit(e) {
-    if (!Validate(this.state.login, patternLogin)) {
-      this.setState({styleLogin: "block"})
-    } else {
-      this.setState({styleLogin: "none"})
+  handleSubmit = (e) => {
+    let {login, password, confirmPassword, email,
+      sex, day, month, year, styleLogin, stylePas, styleConfirmPas,
+      styleEmail, styleSex, styleDate } = this.state;
+
+    styleLogin = !Validate(login, patternLogin) ? "block" : "none";
+    stylePas = !Validate(password, patternPassword) ? "block" : "none";
+    styleConfirmPas = confirmPassword !== password ? "block" : "none";
+    styleEmail = !Validate(email, patternEmail) ? "block" : "none";
+    styleSex = sex === '' ? "block" : "none";
+    styleDate = day === '' || month === '' || year === '' ? "block" : "none";
+
+
+
+    this.setState({styleLogin, stylePas, styleConfirmPas, styleEmail, styleSex, styleDate})
+    if ((styleLogin + stylePas + styleConfirmPas + styleEmail +
+       styleSex + styleDate).indexOf("block") === -1) {
+      const creationDate = new Date().getTime();
+      const birthday = dayjs(`${year}-${month}-${day}`).unix() * 1000;
+      const data = {login: login, password: password, email: email, birthday: birthday,
+        creationDate: creationDate, sex: sex, typeUser: "user"}
+      this.props.signUp(data)
     }
-    if (!Validate(this.state.password, patternPassword)) {
-      this.setState({stylePas: "block"})
-    } else {
-      this.setState({stylePas: "none"})
-    }
-    if (this.state.confirmPassword !== this.state.password) {
-      this.setState({styleConfirmPas: "block"})
-    } else {
-       this.setState({styleConfirmPas: "none"})
-    }
-    if (!Validate(this.state.email, patternEmail)) {
-      this.setState({styleEmail: "block"})
-    } else {
-      this.setState({styleEmail: "none"})
-    }
-    if (this.state.sex === '') {
-      this.setState({styleSex: "block"})
-    } else {
-      this.setState({styleSex: "none"})
-    }
-    if(this.state.day === '' || this.state.month === '' || this.state.year === '') {
-      this.setState({styleDate: "block"})
-      } else {
-      this.setState({styleDate: "none"})
-      }
+
     e.preventDefault();
   }
 
   render() {
+    const { login, password, confirmPassword, email, day, month, year, sex,
+       styleLogin, stylePas, styleConfirmPas, styleEmail } = this.state;
+
+    const days = generatorDate(1, 31);
+    const months = generatorDate(1, 12);
+    const years = generatorDate(1900, 2003);
+
     const RegElementParametres = [
-      {display: this.state.styleLogin, actionOnChange: this.updateDataL ,classN1: "registration__login", classN2: "registration", title: "Логин", type: "text", classN3: "registration__error", text: "Логин не подходит"},
-      {display: this.state.stylePas, actionOnChange: this.updateDataP ,classN1: "registration__password", classN2: "registration", title: "Пароль", type: "password", classN3: "registration__error", text: "Пароль не подходит"},
-      {display: this.state.styleConfirmPas, actionOnChange: this.updateDataConfP ,classN1: "registration__confirm-password", classN2: "registration", title: "Повторите пароль", type: "password", classN3: "registration__error", text: "Пароли не совпадают"},
+      {display: styleLogin, value: login,
+        classN1: "registration__login", title: "Логин",
+        type: "text", text: "Логин не подходит", name: "login"
+      },
+      {display: stylePas, value: password,
+        classN1: "registration__password", title: "Пароль",
+        type: "password", text: "Пароль не подходит", name: "password"
+      },
+      {display: styleConfirmPas, value: confirmPassword,
+        classN1: "registration__confirm-password", text: "Пароли не совпадают",
+        type: "password", title: "Повторите пароль", name: "confirmPassword"
+      },
     ]
 
-    let days, months, years;
-    days = generatorDate(1, 31);
-    months = generatorDate(1, 12);
-    years = generatorDate(1900, 2003);
-// <RegElement classN1="" classN2="" update={} name="" type="" display={} classN3="" text=""/>
-    const RegElements = RegElementParametres.map((element, index) =>
-      <RegElement
-        key={index}
-        classN1={element.classN1}
-        classN2={element.classN2}
-        actionOnChange={element.actionOnChange}
-        title={element.title}
-        type={element.type}
-        display={element.display}
-        classN3={element.classN3}
-        text={element.text}
-      />
-    )
     return (
       <div className="registration">
         <form onSubmit={this.handleSubmit}>
           <h1>Регистрация</h1>
-          {RegElements}
+          {RegElementParametres.map((element, index) =>
+              <RegElement
+                key={index}
+                classN1={element.classN1}
+                classN2="registration"
+                actionOnChange={this.handleOnChange}
+                title={element.title}
+                type={element.type}
+                display={element.display}
+                text={element.text}
+                name={element.name}
+                value={element.value}
+              />
+            )
+          }
+
           <div className="registration__date">
             <p className="registration_title">Дата рождения</p>
             <div className="registration__dateSelector">
@@ -175,6 +186,7 @@ class Registration extends Component {
               Выберите дату
             </div>
           </div>
+
           <div className="registration__sex">
             <p className="registration_title">Пол</p>
             <RadioB classN="registration" actionOnChange={this.updateDataS}
@@ -185,17 +197,19 @@ class Registration extends Component {
               Выберите пол
             </div>
           </div>
+
           <RegElement
             classN1="registration__email"
             classN2="registration"
-            actionOnChange={this.updateDataE}
+            actionOnChange={this.handleOnChange}
             title="Почта"
             type="text"
-            display={this.state.styleEmail}
-            classN3="registration__error"
+            display={styleEmail}
             text="почта не подходит"
+            name="email"
+            value={email}
             />
-          <InputS type="submit" classN="registration">
+          <InputS type="submit" classN="registration" actionOnClick={this.handleSubmit}>
             <p>Зарегистрироваться</p>
           </InputS>
        </form>
@@ -208,4 +222,4 @@ class Registration extends Component {
   }
 }
 
-export default connect(state => ({}), { setPath })(Registration);
+export default connect(state => ({}), { setPath, signUp })(Registration);

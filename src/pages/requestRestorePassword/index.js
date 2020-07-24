@@ -2,7 +2,7 @@ import React, {Component} from 'react';
 import TextIF from '../../components/textInputField/index';
 import InputS from '../../components/inputSubmit/index';
 import getHistory from '../../modules/history';
-import { setPath } from '../../actions/actionPath.js';
+import { setPath } from '../../redux/actions/actionPath.js';
 import { connect } from 'react-redux';
 
 const patternEmail = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/

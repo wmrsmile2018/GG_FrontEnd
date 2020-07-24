@@ -1,8 +1,8 @@
 import React, { Component, Fragment } from 'react';
 
-import InputS from '../components/inputSubmit/index';
-import Earth from '../public/svg/earth.svg';
-import Trapeze from '../public/svg/trapeze.svg';
+import InputS from '../inputSubmit/index';
+import Earth from '../../public/svg/earth.svg';
+import Trapeze from '../../public/svg/trapeze.svg';
 
 class HeaderNews extends Component {
   render() {

@@ -3,19 +3,13 @@ import PropTypes from 'prop-types';
 import { Link } from "react-router-dom";
 
 class InputS extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      blue: '#83E4E4',
-      yellow: '#FFD074',
-      color: '#83E4E4',
-      isActivity: false,
-    }
-    this.handleOnMouseOver = this.handleOnMouseOver.bind(this);
-    this.handleOnMouseOut = this.handleOnMouseOut.bind(this);
-    this.handleOnClick = this.handleOnClick.bind(this);
+  state = {
+    blue: '#83E4E4',
+    yellow: '#FFD074',
+    color: '#83E4E4',
+    isActivity: false,
   }
-
+  
   static propTypes = {
     children: PropTypes.node,
     active: PropTypes.bool,
@@ -40,19 +34,19 @@ class InputS extends Component {
     link: '',
   }
 
-  handleOnMouseOver() {
+  handleOnMouseOver = () => {
     this.setState({
       color: this.state.yellow,
     })
   }
 
-  handleOnMouseOut() {
+  handleOnMouseOut = () => {
     this.setState({
       color: this.state.blue,
     })
   }
 
-  handleOnClick(e) {
+  handleOnClick = (e) => {
     this.setState({
       color: this.state.yellow,
       isActivity: true,

@@ -1,14 +1,14 @@
 import { eventChannel } from 'redux-saga'
 import { call, take, put } from 'redux-saga/effects';
 
-import { NEW_WS, NEW_MESSAGE } from '../constants';
+import { NEW_WS, NEW_MESSAGE } from '../../constants';
 
 const user_id1 = "a0eebc99-9c0b-4ef8-bb6d-6bb9bd380a10";
 
 function initWebsocket() {
   return eventChannel(emitter => {
     // console.log(document.location.host);
-    const ws = new WebSocket("ws://" + 'localhost:8000' + "/ws" + "?id=" + user_id1)
+    const ws = new WebSocket("ws://localhost:8000/ws?id=" + user_id1)
 
     ws.onopen = () => {
       console.log('WebSocket success')

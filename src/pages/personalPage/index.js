@@ -10,7 +10,7 @@ import AddPaymentCard from '../../components/addPaymentCard/index';
 
 import getHistory from '../../modules/history';
 
-import { setPath } from '../../actions/actionPath.js';
+import { setPath } from '../../redux/actions/actionPath.js';
 
 // const currentDateTime = new Date();
 // const startTimeOfCurrentYear = (new Date(currentDateTime.getFullYear(), 0, 1)).getTime();

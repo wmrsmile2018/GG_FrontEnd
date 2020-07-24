@@ -1,4 +1,4 @@
-import { SET_PATH } from '../constants';
+import { SET_PATH } from '../../constants';
 
 // export const changePath = (path) =>  {
 //   return dispatch => {
@@ -10,7 +10,6 @@ import { SET_PATH } from '../constants';
 //     })
 //   }
 // }
-
 export const setPath = (path) =>  ({
   type: SET_PATH,
   payload: {

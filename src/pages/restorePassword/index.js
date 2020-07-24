@@ -2,7 +2,7 @@ import React, {Component} from 'react';
 import TextIF from '../../components/textInputField/index';
 import InputS from '../../components/inputSubmit/index';
 import getHistory from '../../modules/history';
-import { setPath } from '../../actions/actionPath.js';
+import { setPath } from '../../redux/actions/actionPath.js';
 import { connect } from 'react-redux';
 
 const patternPassword = /(?=.*[0-9])(?=.*[!@#$%^&*])(?=.*[a-z])(?=.*[A-Z])[0-9a-zA-Z!@#$%^&*]{6,}/;

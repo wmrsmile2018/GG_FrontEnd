@@ -1,4 +1,4 @@
-import { SET_PATH, PATH_CLEAN } from '../constants';
+import { SET_PATH, PATH_CLEAN } from '../../constants';
 
 const initialState = {
   path: '',

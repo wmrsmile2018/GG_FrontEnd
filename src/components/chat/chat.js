@@ -5,8 +5,6 @@ import PropTypes from 'prop-types';
 
 import TextIF from '../textInputField/index';
 
-const user_id1 = "a0eebc99-9c0b-4ef8-bb6d-6bb9bd380a10";
-
 class Chat extends Component {
   state = {
     author: '',

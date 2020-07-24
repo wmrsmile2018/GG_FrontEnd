@@ -6,7 +6,7 @@ import ButtonGroup from '../../components/buttonGroup/index';
 
 import getHistory from '../../modules/history';
 
-import { setPath } from '../../actions/actionPath.js';
+import { setPath } from '../../redux/actions/actionPath.js';
 
 import Book from '../../public/svg/book.svg';
 import Security from '../../public/svg/security.svg';

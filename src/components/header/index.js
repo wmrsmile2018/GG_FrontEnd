@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import HeaderNews from '../../headers/news.js';
-import HeaderArena from '../../headers/arena.js';
-import HeaderPersonal from '../../headers/personal.js';
+import HeaderNews from '../headers/news.js';
+import HeaderArena from '../headers/arena.js';
+import HeaderPersonal from '../headers/personal.js';
 
 class Header extends Component {
   state = {

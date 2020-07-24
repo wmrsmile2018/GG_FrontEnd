@@ -1,8 +1,8 @@
 import React, { Component, Fragment } from 'react';
 
-import InputS from '../components/inputSubmit/index';
-import CSGO from '../public/svg/csgo.svg';
-import Trapeze from '../public/svg/trapeze.svg';
+import InputS from '../inputSubmit/index';
+import CSGO from '../../public/svg/csgo.svg';
+import Trapeze from '../../public/svg/trapeze.svg';
 
 class HeaderArena extends Component {
   render() {

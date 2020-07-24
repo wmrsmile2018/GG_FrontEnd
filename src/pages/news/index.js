@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 import Post from '../../components/post/index';
 import getHistory from '../../modules/history';
-import { setPath } from '../../actions/actionPath.js';
+import { setPath } from '../../redux/actions/actionPath.js';
 import { connect } from 'react-redux';
 
 const obj= [

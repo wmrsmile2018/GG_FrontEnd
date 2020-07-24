@@ -4,7 +4,7 @@ import Avatar1 from '../../components/avatar1/index';
 import placeholder from '../../public/images/placeholder.jpg';
 import Outline from '../../public/svg/outline.svg';
 import getHistory from '../../modules/history';
-import { setPath } from '../../actions/actionPath.js';
+import { setPath } from '../../redux/actions/actionPath.js';
 import { connect } from 'react-redux';
 
 const leaders = [

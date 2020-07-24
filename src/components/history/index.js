@@ -62,7 +62,7 @@ class Histories extends Component {
 
   render(){
     const { red, green, isOpen } = this.state;
-    const background1 = isOpen ? 'none' : this.props.isWin === true ? green : red;
+    // const background1 = isOpen ? 'none' : this.props.isWin === true ? green : red;
     const background2 = !isOpen ? 'none' : this.props.isWin === true ? green : red;
     const type = this.setType(this.props.team1);
     return (

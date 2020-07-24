@@ -1,14 +1,15 @@
 import React, { Component } from 'react';
 
-import InputS from '../components/inputSubmit/index';
-import Avatar1 from '../components/avatar1/index';
+import InputS from '../inputSubmit/index';
+import Avatar1 from '../avatar1/index';
 
-import Options from '../public/svg/options.svg';
-import placeholder from '../public/images/placeholder.jpg';
+import Options from '../../public/svg/options.svg';
+import placeholder from '../../public/images/placeholder.jpg';
+import Links from '../../public/images/links.jpg';
 
-import getHistory from '../modules/history';
+import getHistory from '../../modules/history';
 
-import Links from '../public/images/links.jpg';
+
 
 class HeaderPersonal extends Component {
   handleOnClick() {

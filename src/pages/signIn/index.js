@@ -3,7 +3,7 @@ import TextIF from '../../components/textInputField/index';
 import InputS from '../../components/inputSubmit/index';
 import ButtonS from '../../components/buttonSubmit/index';
 import getHistory from '../../modules/history';
-import { setPath } from '../../actions/actionPath.js';
+import { setPath } from '../../redux/actions/actionPath.js';
 import { connect } from 'react-redux';
 
 const SignInElement = (props) => {
