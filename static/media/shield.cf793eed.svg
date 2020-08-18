@@ -1,0 +1,14 @@
+<svg width="69" height="83" viewBox="0 0 69 83" fill-rule="nonzero" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"  stroke="#789393">
+<path d="M67.5979 34.8813C64.0187 64.6133 37.9804 80.0341 34.5366 82C30.9608 79.9375 5.30554 64.5733 1.47211 34.8813C-0.231631 21.6864 3.04048 10.8305 5.49044 4.70286C24.4862 -0.439767 44.5164 -0.221934 63.3979 5.33262C65.8809 11.3803 69.1497 21.9796 67.5979 34.8813Z" fill="url(#pattern0)"/>
+<path d="M67.5979 34.8813C64.0187 64.6133 37.9804 80.0341 34.5366 82C30.9608 79.9375 5.30554 64.5733 1.47211 34.8813C-0.231631 21.6864 3.04048 10.8305 5.49044 4.70286C24.4862 -0.439767 44.5164 -0.221934 63.3979 5.33262C65.8809 11.3803 69.1497 21.9796 67.5979 34.8813Z" stroke="#789393" stroke-miterlimit="10"/>
+<path d="M67.5979 34.8813C64.0187 64.6133 37.9804 80.0341 34.5366 82C30.9608 79.9375 5.30554 64.5733 1.47211 34.8813C-0.231631 21.6864 3.04048 10.8305 5.49044 4.70286C24.4862 -0.439767 44.5164 -0.221934 63.3979 5.33262C65.8809 11.3803 69.1497 21.9796 67.5979 34.8813Z" stroke="url(#paint0_linear)" />
+<defs>
+<pattern id="pattern0" patternContentUnits="objectBoundingBox" width="1" height="1">
+<use xlink:href="#image0" transform="translate(-0.104478) scale(0.00302239 0.0025)"/>
+</pattern>
+<linearGradient id="paint0_linear" x1="34.5" y1="1" x2="34.5" y2="82" gradientUnits="userSpaceOnUse">
+<stop stop-color="#F5F7F8"/>
+<stop offset="1" stop-color="white" stop-opacity="0"/>
+</linearGradient>
+</defs>
+</svg>
