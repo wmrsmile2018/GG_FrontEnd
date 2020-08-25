@@ -30,8 +30,6 @@ class Histories extends Component {
       green: "#59a7ea75",
       // green: "#3fd27a75",
       // green: "#195e9ac9",
-
-
     };
 
     this.handleClick = this.handleClick.bind(this);
@@ -62,8 +60,7 @@ class Histories extends Component {
 
   render(){
     const { red, green, isOpen } = this.state;
-    // const background1 = isOpen ? 'none' : this.props.isWin === true ? green : red;
-    const background2 = !isOpen ? 'none' : this.props.isWin === true ? green : red;
+    const background1 = this.props.isWin === true ? green : red;
     const type = this.setType(this.props.team1);
     return (
       <div onClick={this.handleClick}
@@ -89,11 +86,9 @@ class Histories extends Component {
                 src={player.photo}/>)}
           </div>
         </div>
-        <div className="currentHistory-outline"
-        />
-      <div className="currentHistory-background"
-        />
-        <DetailedInf background={background2} type={type}/>
+        <div className="currentHistory-outline"/>
+      <div className="currentHistory-background" style={{background: background1}}/>
+        <DetailedInf isOpen={isOpen} type={type}/>
       </div>
     )
   }

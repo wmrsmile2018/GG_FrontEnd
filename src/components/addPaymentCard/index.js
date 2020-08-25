@@ -21,6 +21,7 @@ class AddPaymentCard extends Component {
     focused: "",
     formData: null
   }
+
   handleCallback = ({ issuer }, isValid) => {
     if (isValid) {
       this.setState({ issuer });
@@ -43,7 +44,8 @@ class AddPaymentCard extends Component {
      else if (target.name === "cvc") {
       target.value = formatCVC(target.value);
     }
-
+    console.log(target.name);
+    console.log(target.value);
     this.setState({ [target.name]: target.value });
   };
 
@@ -64,7 +66,7 @@ class AddPaymentCard extends Component {
   render() {
     const { name, number, expiry, cvc, focused } = this.state;
     const { visibility } = this.props;
-
+window.a = this.state;
 
     const Parametres = [
       {classN: "addPaymentCard", type: "tel", name: "number", actionOnChange: this.handleInputChange,
@@ -72,7 +74,7 @@ class AddPaymentCard extends Component {
       {classN: "addPaymentCard", type: "text", name: "name", actionOnChange: this.handleInputChange,
         placeholder: "Name", title: "Владелец карты"},
       {classN: "addPaymentCard", type: "tel", name: "expiry", actionOnChange: this.handleInputChange,
-        placeholder: "Name", title: "Владелец карты"},
+        placeholder: "Date", title: "Срок действия карты"},
       {classN: "addPaymentCard", type: "tel", name: "cvc", actionOnChange: this.handleInputChange,
         placeholder: "CVC/CVV", title: "CVC/CVV"},
     ]
@@ -98,6 +100,7 @@ class AddPaymentCard extends Component {
               actionOnChange={element.actionOnChange}
               placeholder={element.placeholder}
               title={element.title}
+              value={this.state[element.name]}
               />
           )}
 

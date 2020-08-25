@@ -24,27 +24,21 @@ import Avatar2 from '../avatar2/index'
 // `;
 
 
-const DetailedInf = ({type, background}) => {
+const DetailedInf = ({type, isOpen}) => {
 
-  // const setProp = (type) => {
-  //   if (type === '1:1') {
-  //     return [StatisticsSmall, 124];
-  //   } else if (type === '2:2') {
-  //     return [StatisticsMedium, 187];
-  //   } else if (type === '2:2') {
-  //     return [StatisticsBig, 364];
-  //   }
-  // }
+  const setHeight = (type) => {
+    if (type === '1:1') {
+      return 100;
+    } else if (type === '2:2') {
+      return 165;
+    }
+  }
 
-  // const [Mask, height] = setProp(type);
-  // <DragAndDropContainer className="statistics-outline" background={background}
-  //    mask={Mask} height={height}>
-  //    <div>
-  //    </div>
-  // </DragAndDropContainer>
+  const height = setHeight(type);
+
   return (
     <div className="detailedInf"
-        style={{height: 30, display: background === 'none' ? 'none' : 'block'}}
+        style={{height: height, display: !isOpen ? 'none' : 'block'}}
       >
       <div className="detailedInf-winner">
         <div className="detailedInf-user detailedInf-user1">

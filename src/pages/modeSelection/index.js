@@ -147,7 +147,6 @@ class ModeSelection extends Component {
                   <div className="modeSelection-outline"></div>
                   <div className="modeSelection-background"></div>
                   <div className="modeSelection-image">
-                    <img src={Camera} alt=""/>
                   </div>
                 </div>
                 <div className="modeSelection__rule2 modeSelection__rule">

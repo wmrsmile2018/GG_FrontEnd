@@ -94,6 +94,11 @@ code {
   position: fixed;
   height: 100%;
   width: 100%;
+  background-size: 100%;
+  background-repeat: no-repeat;
+  -moz-background-size: 100%;
+  -webkit-background-size: 100%;
+  -o-background-size: 100%;
 }
 
 .App-content {
@@ -119,6 +124,7 @@ code {
   // background: red;
   position: relative;
   height: 120px;
+  z-index: 200;
 
   .inputS {
     p {
@@ -2856,6 +2862,7 @@ code {
   }
 
   .options__data {
+    width: 366px;
     .options__sex {
       cursor: pointer;
       margin-bottom: 12px;
@@ -2909,9 +2916,18 @@ code {
         }
       }
     }
-    .phone_options, .email_options {
+    .phone_options, .email_options, .login_options, .password_options {
       margin-bottom: 25px;
     }
+
+    .MuiFormControl-root {
+      display: flex;
+      .MuiFormControlLabel-root {
+        justify-content: space-between;
+        margin: 0;
+      }
+    }
+
   }
 }
 
@@ -2922,6 +2938,7 @@ code {
   width: 200px;
   height: 100%;
   overflow: hidden;
+  z-index: 100;
 
   .rightBar:hover {
     margin-left: 0px;
@@ -2931,9 +2948,9 @@ code {
   .rightBar {
     width: 200px;
     height: 494px;
-    // margin-left: 175px;
-    margin-left: 0px;
-    margin-top: 100px;
+    margin-left: 175px;
+    // margin-left: 0px;
+    margin-top: 120px;
     transition: .5s ease-in-out;
     position: fixed;
 
@@ -3210,6 +3227,7 @@ code {
     right:0;
     top:0;
     cursor:move;
+    z-index: 100;
   }
 
   .flexible-modal-drag-area-left {
@@ -3219,6 +3237,7 @@ code {
     height: 300px!important;
     width: 15px;
     cursor:move;
+    z-index: 100;
   }
 
   .flexible-modal-drag-area-right {
@@ -3228,6 +3247,7 @@ code {
     height: 300px!important;
     width: 15px;
     cursor:move;
+    z-index: 100;
   }
 
   .flexible-modal-drag-area-bottom {
@@ -3236,6 +3256,7 @@ code {
     height: 15px;
     width: 250px;
     cursor:move;
+    z-index: 100;
   }
 
   .flexible-modal-resizer {
@@ -3243,7 +3264,7 @@ code {
   }
 
 
-  .header {
+  .modalForm__header {
     height: 35px;
     margin: 7px 15px;
     border-bottom: 1px solid $color-white-blue;
@@ -3251,7 +3272,7 @@ code {
     display: flex;
     justify-content: flex-end;
 
-    .title {
+    .modalForm__title {
       margin: 0 auto;
     }
 
@@ -3259,21 +3280,22 @@ code {
       height: 18px;
       position: absolute;
       top: 5px;
-      right: 10px;
+      left: 10px;
+      z-index: 200;
     }
 
   }
 
-  .content {
-    .dialogs {
+  .modalForm__content {
+    .modalForm__dialogs {
       list-style: none;
       width: 220px;
       padding: 5px 15px;
-      .dialog {
+      .modalForm__dialog {
         width: 100%;
         display: flex;
         margin-bottom: 10px;
-        .data {
+        .modalForm__data {
           width: calc(100% - 20px);
           p {
             width: calc(100% - 70px);
@@ -3282,13 +3304,13 @@ code {
             overflow: hidden;
             white-space: nowrap;
           }
-          .nickName {
+          .modalForm__nickName {
             width: calc(100% - 20px);
             font-size: $size-medium;
           }
         }
 
-        .avatar {
+        .modalForm__avatar {
           margin-right: 10px;
           img {
             border-radius: 15px;

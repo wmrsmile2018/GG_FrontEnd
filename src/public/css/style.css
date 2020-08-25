@@ -73,6 +73,11 @@ code {
   position: fixed;
   height: 100%;
   width: 100%;
+  background-size: 100%;
+  background-repeat: no-repeat;
+  -moz-background-size: 100%;
+  -webkit-background-size: 100%;
+  -o-background-size: 100%;
 }
 
 .App-content {
@@ -95,6 +100,7 @@ code {
   width: 770px;
   position: relative;
   height: 120px;
+  z-index: 200;
 }
 .header .inputS p {
   color: inherit;
@@ -2160,6 +2166,9 @@ code {
   left: calc(50% - 17px);
   cursor: pointer;
 }
+.options .options__data {
+  width: 366px;
+}
 .options .options__data .options__sex {
   cursor: pointer;
   margin-bottom: 12px;
@@ -2205,8 +2214,15 @@ code {
   width: 22px;
   height: 22px;
 }
-.options .options__data .phone_options, .options .options__data .email_options {
+.options .options__data .phone_options, .options .options__data .email_options, .options .options__data .login_options, .options .options__data .password_options {
   margin-bottom: 25px;
+}
+.options .options__data .MuiFormControl-root {
+  display: flex;
+}
+.options .options__data .MuiFormControl-root .MuiFormControlLabel-root {
+  justify-content: space-between;
+  margin: 0;
 }
 
 .right {
@@ -2214,6 +2230,7 @@ code {
   width: 200px;
   height: 100%;
   overflow: hidden;
+  z-index: 100;
 }
 .right .rightBar:hover {
   margin-left: 0px;
@@ -2222,8 +2239,8 @@ code {
 .right .rightBar {
   width: 200px;
   height: 494px;
-  margin-left: 0px;
-  margin-top: 100px;
+  margin-left: 175px;
+  margin-top: 120px;
   transition: 0.5s ease-in-out;
   position: fixed;
 }
@@ -2469,6 +2486,7 @@ code {
   right: 0;
   top: 0;
   cursor: move;
+  z-index: 100;
 }
 .modalForm .flexible-modal-drag-area-left {
   position: absolute;
@@ -2477,6 +2495,7 @@ code {
   height: 300px !important;
   width: 15px;
   cursor: move;
+  z-index: 100;
 }
 .modalForm .flexible-modal-drag-area-right {
   position: absolute;
@@ -2485,6 +2504,7 @@ code {
   height: 300px !important;
   width: 15px;
   cursor: move;
+  z-index: 100;
 }
 .modalForm .flexible-modal-drag-area-bottom {
   position: absolute;
@@ -2492,11 +2512,12 @@ code {
   height: 15px;
   width: 250px;
   cursor: move;
+  z-index: 100;
 }
 .modalForm .flexible-modal-resizer {
   display: none;
 }
-.modalForm .header {
+.modalForm .modalForm__header {
   height: 35px;
   margin: 7px 15px;
   border-bottom: 1px solid #83E4E4;
@@ -2504,48 +2525,49 @@ code {
   display: flex;
   justify-content: flex-end;
 }
-.modalForm .header .title {
+.modalForm .modalForm__header .modalForm__title {
   margin: 0 auto;
 }
-.modalForm .header img {
+.modalForm .modalForm__header img {
   height: 18px;
   position: absolute;
   top: 5px;
-  right: 10px;
+  left: 10px;
+  z-index: 200;
 }
-.modalForm .content .dialogs {
+.modalForm .modalForm__content .modalForm__dialogs {
   list-style: none;
   width: 220px;
   padding: 5px 15px;
 }
-.modalForm .content .dialogs .dialog {
+.modalForm .modalForm__content .modalForm__dialogs .modalForm__dialog {
   width: 100%;
   display: flex;
   margin-bottom: 10px;
 }
-.modalForm .content .dialogs .dialog .data {
+.modalForm .modalForm__content .modalForm__dialogs .modalForm__dialog .modalForm__data {
   width: calc(100% - 20px);
 }
-.modalForm .content .dialogs .dialog .data p {
+.modalForm .modalForm__content .modalForm__dialogs .modalForm__dialog .modalForm__data p {
   width: calc(100% - 70px);
   font-size: 12px;
   text-overflow: ellipsis;
   overflow: hidden;
   white-space: nowrap;
 }
-.modalForm .content .dialogs .dialog .data .nickName {
+.modalForm .modalForm__content .modalForm__dialogs .modalForm__dialog .modalForm__data .modalForm__nickName {
   width: calc(100% - 20px);
   font-size: 13px;
 }
-.modalForm .content .dialogs .dialog .avatar {
+.modalForm .modalForm__content .modalForm__dialogs .modalForm__dialog .modalForm__avatar {
   margin-right: 10px;
 }
-.modalForm .content .dialogs .dialog .avatar img {
+.modalForm .modalForm__content .modalForm__dialogs .modalForm__dialog .modalForm__avatar img {
   border-radius: 15px;
   height: 30px;
   width: 30px;
 }
-.modalForm .content .dialogs .dialog .chat {
+.modalForm .modalForm__content .modalForm__dialogs .modalForm__dialog .chat {
   width: 250px !important;
   height: 300px !important;
   position: absolute;
@@ -2557,34 +2579,34 @@ code {
   left: 200px;
   z-index: 300;
 }
-.modalForm .content .dialogs .dialog .chat .chat__content {
+.modalForm .modalForm__content .modalForm__dialogs .modalForm__dialog .chat .chat__content {
   padding: 5px 15px;
 }
-.modalForm .content .dialogs .dialog .chat .chat__header {
+.modalForm .modalForm__content .modalForm__dialogs .modalForm__dialog .chat .chat__header {
   height: 35px;
   margin: 7px 15px;
   border-bottom: 1px solid #83E4E4;
   width: 220px;
 }
-.modalForm .content .dialogs .dialog .chat .chat__header button {
+.modalForm .modalForm__content .modalForm__dialogs .modalForm__dialog .chat .chat__header button {
   position: relative;
   z-index: 200;
 }
-.modalForm .content .dialogs .dialog .chat .chat__footer {
+.modalForm .modalForm__content .modalForm__dialogs .modalForm__dialog .chat .chat__footer {
   position: absolute;
   bottom: 0px;
   width: 250px;
   height: 30px;
 }
-.modalForm .content .dialogs .dialog .chat .chat__footer form {
+.modalForm .modalForm__content .modalForm__dialogs .modalForm__dialog .chat .chat__footer form {
   margin: 0;
   display: flex;
   flex-direction: row;
 }
-.modalForm .content .dialogs .dialog .chat .chat__footer .textIF input {
+.modalForm .modalForm__content .modalForm__dialogs .modalForm__dialog .chat .chat__footer .textIF input {
   width: 220px;
   height: 30px;
 }
-.modalForm .content .dialogs .dialog .chat .flexible-modal-drag-area-bottom, .modalForm .content .dialogs .dialog .chat .flexible-modal-drag-area-right, .modalForm .content .dialogs .dialog .chat .flexible-modal-drag-area-left {
+.modalForm .modalForm__content .modalForm__dialogs .modalForm__dialog .chat .flexible-modal-drag-area-bottom, .modalForm .modalForm__content .modalForm__dialogs .modalForm__dialog .chat .flexible-modal-drag-area-right, .modalForm .modalForm__content .modalForm__dialogs .modalForm__dialog .chat .flexible-modal-drag-area-left {
   display: none;
 }
