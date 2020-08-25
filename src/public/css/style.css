@@ -2528,10 +2528,17 @@ code {
 .modalForm .modalForm__header .modalForm__title {
   margin: 0 auto;
 }
-.modalForm .modalForm__header img {
+.modalForm .modalForm__header .modalForm__close {
   height: 18px;
   position: absolute;
-  top: 5px;
+  top: 10px;
+  right: 10px;
+  z-index: 200;
+}
+.modalForm .modalForm__header .modalForm__newConversation {
+  height: 18px;
+  position: absolute;
+  top: 10px;
   left: 10px;
   z-index: 200;
 }

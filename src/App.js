@@ -62,7 +62,7 @@ class App extends Component {
         top={100}
         left={100}
         >
-           <ModalForm/>
+           <ModalForm closeChat={this.handleOnClickChat}/>
         </ReactModal>
         <div className="App-background"></div>
         <div className="App-content">

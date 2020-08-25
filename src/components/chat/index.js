@@ -1,5 +1,6 @@
 import React, { Component, Fragment } from 'react';
 import NewConversation from '../../public/svg/newСonversation.svg';
+import Close from '../../public/svg/close.svg';
 import placeholder from '../../public/images/placeholder.jpg';
 import Chat from './chat';
 
@@ -38,6 +39,7 @@ class ModalForm extends Component {
         <div className="modalForm__header">
           <p className="modalForm__title">Чат</p>
           <img className="modalForm__newConversation" src={NewConversation} alt=""/>
+          <img className="modalForm__close" onClick={this.props.closeChat} src={Close} alt=""/>
         </div>
         <div className="modalForm__content">
           <ul className="modalForm__dialogs">
